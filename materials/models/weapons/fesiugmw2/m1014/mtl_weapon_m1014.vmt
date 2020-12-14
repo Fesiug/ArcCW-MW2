@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/m1014/mtl_weapon_m1014_shared.vmt
+	insert
+	{
+		$detail						"models/weapons/fesiugmw2/_camos/detail_olive_drab_paint - Copy"
+		$detailscale				1
+		$detailblendmode			4
+		$detailblendfactor			-0.4
+	}
+}

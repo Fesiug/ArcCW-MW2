@@ -1,0 +1,7 @@
+UnlitGeneric
+{
+		$basetexture				"models/weapons/fesiugmw2/_attach/sights/acog/mtl_weapon_acog2_reticle_base"
+		
+		$translucent				1
+		$model						1
+}

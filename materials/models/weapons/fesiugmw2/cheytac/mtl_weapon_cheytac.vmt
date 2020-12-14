@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/cheytac/mtl_weapon_cheytac_shared.vmt
+	insert
+	{
+		$detail						"models/weapons/fesiugmw2/_camos/detail_kaki_paint_02"
+		$detailscale				2
+		$detailblendmode			0
+		$detailblendfactor			1
+	}
+}

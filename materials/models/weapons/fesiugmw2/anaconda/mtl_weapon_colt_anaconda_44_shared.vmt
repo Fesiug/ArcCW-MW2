@@ -1,0 +1,13 @@
+VertexLitGeneric
+{
+		$basetexture				"models/weapons/fesiugmw2/anaconda/mtl_weapon_colt_anaconda_44_col"
+        $bumpmap					"models/weapons/fesiugmw2/anaconda/mtl_weapon_colt_anaconda_44_nml"
+ 
+        $phong						1
+        $phongboost					999
+        $phongexponent				30
+        $phongfresnelranges			"[1 1 1]"
+        $phongexponenttexture		"models/exp_gun"
+        $phongalbedotint			1
+        $nocull						1
+}

@@ -1,0 +1,24 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/fesiugmw2/mg4/weapon_mg4_rifle_col"
+			//EXP_GUN
+        $bumpmap   "models/weapons/fesiugmw2/mg4/normal"
+        $phongexponenttexture  "models/exp_gun"
+        $phongexponent "30"
+       
+        $normalmapalphaenvmapmask   "1"
+        $envmaptint   "[0.1 0.1 0.1]"
+        $envmapfresnel "1" // Advanced envmap reflections
+		
+		$detail "models/weapons/fesiugmw2/mg4/weapon_mg4_rifle_col"
+		$detailscale 1
+		$detailblendmode 0
+		$detailblendfactor 0.4
+ 
+        $phong  "1"
+        $phongboost  "2"      //tone down to decrease specular reflections
+        $phongfresnelranges     "[0.25 0.75 1.00]"
+        $phongalbedotint  "1"
+        $nocull  1
+		
+}

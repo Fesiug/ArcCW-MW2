@@ -1,0 +1,7 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/striker/mtl_weapon_striker_shared.vmt
+	insert
+	{
+	}
+}

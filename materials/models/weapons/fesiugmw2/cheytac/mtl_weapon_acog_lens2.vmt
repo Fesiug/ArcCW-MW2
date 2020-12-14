@@ -1,0 +1,19 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/fesiugmw2/cheytac/weapon_acog_lens2_col"
+	"$envmapmask" "models/weapons/fesiugmw2/cheytac/weapon_acog_lens2_spec"
+			//EXP_GUN
+        $phongexponenttexture  "models/exp_gun"
+        $phongexponent "30"
+		
+		$color2 "[1 1 1]"
+		
+		$translucent 1
+       
+        $normalmapalphaenvmapmask   "1"
+		$envmap 	env_cubemap
+        $envmaptint   "[0.3 0.3 0.3]"
+        $envmapfresnel "1" // Advanced envmap reflections
+		
+        $nocull  0
+}

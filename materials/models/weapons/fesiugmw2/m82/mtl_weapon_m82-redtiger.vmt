@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/m82/mtl_weapon_m82_shared.vmt
+	insert
+	{
+		$detail						"models/weapons/fesiugmw2/_camos/weapon_camo_red_tiger"
+		$detailscale				4
+		$detailblendmode			4
+		$detailblendfactor			1
+	}
+}

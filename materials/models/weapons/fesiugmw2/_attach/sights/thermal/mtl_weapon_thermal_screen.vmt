@@ -1,0 +1,4 @@
+VertexLitGeneric
+{
+		$basetexture				"models/weapons/fesiugmw2/_attach/sights/thermal/mtl_thermal_screen_col"
+}

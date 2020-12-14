@@ -1,0 +1,6 @@
+UnlitGeneric
+{
+	$basetexture	"models/weapons/fesiugmw2/_attach/mtl_weapon_trintium_sight_amber_c"
+	$translucent	1
+	$model			1
+}

@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/kriss/mtl_weapon_kriss_vector_shared.vmt
+	insert
+	{
+		$detail						"models/weapons/fesiugmw2/_camos/detail_kaki_paint"
+		$detailscale				4
+		$detailblendmode			4
+		$detailblendfactor			1
+	}
+}

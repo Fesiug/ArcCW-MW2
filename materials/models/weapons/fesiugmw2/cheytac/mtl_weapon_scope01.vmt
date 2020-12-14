@@ -1,0 +1,22 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/fesiugmw2/cheytac/mtl_weapon_scope01"
+			//EXP_GUN
+        $bumpmap   "models/weapons/fesiugmw2/cheytac/mtl_weapon_scope01_nml"
+        $phongexponenttexture  "models/exp_gun"
+        $phongexponent "30"
+		
+		$color2 "[1 1 1]"
+       
+        $normalmapalphaenvmapmask   "1"
+		$envmap 	env_cubemap
+        $envmaptint   "[0.04 0.04 0.04]" // The scope has a much brighter specular maask than the gun :P
+        $envmapfresnel "1" // Advanced envmap reflections
+ 
+        $phong  "1"
+        $phongboost  "3"      //tone down to decrease specular reflections
+        $phongfresnelranges     "[0.25 0.75 1.00]"
+        $phongalbedotint  "1"
+        $nocull  0
+		
+}

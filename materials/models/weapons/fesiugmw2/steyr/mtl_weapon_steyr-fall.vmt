@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/steyr/mtl_weapon_steyr_shared.vmt
+	insert
+	{
+		$detail						"models/weapons/fesiugmw2/_camos/weapon_camo_orange_fall"
+		$detailscale				4
+		$detailblendmode			4
+		$detailblendfactor			1
+	}
+}

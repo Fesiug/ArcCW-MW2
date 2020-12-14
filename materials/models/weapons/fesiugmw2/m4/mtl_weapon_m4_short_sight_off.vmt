@@ -1,0 +1,7 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/m4/mtl_weapon_m4_short_shared.vmt
+	insert
+	{
+	}
+}

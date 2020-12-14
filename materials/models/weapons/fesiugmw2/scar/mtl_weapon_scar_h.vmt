@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/scar/mtl_weapon_scar_h_shared.vmt
+	insert
+	{
+		$detail						"models/weapons/fesiugmw2/_camos/detail_kaki_paint"
+		$detailscale				8
+		$detailblendmode			4
+		$detailblendfactor			0.5
+	}
+}

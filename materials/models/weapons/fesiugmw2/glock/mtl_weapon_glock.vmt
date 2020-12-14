@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/glock/mtl_weapon_glock_shared.vmt
+	insert
+	{
+		$detail						"models/weapons/fesiugmw2/_camos/detail_olive_drab_paint_03"
+		$detailscale				1
+		$detailblendmode			4
+		$detailblendfactor			2
+	}
+}

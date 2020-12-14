@@ -1,0 +1,23 @@
+VertexLitGeneric
+{
+		$basetexture				"models/weapons/fesiugmw2/striker/mtl_weapon_striker_col"
+        $bumpmap					"models/weapons/fesiugmw2/striker/mtl_weapon_striker_nml"
+       
+        $normalmapalphaenvmapmask	1
+		$envmap						env_cubemap
+        $envmaptint					"[0.1 0.1 0.1]"
+        $envmapfresnel 				1
+		
+		$detail						"models/weapons/fesiugmw2/_camos/detail_black_paint"
+		$detailscale				4
+		$detailblendmode			4
+		$detailblendfactor			1
+ 
+        $phong						1
+        $phongboost					2
+        $phongexponent				20
+        $phongfresnelranges			"[0.25 0.75 1.00]"
+        $phongexponenttexture		"models/exp_gun"
+        $phongalbedotint			1
+        $nocull						1
+}

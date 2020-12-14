@@ -1,0 +1,24 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/weapons/fesiugmw2/winchester/mtl_weapon_winchest1200_col"
+	$phongexponenttexture  "models/exp_gun"
+	$phongexponent "30"
+
+	$color2 "[1 1 1]"
+
+	$envmapmask "models/weapons/fesiugmw2/winchester/mtl_weapon_winchest1200_spec"
+	$envmap 	env_cubemap
+	$envmaptint   "[0.125 0.125 0.125]"
+	$envmapfresnel "1" // Advanced envmap reflections
+
+	$detail "models/weapons/fesiugmw2/winchester/mtl_weapon_winchest1200_spec"
+	$detailscale 1
+	$detailblendmode 0
+	$detailblendfactor 0.5
+
+	$phong  "1"
+	$phongboost  "3"      //tone down to decrease specular reflections
+	$phongfresnelranges     "[0.25 0.75 1.00]"
+	$phongalbedotint  "1"
+	$nocull  1
+}

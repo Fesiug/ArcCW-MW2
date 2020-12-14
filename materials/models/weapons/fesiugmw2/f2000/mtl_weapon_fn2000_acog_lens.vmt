@@ -1,0 +1,20 @@
+VertexLitGeneric
+{
+		$basetexture				"models/weapons/fesiugmw2/f2000/mtl_weapon_acog_2_lens_col"
+        $bumpmap					"models/weapons/fesiugmw2/f2000/mtl_weapon_acog_2_lens_nml"
+		
+		$translucent				1
+       
+        $normalmapalphaenvmapmask	1
+		$envmap						env_cubemap
+        $envmaptint					"[0.125 0.125 0.125]"
+        $envmapfresnel				1
+ 
+        $phong						1
+        $phongboost					2
+        $phongexponent				20
+        $phongfresnelranges			"[0.25 0.75 1.00]"
+        $phongexponenttexture		"models/exp_gun"
+        $phongalbedotint			1
+        $nocull						1
+}

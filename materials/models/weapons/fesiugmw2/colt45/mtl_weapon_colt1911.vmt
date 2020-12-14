@@ -1,0 +1,19 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/weapons/fesiugmw2/colt45/mtl_weapon_colt1911_col"
+	$phongexponenttexture  "models/exp_gun"
+	$phongexponent "30"
+
+	$color2 "[1 1 1]"
+
+	$envmapmask "models/weapons/fesiugmw2/colt45/mtl_weapon_colt1911_spec"
+	$envmap 	env_cubemap
+	$envmaptint   "[0.125 0.125 0.125]"
+	$envmapfresnel "1" // Advanced envmap reflections
+
+	$phong  "1"
+	$phongboost  "3"      //tone down to decrease specular reflections
+	$phongfresnelranges     "[0.25 0.75 1.00]"
+	$phongalbedotint  "1"
+	$nocull  1
+}

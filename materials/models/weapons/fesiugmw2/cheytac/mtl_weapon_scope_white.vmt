@@ -1,0 +1,8 @@
+"VertexlitGeneric"
+{
+	$basetexture "models/weapons/fesiugmw2/cheytac/mtl_weapon_scope_white_col"
+	$color2 "[0.2 0.2 0.2]"
+	"$envmap" "env_cubemap"
+	"$envmapmask" "models\weapons\v_models\snip_awp\v_awp_scope_ref"
+        $envmaptint   "[5 5 5]"
+}

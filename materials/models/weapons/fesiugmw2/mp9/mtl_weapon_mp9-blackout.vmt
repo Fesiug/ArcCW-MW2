@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/mp9/mtl_weapon_mp9_shared.vmt
+	insert
+	{
+		$detail						"models/weapons/fesiugmw2/_camos/detail_black_paint_c"
+		$detailscale				4
+		$detailblendmode			4
+		$detailblendfactor			1
+	}
+}

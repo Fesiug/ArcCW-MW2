@@ -1,0 +1,11 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/m82/mtl_weapon_m82_shared.vmt
+	insert
+	{
+		//$detail						"models/weapons/fesiugmw2/_camos/detail_dark_earth_paint"
+		//$detailscale				2
+		//$detailblendmode			0
+		//$detailblendfactor			1
+	}
+}
