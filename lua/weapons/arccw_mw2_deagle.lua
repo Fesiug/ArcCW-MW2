@@ -1,4 +1,4 @@
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_mw2_abase"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - MW2" -- edit this if you like
 SWEP.AdminOnly = false
@@ -181,7 +181,7 @@ SWEP.Attachments = {
         Slot = "muzzle",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(6.8, 0, 1),
+            vpos = Vector(6.2, 0, 1),
             vang = Angle(0, 0, 0),
             wpos = Vector(26.648, 0.782, -8.042),
             wang = Angle(-9.79, 0, 180)

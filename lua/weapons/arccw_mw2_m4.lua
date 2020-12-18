@@ -1,4 +1,4 @@
-SWEP.Base = "arccw_base"
+SWEP.Base = "arccw_mw2_abase"
 SWEP.Spawnable = true -- this obviously has to be set to true
 SWEP.Category = "ArcCW - MW2" -- edit this if you like
 SWEP.AdminOnly = false
@@ -39,8 +39,8 @@ SWEP.ExtendedClipSize = 45
 SWEP.ReducedClipSize = 15
 
 SWEP.VisualRecoilMult = 0
-SWEP.Recoil = 0.47
-SWEP.RecoilSide = 0.37
+SWEP.Recoil = 0
+SWEP.RecoilSide = 0
 SWEP.RecoilRise = 0
 
 SWEP.Delay = 0.07 -- 60 / RPM.

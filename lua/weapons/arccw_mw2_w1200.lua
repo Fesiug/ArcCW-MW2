@@ -160,11 +160,12 @@ SWEP.Attachments = {
         Slot = "muzzle_shotgun",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(23, 0, 0.9950),
+            vpos = Vector(20, 0, 0.8950),
             vang = Angle(0, 0, 0),
             wpos = Vector(26.648, 0.782, -8.042),
             wang = Angle(-9.79, 0, 180)
         },
+		VMScale = Vector(1.25, 1.25, 1.25),
     },
     {
         PrintName = "Underbarrel",
