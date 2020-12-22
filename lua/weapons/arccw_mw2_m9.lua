@@ -271,15 +271,15 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-        Time = 11/30
+        Time = 10/30
     },
     ["idle_sprint"] = {
         Source = "sprint_loop",
-        Time = 31/40
+        Time = 30/40
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-        Time = 11/30
+        Time = 10/30
     },
     ["draw"] = {
         Source = "pullout",
@@ -512,25 +512,21 @@ SWEP.Animations = {
     },
     ["reload_akimbo_right"] = {
         Source = "reload_akimbo_right",
-        Time = 70/24,
+        Time = 70/40,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/24},
-						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav", 	t = 39/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/40},
+						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav", 	t = 39/40},
 					},
-        Checkpoints = {24, 97},
-        FrameRate = 24,
     },
     ["reload_empty_akimbo_right"] = {
         Source = "reload_empty_akimbo_right",
-        Time = 89/24,
+        Time = 89/40,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/24},
-						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav", 	t = 45/24},
-						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_chamber_v2.wav", 	t = 65/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/40},
+						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav", 	t = 45/40},
+						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_chamber_v2.wav", 	t = 65/40},
 					},
-        Checkpoints = {24, 97, 131},
-        FrameRate = 24,
     },
 }

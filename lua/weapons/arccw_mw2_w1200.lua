@@ -313,12 +313,4 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKOut = 0.8,
     },
-    ["sgreload_finish_empty"] = {
-        Source = "reload_finish",
-        Time = 22/30,
-        SoundTable = {{s = "weapons/fesiugmw2/foley/wpfoly_winchester_reload_pump_v1.wav", 		t = 8/30}},
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.8,
-    },
 }

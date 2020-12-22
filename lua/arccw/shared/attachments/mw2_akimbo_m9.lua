@@ -157,19 +157,19 @@ att.UBGL_Reload = function(wep, ubgl)
     if Ammo(wep) <= 0 then return end
 
     if wep:Clip2() <= 0 then
-        wep:DoLHIKAnimation("reload_empty", 89/24)
-        wep:SetNextSecondaryFire(CurTime() + 89/24)
+        wep:DoLHIKAnimation("reload_empty", 89/40)
+        wep:SetNextSecondaryFire(CurTime() + 89/40)
         wep:PlaySoundTable({
-            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/24},
-            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav",  	t = 42/24},
-            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_chamber_v2.wav", 	t = 67/24},
+            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/40},
+            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav",  	t = 42/40},
+            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_chamber_v2.wav", 	t = 67/40},
         })
     else
-        wep:DoLHIKAnimation("reload", 70/24)
-        wep:SetNextSecondaryFire(CurTime() + 70/24)
+        wep:DoLHIKAnimation("reload", 70/40)
+        wep:SetNextSecondaryFire(CurTime() + 70/40)
         wep:PlaySoundTable({
-            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/24},
-            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav", 	    t = 36/24},
+            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/40},
+            {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav", 	    t = 36/40},
         })
     end
 

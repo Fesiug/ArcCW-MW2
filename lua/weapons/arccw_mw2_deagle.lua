@@ -486,25 +486,21 @@ SWEP.Animations = {
     },
     ["reload_akimbo_right"] = {
         Source = "reload_akimbo_right",
-        Time = 58/24,
+        Time = 58/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/24},
-						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav", 	t = 39/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav", 	t = 39/30},
 					},
-        Checkpoints = {24, 97},
-        FrameRate = 24,
     },
     ["reload_empty_akimbo_right"] = {
         Source = "reload_empty_akimbo_right",
-        Time = 63/24,
+        Time = 63/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/24},
-						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav", 	t = 39/24},
-						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_chamber_v1.wav", 	t = 48/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav", 	t = 39/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_chamber_v1.wav", 	t = 48/30},
 					},
-        Checkpoints = {24, 97, 131},
-        FrameRate = 24,
     },
 }

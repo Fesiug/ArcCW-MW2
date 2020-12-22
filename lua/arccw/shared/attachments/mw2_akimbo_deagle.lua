@@ -159,19 +159,19 @@ att.UBGL_Reload = function(wep, ubgl)
     if Ammo(wep) <= 0 then return end
 
     if wep:Clip2() <= 0 then
-        wep:DoLHIKAnimation("reload_empty", 63/24)
-        wep:SetNextSecondaryFire(CurTime() + 63/24)
+        wep:DoLHIKAnimation("reload_empty", 63/30)
+        wep:SetNextSecondaryFire(CurTime() + 63/30)
         wep:PlaySoundTable({
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/24},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav",  	t = 39/24},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_chamber_v1.wav", 	t = 48/24},
+            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
+            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav",  	t = 39/30},
+            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_chamber_v1.wav", 	t = 48/30},
         })
     else
-        wep:DoLHIKAnimation("reload", 59/24)
-        wep:SetNextSecondaryFire(CurTime() + 59/24)
+        wep:DoLHIKAnimation("reload", 59/30)
+        wep:SetNextSecondaryFire(CurTime() + 59/30)
         wep:PlaySoundTable({
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/24},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav", 	    t = 39/24},
+            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
+            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav", 	    t = 39/30},
         })
     end
 
@@ -184,4 +184,14 @@ att.UBGL_Reload = function(wep, ubgl)
     wep.Owner:SetAmmo(reserve - load, "357") -- att.UBGL_Ammo
 
     wep:SetClip2(load)
+end
+
+att.Hook_GetHUDData = function( wep, data )
+    if ArcCW:ShouldDrawHUDElement("CHudAmmo") then
+        data.clip = wep:Clip2() .. " / " .. wep:Clip1()
+    else
+        data.clip = wep:Clip1() + wep:Clip2()
+    end
+    data.ubgl = nil
+    return data
 end

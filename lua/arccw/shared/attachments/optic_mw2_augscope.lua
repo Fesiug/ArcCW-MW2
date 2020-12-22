@@ -43,8 +43,8 @@ att.HolosightBlackbox = true
 
 att.HolosightConstDist = 64
 
-att.Mult_SightTime = 1.08
-att.Mult_SightedSpeedMult = 0.94
+att.Mult_SightTime = 1.12
+att.Mult_SightedSpeedMult = 0.92
 
 att.ModelRotate = Angle(0, 90, 0)
 
