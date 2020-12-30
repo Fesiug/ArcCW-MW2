@@ -69,8 +69,43 @@ SWEP.Inaccuracy_Hip_Decay_Prone	= 1.1
 
 local idk = 1/45
 
-
 DEFINE_BASECLASS("arccw_base")
+
+function SWEP:DoShootSound(sndoverride, dsndoverride, voloverride, pitchoverride)
+    local fsound = self.ShootSound
+    local suppressed = self:GetBuff_Override("Silencer")
+    if suppressed then
+        fsound = self.ShootSoundSilenced
+    end
+
+    fsound = self:GetBuff_Hook("Hook_GetShootSound", fsound)
+
+    local spv    = self.ShootPitchVariation
+    local volume = self.ShootVol
+    local pitch  = self.ShootPitch * math.Rand(1 - spv, 1 + spv) * self:GetBuff_Mult("Mult_ShootPitch")
+
+    local v = GetConVar("arccw_weakensounds"):GetFloat()
+    volume = volume - v
+
+    volume = volume * self:GetBuff_Mult("Mult_ShootVol")
+
+    volume = math.Clamp(volume, 51, 149)
+    pitch  = math.Clamp(pitch, 0, 255)
+
+    if sndoverride then fsound = sndoverride end
+    if voloverride then volume = voloverride end
+    if pitchoverride then pitch = pitchoverride end
+
+    if fsound then self:MyEmitSound(fsound, volume, pitch, 1, CHAN_WEAPON) end
+
+    local data = {
+        sound   = fsound,
+        volume  = volume,
+        pitch   = pitch,
+    }
+
+    self:GetBuff_Hook("Hook_AddShootSound", data)
+end
 
 SWEP.Override_NoRandSpread = true
 function SWEP:GetDispersion()

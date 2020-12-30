@@ -1,5 +1,5 @@
 att.PrintName = "MARS (RDS)"
-att.Icon = Material("entities/acwatt_optic_tuna.png", "smooth")
+att.Icon = Material("entities/acwatt_optic_mw2_mars.png", "smooth")
 att.Description = "Funny moon sight."
 
 att.SortOrder = 0
