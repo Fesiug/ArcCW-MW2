@@ -41,7 +41,11 @@ att.UBGL_Fire = function(wep, ubgl)
 
     wep:FireRocket("arccw_gl_he_mw2", 30000)
 
-    wep:EmitSound("weapons/fesiugmw2/fire/m203.wav", 100)
+    if wep.MW2_M203isGP25 then
+        wep:EmitSound("weapons/fesiugmw2/fire/gp25.wav", 100)
+    else
+        wep:EmitSound("weapons/fesiugmw2/fire/m203.wav", 100)
+    end
 
     wep:SetClip2(wep:Clip2() - 1)
 
@@ -54,7 +58,7 @@ att.UBGL_Reload = function(wep, ubgl)
     if Ammo(wep) <= 0 then return end
 
     wep:PlayAnimation("alt_reload_m203", 1, true, nil, nil, nil, true)
-    wep:SetReloading(CurTime() + 76/30)
+    wep:SetReloading(CurTime() + wep:GetAnimKeyTime("alt_reload_m203"))
 
     local reserve = Ammo(wep)
 

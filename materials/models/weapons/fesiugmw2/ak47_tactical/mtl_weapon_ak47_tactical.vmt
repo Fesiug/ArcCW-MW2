@@ -1,0 +1,7 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/ak47_tactical/mtl_weapon_ak47_tactical_shared.vmt
+	insert
+	{
+	}
+}

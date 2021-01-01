@@ -162,6 +162,11 @@ SWEP.AttachmentElements = {
     ["wepcamo-thunderstorm"]    = { VMSkin = 12 },
 }
 
+SWEP.Hook_SelectReloadAnimation = function(wep, anim)
+    if wep.Attachments[3].Installed == "mw2_tacticalknife" then
+        return anim .. "_knife"
+    end
+end
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     if wep.Attachments[3].Installed == "mw2_tacticalknife" then
         return anim .. "_knife"

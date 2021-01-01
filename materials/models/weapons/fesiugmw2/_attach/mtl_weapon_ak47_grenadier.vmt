@@ -1,6 +1,6 @@
 "VertexlitGeneric"
 {
-		$basetexture				"models/weapons/fesiugmw2/_attach/mtl_weapon_m203_grenade_col"
+		$basetexture				"models/weapons/fesiugmw2/_attach/mtl_weapon_ak47_grenadier_col"
         $phongexponenttexture		"models/exp_gun"
 		
 		$basealphaenvmapmask		1

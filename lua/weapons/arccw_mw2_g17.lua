@@ -251,6 +251,13 @@ SWEP.Attachments = {
     },
 }
 
+SWEP.Hook_SelectReloadAnimation = function(wep, anim)
+    if wep.Attachments[3].Installed == "mw2_tacticalknife" then
+        return anim .. "_knife"
+    elseif wep.Attachments[9].Installed then
+        return anim .. "_akimbo_right"
+    end
+end
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     if wep.Attachments[3].Installed == "mw2_tacticalknife" then
         return anim .. "_knife"
