@@ -30,6 +30,10 @@ att.UBGL_Capacity = 1
 
 att.AddSuffix = " Grenadier"
 
+att.Hook_ShouldNotSight = function(wep)
+    return wep:GetInUBGL()
+end
+
 local function Ammo(wep)
     return wep.Owner:GetAmmoCount("smg1_grenade")
 end

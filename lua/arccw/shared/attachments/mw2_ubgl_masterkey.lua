@@ -34,6 +34,10 @@ att.NeedPump = false
 
 att.AddSuffix = " w/ Shotgun"
 
+att.Hook_ShouldNotSight = function(wep)
+    return wep:GetInUBGL()
+end
+
 local function Ammo(wep)
 	return wep.Owner:GetAmmoCount("buckshot")
 end

@@ -479,7 +479,7 @@ SWEP.Animations = {
         Time = 10/30
     },
     ["alt_idle_sprint_m203"] = {
-        Source = "alt_sprint_loop_m203",
+        Source = "sprint_loop_m203",
         Time = 30/40
     },
     ["alt_exit_sprint_m203"] = {
