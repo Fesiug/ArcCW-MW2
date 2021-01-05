@@ -51,6 +51,9 @@ SWEP.Hook_ModifyRecoil = function(wep)
 end
 
 
+SWEP.ShootMechSound = nil
+
+
 SWEP.Inaccuracy_Add_ADS			= 0
 SWEP.Inaccuracy_Add_Hip			= 0.6
 SWEP.Inaccuracy_Add_Move		= 5
@@ -71,11 +74,14 @@ local idk = 1/45
 
 DEFINE_BASECLASS("arccw_base")
 
+
 function SWEP:DoShootSound(sndoverride, dsndoverride, voloverride, pitchoverride)
     local fsound = self.ShootSound
+    local msound = self.ShootMechSound
     local suppressed = self:GetBuff_Override("Silencer")
     if suppressed then
         fsound = self.ShootSoundSilenced
+        msound = nil
     end
 
     fsound = self:GetBuff_Hook("Hook_GetShootSound", fsound)
@@ -97,6 +103,7 @@ function SWEP:DoShootSound(sndoverride, dsndoverride, voloverride, pitchoverride
     if pitchoverride then pitch = pitchoverride end
 
     if fsound then self:MyEmitSound(fsound, volume, pitch, 1, CHAN_WEAPON) end
+    if msound then self:MyEmitSound(msound, 65, math.Rand(95, 105), .5, CHAN_AUTO) end
 
     local data = {
         sound   = fsound,
@@ -149,7 +156,11 @@ end
 
 function SWEP:SetupDataTables()
 	BaseClass.SetupDataTables( self )
+    
+    self:NetworkVar("Bool", 30, "MW2Masterkey_NeedPump")
+    self:NetworkVar("Bool", 31, "MW2Masterkey_Reloading")
 
+    self:NetworkVar("Float", 30, "MW2Masterkey_ReloadingTimer")
 	self:NetworkVar("Float", 31, "Inaccuracy")
 end
 

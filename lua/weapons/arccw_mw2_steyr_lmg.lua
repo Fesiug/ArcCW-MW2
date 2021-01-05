@@ -51,6 +51,7 @@ SWEP.ShootVol = 110 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
 
 SWEP.ShootSound =			"weapons/fesiugmw2/fire/aug.wav"
+SWEP.ShootMechSound =       ArcCW_MW2_Mech
 --SWEP.DistantShootSound =	"weapons/fesiugmw2/fire_distant/aug.wav"
 SWEP.ShootDrySound =        "weapons/fesiugmw2/fire/dryfire_rifle.wav"
 SWEP.ShootSoundSilenced =	"weapons/fesiugmw2/fire/m240_sil.wav"

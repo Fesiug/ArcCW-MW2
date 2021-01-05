@@ -28,14 +28,10 @@ att.UBGL_RPM = 1200
 att.UBGL_Recoil = 0.5
 att.UBGL_Capacity = 4
 
-att.Reloading = false
-att.ReloadingTimer = 0
-att.NeedPump = false
-
 att.AddSuffix = " w/ Shotgun"
 
 att.Hook_ShouldNotSight = function(wep)
-    return wep:GetInUBGL()
+	return wep:GetInUBGL()
 end
 
 local function Ammo(wep)
@@ -43,16 +39,15 @@ local function Ammo(wep)
 end
 
 att.UBGL_Fire = function(wep, ubgl)
-	--[[if att.Reloading then
-		Masterkey_ReloadFinish(wep)
+	if wep:GetMW2Masterkey_Reloading() then
+		MW2Masterkey_ReloadFinish(wep)
 		return
-	end]]
-	if att.NeedPump then return end
+	end
+	if wep:GetMW2Masterkey_NeedPump() then return end
 	if wep:Clip2() <= 0 then return end
 
 	wep:PlayAnimation("alt_fire_masterkey", 1, true, nil, nil, nil, true)
 
-	--wep:FireRocket("arccw_gl_he_mw2", 30000)
 	wep.Owner:FireBullets({
 		Src = wep.Owner:EyePos(),
 		Num = 6,
@@ -82,53 +77,54 @@ att.UBGL_Fire = function(wep, ubgl)
 	wep:SetClip2(wep:Clip2() - 1)
 
 	wep:DoEffects()
-	att.NeedPump = true
+	wep:SetMW2Masterkey_NeedPump(true)
 end
 
 att.UBGL_Reload = function(wep, ubgl)
 	if wep:Clip2() >= 4 then return end
 	if Ammo(wep) <= 0 then return end
-	if att.Reloading == true then return end
+	if wep:GetMW2Masterkey_Reloading() then return end
 
-	Masterkey_ReloadStart(wep)
-	att.Reloading = true
+	MW2Masterkey_ReloadStart(wep)
+	wep:SetMW2Masterkey_Reloading(true)
 end
 
 att.Hook_Think = function(wep)
-	if att.NeedPump and wep:GetNextSecondaryFire() <= CurTime() and wep:Clip2() > 0 and !att.Reloading and !wep.Owner:KeyDown(IN_ATTACK) then
+	if wep:GetMW2Masterkey_NeedPump() and wep:GetNextSecondaryFire() <= CurTime() and wep:Clip2() > 0 and !wep:GetMW2Masterkey_Reloading() and !wep.Owner:KeyDown(IN_ATTACK) then
 		wep:PlayAnimation("alt_cycle_masterkey", 1, true, nil, nil, nil, true)
 		wep:SetReloading(CurTime() + 15/30)
-		att.NeedPump = false
+		wep:SetMW2Masterkey_NeedPump(false)
 	end
-	if att.Reloading and wep:Clip2() >= 4 then
-		Masterkey_ReloadFinish(wep)
-	elseif att.Reloading and att.ReloadingTimer <= CurTime() and wep:Clip2() < 4 then
-		Masterkey_ReloadLoop(wep)
+	if wep:GetMW2Masterkey_Reloading() and wep:Clip2() >= 4 then
+		MW2Masterkey_ReloadFinish(wep)
+	elseif wep:GetMW2Masterkey_Reloading() and wep:GetMW2Masterkey_ReloadingTimer() < CurTime() and wep:Clip2() < 4 then
+		MW2Masterkey_ReloadLoop(wep)
 	end
 end
 
-function Masterkey_ReloadStart(wep)
-	wep:PlayAnimation("alt_reload_start_masterkey", 1, true, nil, nil, nil, true)
-	att.ReloadingTimer = (CurTime() + 35/30)
+function MW2Masterkey_ReloadStart(wep)
+	wep:PlayAnimation("alt_reload_start_masterkey", 1, true, nil, nil, nil, false)
+	wep:SetMW2Masterkey_ReloadingTimer(CurTime() + 35/30)
+	
 	wep:SetReloading(CurTime() + 35/30)
-	att.Reloading = true
+	wep:SetMW2Masterkey_Reloading(true)
 end
 
-function Masterkey_ReloadLoop(wep)
-	wep:PlayAnimation("alt_reload_loop_masterkey", 1, true, nil, nil, nil, true)
-	att.ReloadingTimer = (CurTime() + 33/30)
+function MW2Masterkey_ReloadLoop(wep)
+	wep:PlayAnimation("alt_reload_loop_masterkey", 1, true, nil, nil, nil, false)
+	wep:SetMW2Masterkey_ReloadingTimer(CurTime() + 33/30)
 	wep:SetReloading(CurTime() + 33/30)
-	Masterkey_InsertShell(wep)
+	MW2Masterkey_InsertShell(wep)
 end
 
-function Masterkey_ReloadFinish(wep)
-	wep:PlayAnimation("alt_reload_finish_masterkey", 1, true, nil, nil, nil, true)
+function MW2Masterkey_ReloadFinish(wep)
+	wep:PlayAnimation("alt_reload_finish_masterkey", 1, true, nil, nil, nil, false)
 	wep:SetReloading(CurTime() + 50/30)
-	att.Reloading = false
-	att.NeedPump = false
+	wep:SetMW2Masterkey_Reloading(false)
+	wep:SetMW2Masterkey_NeedPump(false)
 end
 
-function Masterkey_InsertShell(wep)
+function MW2Masterkey_InsertShell(wep)
 	wep.Owner:RemoveAmmo(1, "buckshot")
 	wep:SetClip2(wep:Clip2() + 1)
 end
