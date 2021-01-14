@@ -160,6 +160,7 @@ function SWEP:SetupDataTables()
     self:NetworkVar("Bool", 30, "MW2Masterkey_NeedPump")
     self:NetworkVar("Bool", 31, "MW2Masterkey_Reloading")
 
+    self:NetworkVar("Float", 29, "MW2Masterkey_ShellInsertTime")
     self:NetworkVar("Float", 30, "MW2Masterkey_ReloadingTimer")
 	self:NetworkVar("Float", 31, "Inaccuracy")
 end

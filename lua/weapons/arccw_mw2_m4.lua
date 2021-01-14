@@ -27,6 +27,7 @@ SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
 SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat() -- damage done at maximum range
+SWEP.RangeMin = 1500 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Range = 2000 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
 SWEP.DamageType = DMG_BULLET
