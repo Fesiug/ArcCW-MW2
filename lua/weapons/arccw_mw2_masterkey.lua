@@ -228,11 +228,11 @@ SWEP.Animations = {
         LHIKOut = 0.9,
     },
     ["fire"] = {
-        Source = "fire",
+        Source = "alt_fire",
         Time = 15/30,
     },
     ["fire_iron"] = {
-        Source = "idle",
+        Source = "alt_fire",
         Time = 11/30,
     },
     ["cycle"] = {
