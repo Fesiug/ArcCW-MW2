@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
-SWEP.Spawnable = true -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2" -- edit this if you like
+SWEP.Spawnable = true
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -26,7 +26,7 @@ SWEP.WorldModel = "models/weapons/w_pist_usp.mdl"
 SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 40 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 25 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat() -- damage done at maximum range
+SWEP.DamageMin = 25 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
 SWEP.Range = 450 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 3
 SWEP.DamageType = DMG_BULLET
@@ -88,16 +88,10 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     -- [1] = "bullet1"
 }
 
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
-
-SWEP.CaseBones = {}
-
 SWEP.IronSightStruct = {
     Pos = Vector(-1.994, 2.434, 1.559),
     Ang = Angle(-1.382, 0, 0),
     Magnification = 1,
-    SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
 SWEP.HoldtypeHolstered = "normal"
@@ -174,12 +168,12 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Optic", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = "optic_lp", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "optic_lp",
+        Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(-0.5, -0.025, 2.1), -- offset that the attachment will be relative to the bone
+            vpos = Vector(-0.5, -0.025, 2.1),
             vang = Angle(0, 0, 0),
         },
         ExcludeFlags = {"arcticfixyoshit1"},
@@ -234,10 +228,10 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm", -- print name
+        PrintName = "Charm",
         DefaultAttName = "None",
-        Slot = "charm", -- what kind of attachments can fit here, can be string or table
-        Bone = "j_bolt", -- relevant bone any attachments will be mostly referring to
+        Slot = "charm",
+        Bone = "j_bolt",
         FreeSlot = true,
         Offset = {
             vpos = Vector(3.8, -0.4, -0.7),

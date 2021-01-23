@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
-SWEP.Spawnable = true -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2, UNSUPPORTED" -- edit this if you like
+SWEP.Spawnable = true
+SWEP.Category = "ArcCW - MW2, UNSUPPORTED"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -20,14 +20,14 @@ SWEP.Slot = 2
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/arccw/fesiugmw2/mactonight/c_mw2_aa12_1.mdl"
+SWEP.ViewModel = "models/weapons/arccw/fesiugmw2/c_m4_3a.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_shot_xm1014.mdl"
 SWEP.ViewModelFOV = 65
 
 if GetConVar("arccw_mw2_bal_m1014"):GetBool() then
 	SWEP.Damage = 4
-	SWEP.DamageMin = 2 -- damage done at maximum range
+	SWEP.DamageMin = 2
 else
 	SWEP.Damage = 20
 	SWEP.DamageMin = 15
@@ -94,16 +94,10 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     -- [1] = "bullet1"
 }
 
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
-
-SWEP.CaseBones = {}
-
 SWEP.IronSightStruct = {
     Pos = Vector(-3.12, -8.306, 0.439),
     Ang = Angle(0, 0, 0),
     Magnification = 1.18,
-    SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
 
@@ -139,12 +133,12 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
 	{
-        PrintName = "Optic", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = "optic", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "optic",
+        Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(-0.6, 0, 4.2), -- offset that the attachment will be relative to the bone
+            vpos = Vector(-0.6, 0, 4.2),
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
@@ -178,8 +172,7 @@ SWEP.Attachments = {
             wpos = Vector(14.329, 0.602, -4.453),
             wang = Angle(-10.216, 0, 180)
         },
-        SlideAmount = { -- how far this attachment can slide in both directions.
-            -- overrides Offset.
+        SlideAmount = {
             vmin = Vector(9, 0, 0.3),
             vmax = Vector(17, 0, 1),
         },
@@ -189,7 +182,7 @@ SWEP.Attachments = {
         Slot = "tac",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(16, -1.1, 2.2), -- offset that the attachment will be relative to the bone
+            vpos = Vector(16, -1.1, 2.2),
             vang = Angle(0, 0, 90),
             wpos = Vector(15.625, -0.253, -6.298),
             wang = Angle(-8.829, -0.556, 90)
@@ -204,17 +197,16 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm", -- print name
+        PrintName = "Charm",
         DefaultAttName = "None",
-        Slot = "charm", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "charm",
+        Bone = "tag_weapon",
         FreeSlot = true,
         Offset = {
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
-        SlideAmount = { -- how far this attachment can slide in both directions.
-            -- overrides Offset.
+        SlideAmount = {
             vmin = Vector(0, -0.8, 3),
             vmax = Vector(7, -0.8, 2),
             wmin = Vector(5.36, 0.739, -5.401),
@@ -255,7 +247,7 @@ SWEP.Animations = {
         Time = 0.5,
     },
     ["reload"] = {
-        Source = "reload_tac",
+        Source = "reload",
         Time = 2.23 * 1.25,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
@@ -263,8 +255,6 @@ SWEP.Animations = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipout_v1.wav", 	t = 43/80 * 1.25},
 						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipin_v1.wav", 	t = 125/80 * 1.25},
 					},
-        Checkpoints = {24, 97},
-        FrameRate = 30,
         LHIK = true,
         LHIKIn = 0.5,
         LHIKOut = 0.5,
@@ -279,8 +269,6 @@ SWEP.Animations = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipin_v1.wav", 	t = 125/80 * 1.25},
 						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_chamber_v1.wav", 	t = 165/80 * 1.25},
 					},
-        Checkpoints = {24, 97, 131},
-        FrameRate = 37,
         LHIK = true,
         LHIKIn = 0.5,
         LHIKOut = 0.6,

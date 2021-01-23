@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
-SWEP.Spawnable = true -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2" -- edit this if you like
+SWEP.Spawnable = true
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -28,7 +28,7 @@ SWEP.ViewModelFOV = 65
 SWEP.DefaultBodygroups = "100000"
 
 SWEP.Damage = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat() -- damage done at maximum range
+SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
 SWEP.Range = 1300 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
 SWEP.DamageType = DMG_BULLET
@@ -95,16 +95,10 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     -- [1] = "bullet1"
 }
 
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
-
-SWEP.CaseBones = {}
-
 SWEP.IronSightStruct = {
     Pos = Vector(-3.04, -6.026, 0.68),
     Ang = Angle(0.203, 0, 0),
     Magnification = 1.3,
-    SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
 SWEP.HoldtypeHolstered = "passive"
@@ -157,12 +151,12 @@ SWEP.ExtraSightDist = 5
 
 SWEP.Attachments = {
     {
-        PrintName = "Optic", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"optic","mw2_steyrrearsight"}, -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = {"optic","mw2_steyrrearsight"},
+        Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(6.972, 0, 4.018), -- offset that the attachment will be relative to the bone
+            vpos = Vector(6.972, 0, 4.018),
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
@@ -175,9 +169,9 @@ SWEP.Attachments = {
     },
     {
         Slot = "mw2_augscope",
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(1.6, 0, 2.3), -- offset that the attachment will be relative to the bone
+            vpos = Vector(1.6, 0, 2.3),
             vang = Angle(0, 0, 0),
             wpos = Vector(0, 0, 0),
             wang = Angle(0, 0, 0)
@@ -214,7 +208,7 @@ SWEP.Attachments = {
         Slot = "tac",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(-2, -0.5, 2), -- offset that the attachment will be relative to the bone
+            vpos = Vector(-2, -0.5, 2),
             vang = Angle(0, 0, 135),
             wpos = Vector(15.625, -0.253, -6.298),
             wang = Angle(-8.829, -0.556, 90)
@@ -234,10 +228,10 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm", -- print name
+        PrintName = "Charm",
         DefaultAttName = "None",
-        Slot = "charm", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "charm",
+        Bone = "tag_weapon",
         FreeSlot = true,
         Offset = {
             vpos = Vector(-2, -0.6, 1.8),
@@ -247,9 +241,9 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Camouflage", -- print name
+        PrintName = "Camouflage",
         DefaultAttName = "None",
-        Slot = "mw2_wepcamo", -- what kind of attachments can fit here, can be string or table
+        Slot = "mw2_wepcamo",
         FreeSlot = true,
     },
 }

@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
-SWEP.Spawnable = true -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2" -- edit this if you like
+SWEP.Spawnable = true
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -96,16 +96,10 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     -- [1] = "bullet1"
 }
 
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
-
-SWEP.CaseBones = {}
-
 SWEP.IronSightStruct = {
     Pos = Vector(-2.846, -3.5, 0.75),
     Ang = Angle(-0.2, 0, 0),
     Magnification = 1.18,
-    SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
 
@@ -157,12 +151,12 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
 	{
-        PrintName = "Optic", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = "optic", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "optic",
+        Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(4.4, 0, 2.2), -- offset that the attachment will be relative to the bone
+            vpos = Vector(4.4, 0, 2.2),
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
@@ -186,7 +180,7 @@ SWEP.Attachments = {
         Slot = "foregrip",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(10, 0, 0),
+            vpos = Vector(10, 0, 0.34),
             vang = Angle(0, 0, 0),
             wpos = Vector(14.329, 0.602, -4.453),
             wang = Angle(-10.216, 0, 180)
@@ -198,13 +192,12 @@ SWEP.Attachments = {
         Slot = "tac",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(6, -1, -0.6), -- offset that the attachment will be relative to the bone
+            vpos = Vector(6, -1, -0.6),
             vang = Angle(0, 0, 90),
             wpos = Vector(15.625, -0.253, -6.298),
             wang = Angle(-8.829, -0.556, 90)
         },
-        SlideAmount = { -- how far this attachment can slide in both directions.
-            -- overrides Offset.
+        SlideAmount = {
             vmin = Vector(4, -1, -0.6),
             vmax = Vector(9.5, -1, -0.6),
         },
@@ -223,17 +216,16 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm", -- print name
+        PrintName = "Charm",
         DefaultAttName = "None",
-        Slot = "charm", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "charm",
+        Bone = "tag_weapon",
         FreeSlot = true,
         Offset = {
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
-        SlideAmount = { -- how far this attachment can slide in both directions.
-            -- overrides Offset.
+        SlideAmount = {
             vmin = Vector(-5, -0.55, 0.5),
             vmax = Vector(1, -0.55, 0.5),
             wmin = Vector(5.36, 0.739, -5.401),
@@ -241,9 +233,9 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Camouflage", -- print name
+        PrintName = "Camouflage",
         DefaultAttName = "None",
-        Slot = "mw2_wepcamo", -- what kind of attachments can fit here, can be string or table
+        Slot = "mw2_wepcamo",
         FreeSlot = true,
     },
 }
@@ -271,14 +263,14 @@ SWEP.Animations = {
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
         LHIK = true,
         LHIKIn = 0,
-        LHIKOut = 0.9,
+        LHIKOut = 0.2,
     },
     ["holster"] = {
         Source = "putaway",
         Time = 25/30,
         LHIK = true,
         LHIKIn = 0,
-        LHIKOut = 0.9,
+        LHIKOut = 0.3,
     },
     ["fire"] = {
         Source = "fire",
@@ -300,9 +292,6 @@ SWEP.Animations = {
                         {s = "weapons/fesiugmw2/foley/wpfoly_striker_reload_button_v1.wav", 		t = 36/40},
                     },
 		RestoreAmmo = 1, -- only used by shotgun empty insert reload
-        LHIK = true,
-        LHIKIn = 0.5,
-        LHIKOut = 0,
     },
     ["sgreload_insert"] = {
         Source = "reload_loop",
@@ -313,9 +302,6 @@ SWEP.Animations = {
                         {s = "weapons/fesiugmw2/foley/wpfoly_striker_reload_button_v1.wav", 		t = 19/40},
                     },
         TPAnimStartTime = 0.3,
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0,
     },
     ["sgreload_finish"] = {
         Source = "reload_finish",
@@ -323,9 +309,6 @@ SWEP.Animations = {
         SoundTable = {
                         {s = "weapons/fesiugmw2/foley/wpfoly_striker_reload_end_v1.wav", 		t = 0.01},
                     },
-        LHIK = true,
-        LHIKIn = 0.4,
-        LHIKOut = 0.4,
     },
     ["sgreload_finish_empty"] = {
         Source = "reload_finish",
@@ -333,8 +316,5 @@ SWEP.Animations = {
         SoundTable = {
                         {s = "weapons/fesiugmw2/foley/wpfoly_striker_reload_end_v1.wav", 		t = 0.01},
                     },
-        LHIK = true,
-        LHIKIn = 0.4,
-        LHIKOut = 0.4,
     },
 }

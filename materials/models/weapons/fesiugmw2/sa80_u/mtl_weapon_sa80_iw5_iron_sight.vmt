@@ -16,3 +16,5 @@ VertexLitGeneric
         $phongalbedotint			1
         $nocull						1
 }
+
+// thanks, moka

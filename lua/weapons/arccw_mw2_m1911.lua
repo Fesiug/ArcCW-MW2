@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
-SWEP.Spawnable = true -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2" -- edit this if you like
+SWEP.Spawnable = true
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -26,7 +26,7 @@ SWEP.WorldModel = "models/weapons/w_pist_p228.mdl"
 SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 40 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat() -- damage done at maximum range
+SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
 SWEP.Range = 350 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 3
 SWEP.DamageType = DMG_BULLET
@@ -88,16 +88,10 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     -- [1] = "bullet1"
 }
 
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
-
-SWEP.CaseBones = {}
-
 SWEP.IronSightStruct = {
     Pos = Vector(-2.025, 2, 1.55),
     Ang = Angle(-1.2, -0.1, 0),
     Magnification = 1,
-    SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
 SWEP.HoldtypeHolstered = "normal"
@@ -200,10 +194,10 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm", -- print name
+        PrintName = "Charm",
         DefaultAttName = "None",
-        Slot = "charm", -- what kind of attachments can fit here, can be string or table
-        Bone = "j_bolt", -- relevant bone any attachments will be mostly referring to
+        Slot = "charm",
+        Bone = "j_bolt",
         FreeSlot = true,
         Offset = {
             vpos = Vector(3.8, -0.4, -0.7),

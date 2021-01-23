@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
-SWEP.Spawnable = true -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2" -- edit this if you like
+SWEP.Spawnable = true
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -26,7 +26,7 @@ SWEP.WorldModel = "models/weapons/w_rif_famas.mdl"
 SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat() -- damage done at maximum range
+SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
 SWEP.Range = 2300 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
 SWEP.DamageType = DMG_BULLET
@@ -92,16 +92,10 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     -- [1] = "bullet1"
 }
 
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
-
-SWEP.CaseBones = {}
-
 SWEP.IronSightStruct = {
     Pos = Vector(-3.025, -4.65, 0.881),
     Ang = Angle(-1.201, 0, 0),
     Magnification = 1.3,
-    SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
 SWEP.HoldtypeHolstered = "passive"
@@ -164,19 +158,13 @@ SWEP.RejectAttachments = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Optic", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = { "optic" }, -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = { "optic" },
+        Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(6.972, 0, 4.018), -- offset that the attachment will be relative to the bone
+            vpos = Vector(5.75, 0, 3.35),
             vang = Angle(0, 0, 0),
-            wang = Angle(-1.871, 6.083, 177.66)
-        },
-        SlideAmount = { -- how far this attachment can slide in both directions.
-            -- overrides Offset.
-            vmin = Vector(4.5, 0, 3.35),
-            vmax = Vector(7, 0, 3.35),
         },
         InstalledEles = {"nors"},
     },
@@ -188,8 +176,6 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(15, 0, 1.55),
             vang = Angle(0, 0, 0),
-            wpos = Vector(19.076, -0.47, -4.659),
-            wang = Angle(-1.871, 6.083, 177.66)
         },
     },
     {
@@ -199,11 +185,8 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(10, 0, -1.04),
             vang = Angle(0, 0, 0),
-            wpos = Vector(14.329, 0.602, -4.453),
-            wang = Angle(-10.216, 0, 180)
         },
-        SlideAmount = { -- how far this attachment can slide in both directions.
-            -- overrides Offset.
+        SlideAmount = {
             vmin = Vector(8, 0, 0),
             vmax = Vector(11, 0, 0.8),
         },
@@ -214,10 +197,8 @@ SWEP.Attachments = {
         Slot = "tac",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(5, -1.35, 1.25), -- offset that the attachment will be relative to the bone
+            vpos = Vector(5, -1.35, 1.25),
             vang = Angle(0, 0, 90),
-            wpos = Vector(10.034, 2.275, -3.431),
-            wang = Angle(-1.871, 6.083, -91.517)
         },
     },
     {
@@ -234,22 +215,20 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm", -- print name
+        PrintName = "Charm",
         DefaultAttName = "None",
-        Slot = "charm", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "charm",
+        Bone = "tag_weapon",
         FreeSlot = true,
         Offset = {
             vpos = Vector(0.95, -0.9, 1.25),
             vang = Angle(0, 0, 0),
-            wpos = Vector(5.36, 0.739, -5.401),
-            wang = Angle(-9.738, 0, 180)
         },
     },
     {
-        PrintName = "Camouflage", -- print name
+        PrintName = "Camouflage",
         DefaultAttName = "None",
-        Slot = "mw2_wepcamo", -- what kind of attachments can fit here, can be string or table
+        Slot = "mw2_wepcamo",
         FreeSlot = true,
     },
 }

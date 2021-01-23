@@ -9,7 +9,7 @@ VertexLitGeneric
         $envmapfresnel 				1
  
         $phong						1
-        $phongboost					2
+        $phongboost					5
         $phongexponent				20
         $phongfresnelranges			"[0.25 0.75 1.00]"
         $phongexponenttexture		"models/exp_gun"

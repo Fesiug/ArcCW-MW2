@@ -3,7 +3,7 @@ Patch
 	include materials/models/weapons/fesiugmw2/m240/mtl_weapon_m240_shared.vmt
 	insert
 	{
-		$detail						"models/weapons/fesiugmw2/_camos/detail_black_paint"
+		$detail						"models/weapons/fesiugmw2/_camos/detail_black_paint_d"
 		$detailscale				8
 		$detailblendmode			4
 		$detailblendfactor			1

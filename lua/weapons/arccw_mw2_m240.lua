@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
-SWEP.Spawnable = true -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2, UNSUPPORTED" -- edit this if you like
+SWEP.Spawnable = true
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -20,14 +20,15 @@ SWEP.Slot = 2
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/arccw/fesiugmw2/mactonight/c_mw2_m240.mdl"
+SWEP.ViewModel = "models/weapons/arccw/fesiugmw2_2/c_m240_1.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_mach_m249para.mdl"
 SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat() -- damage done at maximum range
-SWEP.Range = 1000 * 0.025  -- GAME UNITS * 0.025 = METRES
+SWEP.DamageMin = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
+SWEP.Range = 1500 * 0.025  -- GAME UNITS * 0.025 = METRES
+SWEP.RangeMin = 2000 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
@@ -83,21 +84,10 @@ SWEP.SpeedMult = 0.875
 SWEP.SightedSpeedMult = 0.35
 SWEP.SightTime = 0.25
 
-SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
-    -- [0] = "bulletchamber",
-    -- [1] = "bullet1"
-}
-
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
-
-SWEP.CaseBones = {}
-
 SWEP.IronSightStruct = {
-    Pos = Vector(-3.776, -2.9, 0.579),
-    Ang = Angle(-0.101, 0, 0),
+    Pos = Vector(-3.426, -2.9, 0.579),
+    Ang = Angle(-0.1, 0, 0),
     Magnification = 1.3,
-    SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
 SWEP.HoldtypeHolstered = "passive"
@@ -128,10 +118,22 @@ SWEP.AttachmentElements = {
         VMBodygroups = {{ind = 1, bg = 1}},
         WMBodygroups = {},
     },
-    ["bipod"] = {
+    ["fg"] = {
         VMBodygroups = {{ind = 2, bg = 1}},
         WMBodygroups = {},
     },
+    ["wepcamo-desert"]		= { VMSkin = 1 },
+    ["wepcamo-arctic"]		= { VMSkin = 2 },
+    ["wepcamo-woodland"]	= { VMSkin = 3 },
+    ["wepcamo-digital"]		= { VMSkin = 4 },
+    ["wepcamo-urban"]		= { VMSkin = 5 },
+    ["wepcamo-bluetiger"]	= { VMSkin = 6 },
+    ["wepcamo-redtiger"]	= { VMSkin = 7 },
+    ["wepcamo-fall"]		= { VMSkin = 8 },
+    ["wepcamo-whiteout"]	= { VMSkin = 9 },
+    ["wepcamo-blackout"]        = { VMSkin = 10 },
+    ["wepcamo-bushdweller"]     = { VMSkin = 11 },
+    ["wepcamo-thunderstorm"]    = { VMSkin = 12 },
 }
 
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
@@ -155,17 +157,15 @@ SWEP.ExtraSightDist = 5
 
 SWEP.Attachments = {
     {
-        PrintName = "Optic", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = "optic", -- what kind of attachments can fit here, can be string or table
-        Bone = "j_ammo_cover", -- relevant bone any attachments will be mostly referring to
+        Slot = "optic",
+        Bone = "j_ammo_cover",
         Offset = {
-            vpos = Vector(-8.5, 0, 0.8), -- offset that the attachment will be relative to the bone
+            vpos = Vector(-8.5, 0, 0.8),
             vang = Angle(0, 0, 0),
-            wang = Angle(-9.738, 0, 180)
         },
-        SlideAmount = { -- how far this attachment can slide in both directions.
-            -- overrides Offset.
+        SlideAmount = {
             vmin = Vector(-8.5, 0, 0.8),
             vmax = Vector(-5, 0, 0.8),
         },
@@ -177,39 +177,31 @@ SWEP.Attachments = {
         Slot = "muzzle",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(34, 0, 2.2),
+            vpos = Vector(30, 0, 2.0),
             vang = Angle(0, 0, 0),
-            wpos = Vector(26.648, 0.782, -8.042),
-            wang = Angle(-9.79, 0, 180)
         },
+		VMScale = Vector(2, 1.5, 1.5),
     },
     {
         PrintName = "Underbarrel",
-        Slot = {"foregrip", "ubgl", "bipod"},
+        Slot = {"foregrip", "ubgl", "bipod", "foregrip_mw2exclusive"},
         Bone = "tag_weapon",
         Offset = {
             vpos = Vector(18.427, 0, -1.04),
             vang = Angle(0, 0, 0),
-            wpos = Vector(14.329, 0.602, -4.453),
-            wang = Angle(-10.216, 0, 180)
         },
         SlideAmount = {
-            vmin = Vector(15.748, 0, 0),
-            vmax = Vector(22.427, 0, 0),
-            wmin = Vector(15, 0.74, -4.301),
-            wmax = Vector(15, 0.74, -4.301),
+            vmin = Vector(14, 0, -0.5),
+            vmax = Vector(18, 0, -0.5),
         },
-        InstalledEles = {"bipod"},
     },
     {
         PrintName = "Tactical",
         Slot = "tac",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(20, -1.4, 1.4), -- offset that the attachment will be relative to the bone
+            vpos = Vector(20, -1.4, 1.4),
             vang = Angle(0, 0, 90),
-            wpos = Vector(15.625, -0.253, -6.298),
-            wang = Angle(-8.829, -0.556, 90)
         },
     },
     {
@@ -226,64 +218,149 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm", -- print name
+        PrintName = "Charm",
         DefaultAttName = "None",
-        Slot = "charm", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "charm",
+        Bone = "tag_weapon",
         FreeSlot = true,
         Offset = {
             vang = Angle(0, 0, 0),
-            wang = Angle(-9.738, 0, 180)
         },
-        SlideAmount = { -- how far this attachment can slide in both directions.
-            -- overrides Offset.
+        SlideAmount = {
             vmin = Vector(2.7, -0.8, 2),
             vmax = Vector(6.5, -0.8, 2),
-            wmin = Vector(5.36, 0.739, -5.401),
-            wmax = Vector(5.36, 0.739, -5.401),
         },
     },
+    {
+        PrintName = "Camouflage",
+        DefaultAttName = "None",
+        Slot = "mw2_wepcamo",
+        FreeSlot = true,
+    },
 }
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+    if wep.Attachments[3].Installed then
+        return anim .. "_grip"
+    end
+end
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
-        Time = 0.06
+        Time = 200/30
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+        Time = 10/30
+    },
+    ["idle_sprint"] = {
+        Source = "sprint_loop",
+        Time = 30/40
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+        Time = 10/30
     },
     ["draw"] = {
-        Source = "draw",
-        Time = 1.4,
+        Source = "pullout",
+        Time = 41/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
-        LHIK = false,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.35,
+    },
+    ["holster"] = {
+        Source = "putaway",
+        Time = 18/30,
+        LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.35,
     },
     ["fire"] = {
         Source = "fire",
-        Time = 0.33,
+        Time = 9/30,
         ShellEjectAt = 0,
     },
     ["fire_iron"] = {
         Source = "fire_ads",
-        Time = 0.33,
+        Time = 9/30,
         ShellEjectAt = 0,
     },
     ["reload"] = {
-        Source = "reload_tac",
-        Time = 7.75,
+        Source = "reload",
+        Time = 291/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Checkpoints = {35, 97, 120, 160, 190},
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_lift_v1.wav", 			t = 0},
-						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_chamber_v1.wav", 		t = 44/90},
-						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_open_v1.wav", 			t = 210/90 - 0.2},
-						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_clipout_v1.wav", 		t = 273/90 - 0.2},
-						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_clipin_v1.wav", 		t = 384/90 - 0.2},
-						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_close_v1.wav", 			t = 540/90 - 0.2},
-						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_hit_v1.wav", 			t = 540/90 + 0.4 - 0.2},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_chamber_v1.wav", 		t = 16/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_open_v1.wav", 			t = 79/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_clipout_v1.wav", 		t = 104/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_clipin_v1.wav", 		t = 148/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_close_v1.wav", 			t = 209/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_hit_v1.wav", 			t = 225/30},
 					},
-        FrameRate = 30,
-        LastClip1OutTime = 2,
+        LastClip1OutTime = 2.5,
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 1,
+    },
+------------------
+    ["idle_grip"] = {
+        Source = "idle_grip",
+        Time = 200/30
+    },
+    ["enter_sprint_grip"] = {
+        Source = "sprint_in_grip",
+        Time = 10/30
+    },
+    ["idle_sprint_grip"] = {
+        Source = "sprint_loop_grip",
+        Time = 30/40
+    },
+    ["exit_sprint_grip"] = {
+        Source = "sprint_out_grip",
+        Time = 10/30
+    },
+    ["draw_grip"] = {
+        Source = "pullout_grip",
+        Time = 41/30,
+        SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.35,
+    },
+    ["holster_grip"] = {
+        Source = "putaway_grip",
+        Time = 18/30,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.35,
+    },
+    ["fire_grip"] = {
+        Source = "fire_grip",
+        Time = 9/30,
+        ShellEjectAt = 0,
+    },
+    ["fire_iron_grip"] = {
+        Source = "fire_ads_grip",
+        Time = 9/30,
+        ShellEjectAt = 0,
+    },
+    ["reload_grip"] = {
+        Source = "reload_grip",
+        Time = 291/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_lift_v1.wav", 			t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_chamber_v1.wav", 		t = 16/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_open_v1.wav", 			t = 79/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_clipout_v1.wav", 		t = 104/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_clipin_v1.wav", 		t = 148/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_close_v1.wav", 			t = 209/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_hit_v1.wav", 			t = 225/30},
+					},
+        LastClip1OutTime = 2.5,
         LHIK = true,
         LHIKIn = 0.5,
         LHIKOut = 1,

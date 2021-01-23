@@ -8,10 +8,10 @@ VertexLitGeneric
         $envmaptint					"[0.125 0.125 0.125]"
         $envmapfresnel				1
 		
-		$detail						"models/weapons/fesiugmw2/_camos/detail_black_paint_D"
+		$detail						"models/weapons/fesiugmw2/_camos/detail_black_paint_d"
 		$detailscale				4
 		$detailblendmode			4
-		$detailblendfactor			1.3
+		$detailblendfactor			1
  
         $phong						1
         $phongboost					2

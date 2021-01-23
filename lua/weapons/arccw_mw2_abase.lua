@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_base"
-SWEP.Spawnable = false -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2" -- edit this if you like
+SWEP.Spawnable = false
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -101,6 +101,11 @@ function SWEP:DoShootSound(sndoverride, dsndoverride, voloverride, pitchoverride
     if sndoverride then fsound = sndoverride end
     if voloverride then volume = voloverride end
     if pitchoverride then pitch = pitchoverride end
+
+    if suppressed then
+        pitch = 100
+        msound = nil
+    end
 
     if fsound then self:MyEmitSound(fsound, volume, pitch, 1, CHAN_WEAPON) end
     if msound then self:MyEmitSound(msound, 65, math.Rand(95, 105), .5, CHAN_AUTO) end

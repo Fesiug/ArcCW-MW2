@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
-SWEP.Spawnable = true -- this obviously has to be set to true
-SWEP.Category = "ArcCW - MW2" -- edit this if you like
+SWEP.Spawnable = true
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -27,7 +27,7 @@ SWEP.ViewModelFOV = 65
 
 if GetConVar("arccw_mw2_bal_m1014"):GetBool() then
 	SWEP.Damage = 4
-	SWEP.DamageMin = 0 -- damage done at maximum range
+	SWEP.DamageMin = 0
 else
 	SWEP.Damage = 25
 	SWEP.DamageMin = 0
@@ -98,16 +98,10 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
     -- [1] = "bullet1"
 }
 
-SWEP.ProceduralRegularFire = false
-SWEP.ProceduralIronFire = false
-
-SWEP.CaseBones = {}
-
 SWEP.IronSightStruct = {
     Pos = Vector(-2.701, 0, 2.279),
     Ang = Angle(2.005, 0, 0),
     Magnification = 1.18,
-    SwitchToSound = "", -- sound that plays when switching to this sight
 }
 
 
@@ -143,12 +137,12 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
 	{
-        PrintName = "Optic", -- print name
+        PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = "optic", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "optic",
+        Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(9.5, -0.05, 0.65), -- offset that the attachment will be relative to the bone
+            vpos = Vector(9.5, -0.05, 0.65),
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
@@ -198,10 +192,10 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm", -- print name
+        PrintName = "Charm",
         DefaultAttName = "None",
-        Slot = "charm", -- what kind of attachments can fit here, can be string or table
-        Bone = "tag_weapon", -- relevant bone any attachments will be mostly referring to
+        Slot = "charm",
+        Bone = "tag_weapon",
         FreeSlot = true,
         Offset = {
             vpos = Vector(10, -0.5, -0.5),
