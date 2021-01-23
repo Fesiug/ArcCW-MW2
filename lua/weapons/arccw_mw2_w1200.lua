@@ -25,20 +25,15 @@ SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
 SWEP.ViewModelFOV = 65
 
-if GetConVar("arccw_mw2_bal_m1014"):GetBool() then
-	SWEP.Damage = 8
-	SWEP.DamageMin = 2
-else
-	SWEP.Damage = 40
-	SWEP.DamageMin = 10
-end
+SWEP.Damage = 40
+SWEP.DamageMin = 10
 SWEP.Range = 800 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 1
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 
 
-SWEP.ChamberSize = 0 * GetConVar("arccw_mw2_chambering"):GetInt()
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 7 -- DefaultClip is automatically set.
 SWEP.ExtendedClipSize = 9
 SWEP.ReducedClipSize = 4

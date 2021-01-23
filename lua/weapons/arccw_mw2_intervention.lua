@@ -30,7 +30,7 @@ SWEP.DamageMin = 105
 SWEP.Range = 4000 * 0.025 -- in METRES
 SWEP.Penetration = 22
 
-SWEP.ChamberSize = 0 * GetConVar("arccw_mw2_chambering"):GetInt()
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 5 -- DefaultClip is automatically set.
 SWEP.ExtendedClipSize = 10
 SWEP.ReducedClipSize = 3

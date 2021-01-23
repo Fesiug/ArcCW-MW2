@@ -25,12 +25,12 @@ SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_shotgun.mdl"
 SWEP.ViewModelFOV = 80
 
-SWEP.Damage = 80 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 120 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
+SWEP.Damage = 80
+SWEP.DamageMin = 120
 SWEP.Range = 90 -- in METRES
 SWEP.Penetration = 22
 
-SWEP.ChamberSize = 0 * GetConVar("arccw_mw2_chambering"):GetInt()
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 2 -- DefaultClip is automatically set.
 SWEP.ExtendedClipSize = 4
 SWEP.ReducedClipSize = 1

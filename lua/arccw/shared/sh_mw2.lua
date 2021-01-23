@@ -1,6 +1,5 @@
 ArcCW_MW2_Mech = { "weapons/fesiugmw2/mechanism/weap_mech_layer_c1.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c2.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c3.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c4.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c5.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c6.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c7.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c8.wav" }
 
-CreateConVar("arccw_mw2_bal_m1014", 0, FCVAR_ARCHIVE + FCVAR_REPLICATED, "M1014 nerf (40-20 to 8-4)", 0, 1)
 CreateConVar("arccw_mw2_bal_dmgmul", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Weapon damage multiplier", 0, 1)
 
 CreateConVar("arccw_mw2_chambering", 1, FCVAR_ARCHIVE + FCVAR_REPLICATED, "Can weapons be chambered?", 0, 1)

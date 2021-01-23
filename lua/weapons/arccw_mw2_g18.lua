@@ -25,15 +25,15 @@ SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_pist_glock18.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
+SWEP.Damage = 30
+SWEP.DamageMin = 20
 SWEP.Range = 250 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 4
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 
 
-SWEP.ChamberSize = 1 * GetConVar("arccw_mw2_chambering"):GetInt()
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 33 -- DefaultClip is automatically set.
 SWEP.ExtendedClipSize = 50
 SWEP.ReducedClipSize = 18

@@ -27,11 +27,11 @@ SWEP.ViewModelFOV = 65
 
 SWEP.DefaultBodygroups = "000000"
 
-SWEP.Damage = 40 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 40 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
+SWEP.Damage = 40
+SWEP.DamageMin = 40
 SWEP.Range = 1400 * 0.025  -- GAME UNITS * 0.025 = METRES
 
-SWEP.ChamberSize = 1 * GetConVar("arccw_mw2_chambering"):GetInt()
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 42 -- DefaultClip is automatically set.
 SWEP.ExtendedClipSize = 63
 SWEP.ReducedClipSize = 21

@@ -25,8 +25,8 @@ SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_mach_m249para.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
+SWEP.Damage = 30
+SWEP.DamageMin = 30
 SWEP.Range = 1500 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.RangeMin = 2000 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
@@ -34,7 +34,7 @@ SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 
 
-SWEP.ChamberSize = 0 * GetConVar("arccw_mw2_chambering"):GetInt()
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 100 -- DefaultClip is automatically set.
 SWEP.ExtendedClipSize = 200
 SWEP.ReducedClipSize = 50

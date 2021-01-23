@@ -25,8 +25,8 @@ SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 30 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
-SWEP.DamageMin = 20 * GetConVar("arccw_mw2_bal_dmgmul"):GetFloat()
+SWEP.Damage = 30
+SWEP.DamageMin = 20
 SWEP.RangeMin = 1500 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Range = 2000 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
@@ -34,7 +34,7 @@ SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
 
 
-SWEP.ChamberSize = 1 * GetConVar("arccw_mw2_chambering"):GetInt()
+SWEP.ChamberSize = 0
 SWEP.Primary.ClipSize = 30 -- DefaultClip is automatically set.
 SWEP.ExtendedClipSize = 45
 SWEP.ReducedClipSize = 15
