@@ -27,8 +27,8 @@ SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 30
 SWEP.DamageMin = 30
-SWEP.Range = 1500 * 0.025  -- GAME UNITS * 0.025 = METRES
-SWEP.RangeMin = 2000 * 0.025  -- GAME UNITS * 0.025 = METRES
+SWEP.RangeMin = 1500 * 0.025  -- GAME UNITS * 0.025 = METRES
+SWEP.Range = 2000 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
@@ -163,8 +163,8 @@ SWEP.Attachments = {
             vang = Angle(0, 0, 0),
         },
         SlideAmount = {
-            vmin = Vector(-4, 0.3, 0.8),
-            vmax = Vector(-9.5, 0.3, 0.8),
+            vmin = Vector(-8, 0.3, 0.6),
+            vmax = Vector(-6, 0.3, 0.6),
         },
         InstalledEles = {"nors"},
     },
@@ -239,6 +239,20 @@ SWEP.Attachments = {
 
 
 
+SWEP.Hook_SelectReloadAnimation = function(wep, anim)
+    if wep.Attachments[1].Installed then
+        return anim .. "_att"
+    end
+end
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+    if wep.Attachments[3].Installed then
+        return anim .. "_grip"
+    end
+end
+
+
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
@@ -301,6 +315,26 @@ SWEP.Animations = {
         LHIKIn = 0.5,
         LHIKOut = 1,
     },
+    ["reload_att"] = {
+        Source = "reload_att",
+        Time = 291/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_lift_v1.wav", 			t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_chamber_v1.wav", 		t = 18/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_open_v1.wav", 			t = 80/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_clipout_v1.wav", 		t = 103/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_clipin_v1.wav", 		t = 152/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_hitclip_v1.wav", 		t = 175/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_lift_v1.wav", 			t = 192/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_close_v1.wav", 			t = 212/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_hit_v1.wav", 			t = 225/30},
+					},
+        LastClip1OutTime = 2.5,
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 1,
+    },
 ------------------
     ["idle_grip"] = {
         Source = "idle_grip",
@@ -345,6 +379,26 @@ SWEP.Animations = {
     },
     ["reload_grip"] = {
         Source = "reload_grip",
+        Time = 291/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_lift_v1.wav", 			t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_chamber_v1.wav", 		t = 18/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_open_v1.wav", 			t = 80/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_clipout_v1.wav", 		t = 103/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_clipin_v1.wav", 		t = 152/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_hitclip_v1.wav", 		t = 175/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_lift_v1.wav", 			t = 192/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_close_v1.wav", 			t = 212/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_hit_v1.wav", 			t = 225/30},
+					},
+        LastClip1OutTime = 2.5,
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 1,
+    },
+    ["reload_att_grip"] = {
+        Source = "reload_att_grip",
         Time = 291/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {

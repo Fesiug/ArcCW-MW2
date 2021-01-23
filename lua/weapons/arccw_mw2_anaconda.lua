@@ -27,6 +27,7 @@ SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 50
 SWEP.DamageMin = 35
+SWEP.RangeMin = 500 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Range = 1250 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 12
 SWEP.DamageType = DMG_BULLET

@@ -27,8 +27,8 @@ SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 30
 SWEP.DamageMin = 30
-SWEP.Range = 1500 * 0.025  -- GAME UNITS * 0.025 = METRES
-SWEP.RangeMin = 2000 * 0.025  -- GAME UNITS * 0.025 = METRES
+SWEP.RangeMin = 1500 * 0.025  -- GAME UNITS * 0.025 = METRES
+SWEP.Range = 2000 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
