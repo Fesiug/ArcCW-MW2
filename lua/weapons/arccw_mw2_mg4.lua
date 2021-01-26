@@ -123,6 +123,10 @@ SWEP.AttachmentElements = {
         VMBodygroups = {{ind = 1, bg = 1}},
         WMBodygroups = {},
     },
+    ["grip"] = {
+        VMBodygroups = {{ind = 2, bg = 1}},
+        WMBodygroups = {},
+    },
     ["wepcamo-desert"]		= { VMSkin = 1 },
     ["wepcamo-arctic"]		= { VMSkin = 2 },
     ["wepcamo-woodland"]	= { VMSkin = 3 },
@@ -151,6 +155,7 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 }
 
 SWEP.ExtraSightDist = 5
+SWEP.Bipod_Integral = true
 
 SWEP.Attachments = {
     {
@@ -299,6 +304,7 @@ SWEP.Animations = {
         Source = "reload",
         Time = 291/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 7.13,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_lift_v1.wav", 			t = 0},
 						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_chamber_v1.wav", 		t = 18/30},
@@ -319,6 +325,7 @@ SWEP.Animations = {
         Source = "reload_att",
         Time = 291/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 7.13,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_lift_v1.wav", 			t = 0},
 						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_chamber_v1.wav", 		t = 18/30},
@@ -381,6 +388,7 @@ SWEP.Animations = {
         Source = "reload_grip",
         Time = 291/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 7.13,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_lift_v1.wav", 			t = 0},
 						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_chamber_v1.wav", 		t = 18/30},
@@ -401,6 +409,7 @@ SWEP.Animations = {
         Source = "reload_att_grip",
         Time = 291/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 7.13,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_lift_v1.wav", 			t = 0},
 						{s = "weapons/fesiugmw2/foley/wpfoly_mg4_reload_chamber_v1.wav", 		t = 18/30},

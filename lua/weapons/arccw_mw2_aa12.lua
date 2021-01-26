@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
 SWEP.Spawnable = true
-SWEP.Category = "ArcCW - MW2, UNSUPPORTED"
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -20,7 +20,7 @@ SWEP.Slot = 2
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/arccw/fesiugmw2/c_m4_3a.mdl"
+SWEP.ViewModel = "models/weapons/arccw/fesiugmw2_2/c_aa12_1.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_shot_xm1014.mdl"
 SWEP.ViewModelFOV = 65
@@ -90,7 +90,7 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 }
 
 SWEP.IronSightStruct = {
-    Pos = Vector(-3.12, -8.306, 0.439),
+    Pos = Vector(-2.83, -7.06, 0.439),
     Ang = Angle(0, 0, 0),
     Magnification = 1.18,
 }
@@ -124,6 +124,22 @@ SWEP.AttachmentElements = {
         VMBodygroups = {{ind = 1, bg = 1}},
         WMBodygroups = {},
     },
+    ["grip"] = {
+        VMBodygroups = {{ind = 2, bg = 1}},
+        WMBodygroups = {},
+    },
+    ["wepcamo-desert"]		= { VMSkin = 1 },
+    ["wepcamo-arctic"]		= { VMSkin = 2 },
+    ["wepcamo-woodland"]	= { VMSkin = 3 },
+    ["wepcamo-digital"]		= { VMSkin = 4 },
+    ["wepcamo-urban"]		= { VMSkin = 5 },
+    ["wepcamo-bluetiger"]	= { VMSkin = 6 },
+    ["wepcamo-redtiger"]	= { VMSkin = 7 },
+    ["wepcamo-fall"]		= { VMSkin = 8 },
+    ["wepcamo-whiteout"]	= { VMSkin = 9 },
+    ["wepcamo-blackout"]        = { VMSkin = 10 },
+    ["wepcamo-bushdweller"]     = { VMSkin = 11 },
+    ["wepcamo-thunderstorm"]    = { VMSkin = 12 },
 }
 
 SWEP.Attachments = {
@@ -133,16 +149,11 @@ SWEP.Attachments = {
         Slot = "optic",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(-0.6, 0, 4.2),
+            vpos = Vector(0, 0, 3.7),
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
         InstalledEles = {"nors"},
-    },
-    {
-        PrintName = "Fire Group",
-        Slot = "fcg",
-        DefaultAttName = "Standard FCG",
     },
     {
         PrintName = "Muzzle",
@@ -159,7 +170,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Underbarrel",
-        Slot = {"foregrip"},
+        Slot = {"foregrip","foregrip_mw2exclusive"},
         Bone = "tag_weapon",
         Offset = {
             vpos = Vector(10, 0, -1.7),
@@ -188,6 +199,11 @@ SWEP.Attachments = {
         Slot = "ammo_shotgun"
     },
     {
+        PrintName = "Fire Group",
+        Slot = "fcg",
+        DefaultAttName = "Standard FCG",
+    },
+    {
         PrintName = "Perk",
         Slot = "perk"
     },
@@ -208,47 +224,71 @@ SWEP.Attachments = {
             wmax = Vector(5.36, 0.739, -5.401),
         },
     },
+    {
+        PrintName = "Camouflage",
+        DefaultAttName = "None",
+        Slot = "mw2_wepcamo",
+        FreeSlot = true,
+    },
 }
 
--- draw
--- holster
--- reload
--- fire
--- cycle (for bolt actions)
--- append _empty for empty variation
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+    if wep.Attachments[3].Installed then
+        return anim .. "_grip"
+    end
+end
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
-        Time = 0.06,
-        LHIK = true,
-        LHIKIn = 1,
-        LHIKOut = 1,
+        Time = 1/30
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+        Time = 10/30
+    },
+    ["idle_sprint"] = {
+        Source = "sprint_loop",
+        Time = 30/40
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+        Time = 10/30
     },
     ["draw"] = {
-        Source = "draw",
-        Time = 1.04,
+        Source = "pullout",
+        Time = 24/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
         LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.9,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+    },
+    ["holster"] = {
+        Source = "putaway",
+        Time = 26/30,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
     },
     ["fire"] = {
         Source = "fire",
-        Time = 0.2,
+        Time = 4/30,
+        ShellEjectAt = 0,
     },
     ["fire_iron"] = {
-        Source = "idle",
-        Time = 0.5,
+        Source = "fire_ads",
+        Time = 4/30,
+        ShellEjectAt = 0,
     },
     ["reload"] = {
         Source = "reload",
-        Time = 2.23 * 1.25,
+        Time = 66/24,
+        MinProgress = 2,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_lift_v1.wav", 		t = 0/80},
-						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipout_v1.wav", 	t = 43/80 * 1.25},
-						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipin_v1.wav", 	t = 125/80 * 1.25},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_lift_v1.wav", 		t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipout_v1.wav", 	t = 15/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipin_v1.wav", 	    t = 43/24},
 					},
         LHIK = true,
         LHIKIn = 0.5,
@@ -256,13 +296,85 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-        Time = 2.9 * 1.25,
+        Time = 86/24,
+        MinProgress = 2,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_lift_v1.wav", 		t = 0/80},
-						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipout_v1.wav", 	t = 43/80 * 1.25},
-						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipin_v1.wav", 	t = 125/80 * 1.25},
-						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_chamber_v1.wav", 	t = 165/80 * 1.25},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_lift_v1.wav", 		t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipout_v1.wav", 	t = 14/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipin_v1.wav", 	    t = 47/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_chamber_v1.wav",		t = 64/24},
+					},
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 0.6,
+    },
+---------------------------------------------------
+    ["idle_grip"] = {
+        Source = "idle_grip",
+        Time = 100/30
+    },
+    ["enter_sprint_grip"] = {
+        Source = "sprint_in_grip",
+        Time = 10/30
+    },
+    ["idle_sprint_grip"] = {
+        Source = "sprint_loop_grip",
+        Time = 30/40
+    },
+    ["exit_sprint_grip"] = {
+        Source = "sprint_out_grip",
+        Time = 10/30
+    },
+    ["draw_grip"] = {
+        Source = "pullout_grip",
+        Time = 24/30,
+        SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+    },
+    ["holster_grip"] = {
+        Source = "putaway_grip",
+        Time = 26/30,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+    },
+    ["fire_grip"] = {
+        Source = "fire_grip",
+        Time = 4/30,
+        ShellEjectAt = 0,
+    },
+    ["fire_iron_grip"] = {
+        Source = "fire_ads_grip",
+        Time = 4/30,
+        ShellEjectAt = 0,
+    },
+    ["reload_grip"] = {
+        Source = "reload_grip",
+        Time = 66/24,
+        MinProgress = 2,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_lift_v1.wav", 		t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipout_v1.wav", 	t = 15/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipin_v1.wav", 	    t = 43/24},
+					},
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 0.5,
+    },
+    ["reload_empty_grip"] = {
+        Source = "reload_empty_grip",
+        Time = 86/24,
+        MinProgress = 2,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_lift_v1.wav", 		t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipout_v1.wav", 	t = 14/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_clipin_v1.wav", 	    t = 47/24},
+						{s = "weapons/fesiugmw2/foley/wpfoly_aa12_reload_chamber_v1.wav",		t = 64/24},
 					},
         LHIK = true,
         LHIKIn = 0.5,

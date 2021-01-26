@@ -118,7 +118,7 @@ SWEP.AttachmentElements = {
         VMBodygroups = {{ind = 1, bg = 1}},
         WMBodygroups = {},
     },
-    ["fg"] = {
+    ["grip"] = {
         VMBodygroups = {{ind = 2, bg = 1}},
         WMBodygroups = {},
     },
@@ -291,6 +291,7 @@ SWEP.Animations = {
         Source = "reload",
         Time = 291/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 5,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_lift_v1.wav", 			t = 0},
 						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_chamber_v1.wav", 		t = 16/30},
@@ -351,6 +352,7 @@ SWEP.Animations = {
         Source = "reload_grip",
         Time = 291/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 5,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_lift_v1.wav", 			t = 0},
 						{s = "weapons/fesiugmw2/foley/wpfoly_rpd_reload_chamber_v1.wav", 		t = 16/30},

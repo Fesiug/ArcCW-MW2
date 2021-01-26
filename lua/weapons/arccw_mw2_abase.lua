@@ -253,6 +253,10 @@ function SWEP:DoDrawCrosshair(x, y)
 			clr = Color(50, 255, 50)
 		end
 	end
+    if GetConVar("arccw_crosshair_aa"):GetBool() and LocalPlayer().ArcCW_AATarget != nil and GetConVar("arccw_aimassist"):GetBool() and GetConVar("arccw_aimassist_cl"):GetBool() then
+            -- whooie
+        clr = Color(255, 0, 0)
+    end
 	clr.a = GetConVar("arccw_crosshair_clr_a"):GetInt()
 
 	local outlineClr = Color(GetConVar("arccw_crosshair_outline_r"):GetInt(),
@@ -387,8 +391,8 @@ local function DrawTextRot(span, txt, x, y, tx, ty, maxw, only)
                     span.TextRotState = 1
                 end
             elseif span.TextRotState == 1 then
-                span.TextRot = span.TextRot + (FrameTime() * ScreenScaleMulti(16))
-                if span.TextRot >= (tw - maxw) + ScreenScaleMulti(8) then
+                span.TextRot = span.TextRot + (FrameTime() * ssm(16))
+                if span.TextRot >= (tw - maxw) + ssm(8) then
                     span.StartTextRot = CurTime()
                     span.TextRotState = 2
                 end

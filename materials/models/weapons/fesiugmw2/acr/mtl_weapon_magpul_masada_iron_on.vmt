@@ -1,0 +1,7 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/acr/mtl_weapon_magpul_masada_iron_shared.vmt
+	insert
+	{
+	}
+}

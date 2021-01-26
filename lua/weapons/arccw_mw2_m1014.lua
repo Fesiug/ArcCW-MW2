@@ -120,6 +120,7 @@ SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 
 SWEP.ExtraSightDist = 5
+SWEP.Bipod_Integral = true
 
 SWEP.AttachmentElements = {
     ["grip"] = {
