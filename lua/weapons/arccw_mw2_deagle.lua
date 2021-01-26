@@ -192,7 +192,7 @@ SWEP.Attachments = {
             wang = Angle(-10.216, 0, 180)
         },
         InstalledEles = {"nolaser"},
-        MergeSlots = {10},
+        MergeSlots = {9},
     },
     {
         PrintName = "Tactical",
@@ -227,19 +227,6 @@ SWEP.Attachments = {
 		DefaultAttIcon = Material("entities/acwatt_deagle_mw2.png", "smooth")
     },
     {
-        PrintName = "Charm",
-        DefaultAttName = "None",
-        Slot = "charm",
-        Bone = "j_bolt",
-        FreeSlot = true,
-        Offset = {
-            vpos = Vector(5, -0.4, -0.7),
-            vang = Angle(0, 0, 0),
-            wpos = Vector(5.36, 0.739, -5.401),
-            wang = Angle(-9.738, 0, 180)
-        },
-    },
-    {
         PrintName = "Akimbotest",
         DefaultAttName = "No LH",
         Slot = "akimbotest",
@@ -255,14 +242,14 @@ SWEP.Attachments = {
 SWEP.Hook_SelectReloadAnimation = function(wep, anim)
     if wep.Attachments[3].Installed == "mw2_tacticalknife" then
         return anim .. "_knife"
-    elseif wep.Attachments[10].Installed then
+    elseif wep.Attachments[8].Installed then
         return anim .. "_akimbo_right"
     end
 end
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     if wep.Attachments[3].Installed == "mw2_tacticalknife" then
         return anim .. "_knife"
-    elseif wep.Attachments[10].Installed then
+    elseif wep.Attachments[9].Installed then
         return anim .. "_akimbo_right"
     end
 end

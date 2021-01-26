@@ -218,20 +218,6 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm",
-        DefaultAttName = "None",
-        Slot = "charm",
-        Bone = "tag_weapon",
-        FreeSlot = true,
-        Offset = {
-            vang = Angle(0, 0, 0),
-        },
-        SlideAmount = {
-            vmin = Vector(2.7, -0.8, 2),
-            vmax = Vector(6.5, -0.8, 2),
-        },
-    },
-    {
         PrintName = "Camouflage",
         DefaultAttName = "None",
         Slot = "mw2_wepcamo",

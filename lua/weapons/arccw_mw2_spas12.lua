@@ -205,23 +205,6 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm",
-        DefaultAttName = "None",
-        Slot = "charm",
-        Bone = "tag_weapon",
-        FreeSlot = true,
-        Offset = {
-            vang = Angle(0, 0, 0),
-            wang = Angle(-9.738, 0, 180)
-        },
-        SlideAmount = {
-            vmin = Vector(-1, -0.55, 1),
-            vmax = Vector(3, -0.55, 1),
-            wmin = Vector(5.36, 0.739, -5.401),
-            wmax = Vector(5.36, 0.739, -5.401),
-        },
-    },
-    {
         PrintName = "Camouflage",
         DefaultAttName = "None",
         Slot = "mw2_wepcamo",
@@ -234,13 +217,6 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         return anim .. "_fgrip"
     end
 end
-
--- draw
--- holster
--- reload
--- fire
--- cycle (for bolt actions)
--- append _empty for empty variation
 
 SWEP.Animations = {
     ["idle"] = {

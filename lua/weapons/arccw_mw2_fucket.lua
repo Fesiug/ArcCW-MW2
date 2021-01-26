@@ -206,23 +206,6 @@ SWEP.Attachments = {
         PrintName = "Ammo Type",
         Slot = "ammo_bullet"
     },
-    {
-        PrintName = "Charm",
-        DefaultAttName = "None",
-        Slot = "charm",
-        Bone = "Weapon_Main",
-        FreeSlot = true,
-        Offset = {
-            vang = Angle(90, 0, -90),
-            wang = Angle(-9.738, 0, 180)
-        },
-        SlideAmount = {
-            vmin = Vector(0.8, -1.55, 2),
-            vmax = Vector(0.8, -1.55, 6.9),
-            wmin = Vector(5.36, 0.739, -5.401),
-            wmax = Vector(5.36, 0.739, -5.401),
-        },
-    },
 }
 
 SWEP.Animations = {

@@ -193,7 +193,7 @@ SWEP.Attachments = {
             wpos = Vector(14.329, 0.602, -4.453),
             wang = Angle(-10.216, 0, 180)
         },
-        MergeSlots = {9},
+        MergeSlots = {8},
     },
     {
         PrintName = "Tactical",
@@ -219,20 +219,6 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Charm",
-        DefaultAttName = "None",
-        Slot = "charm",
-        Bone = "j_bolt",
-        FreeSlot = true,
-        Offset = {
-            vpos = Vector(3.8, -0.4, -0.6),
-            vang = Angle(0, 0, 0),
-            wpos = Vector(5.36, 0.739, -5.401),
-            wang = Angle(-9.738, 0, 180)
-        },
-		VMScale = Vector(0.67, 0.67, 0.67),
-    },
-    {
         PrintName = "Akimbotest",
         DefaultAttName = "No LH",
         Slot = "akimbotest",
@@ -248,14 +234,14 @@ SWEP.Attachments = {
 SWEP.Hook_SelectReloadAnimation = function(wep, anim)
     if wep.Attachments[3].Installed == "mw2_tacticalknife" then
         return anim .. "_knife"
-    elseif wep.Attachments[9].Installed then
+    elseif wep.Attachments[8].Installed then
         return anim .. "_akimbo_right"
     end
 end
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     if wep.Attachments[3].Installed == "mw2_tacticalknife" then
         return anim .. "_knife"
-    elseif wep.Attachments[9].Installed then
+    elseif wep.Attachments[8].Installed then
         return anim .. "_akimbo_right"
     end
 end
