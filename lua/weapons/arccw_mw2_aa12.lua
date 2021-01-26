@@ -39,7 +39,7 @@ SWEP.ExtendedClipSize = 16
 SWEP.ReducedClipSize = 4
 
 SWEP.VisualRecoilMult = 0
-SWEP.Recoil = 3
+SWEP.Recoil = 2
 SWEP.RecoilSide = 3
 
 SWEP.Delay = 0.15 -- 60 / RPM.
@@ -381,3 +381,28 @@ SWEP.Animations = {
         LHIKOut = 0.6,
     },
 }
+
+ -- Super fucky temp!
+ -- S H U T  U P    A N D   K E E P  T H E M   P I N N E D  D O W N  
+
+-- notverycreativenowarewe
+local nvcnaw = 6
+
+ -- hipfire
+ -- maximum accuracy
+    SWEP.Inaccuracy_Hip_Max_Stand	= nvcnaw
+    SWEP.Inaccuracy_Hip_Max_Duck	= nvcnaw
+    SWEP.Inaccuracy_Hip_Max_Prone	= nvcnaw
+ -- minimum accuracy
+    SWEP.Inaccuracy_Hip_Min_Stand   = nvcnaw
+    SWEP.Inaccuracy_Hip_Min_Duck    = nvcnaw
+    SWEP.Inaccuracy_Hip_Min_Prone   = nvcnaw
+
+ -- sighted fire
+ -- yeah
+    SWEP.Inaccuracy_ADS = 5.5
+
+ -- inaccuracy when you're... i don't remember
+SWEP.Inaccuracy_Add_ADS			= 0
+SWEP.Inaccuracy_Add_Hip			= 0
+SWEP.Inaccuracy_Add_Move		= 0.1

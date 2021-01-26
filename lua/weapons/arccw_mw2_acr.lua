@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
 SWEP.Spawnable = true
-SWEP.Category = "ArcCW - MW2, UNSUPPORTED"
+SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -20,13 +20,14 @@ SWEP.Slot = 2
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/arccw/fesiugmw2/c_m4_3a.mdl"
+SWEP.ViewModel = "models/weapons/arccw/fesiugmw2_2/c_acr_2.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_rif_sg552.mdl"
 SWEP.ViewModelFOV = 65
 
 SWEP.Damage = 30
 SWEP.DamageMin = 20
+SWEP.RangeMin = 1800 * 0.025 -- GAME UNITS * 0.025 = METRES
 SWEP.Range = 2300 * 0.025 -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 7
 SWEP.DamageType = DMG_BULLET
@@ -93,7 +94,7 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 }
 
 SWEP.IronSightStruct = {
-    Pos = Vector(-3.411, -3.4, 0.2),
+    Pos = Vector(-3.101, -3.1, 0.2),
     Ang = Angle(-0.301, 0, 0),
     Magnification = 1.3,
 }
@@ -108,7 +109,7 @@ SWEP.ActivePos = Vector(0, 0, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CustomizePos = Vector(6.639, 0, -2.26)
-SWEP.CustomizeAng = Angle(16.799, 22.399, 14.199)
+SWEP.CustomizeAng = Angle(16, 32, 4)
 
 SWEP.HolsterPos = Vector(3, 0, 0)
 SWEP.HolsterAng = Angle(-10, 25, 0)
@@ -126,9 +127,24 @@ SWEP.AttachmentElements = {
         VMBodygroups = {{ind = 1, bg = 1}},
         WMBodygroups = {},
     },
-    ["skin"] = {
-        VMSkin = 1,
-	},
+    ["wepcamo-desert"]		= { VMSkin = 1 },
+    ["wepcamo-arctic"]		= { VMSkin = 2 },
+    ["wepcamo-woodland"]	= { VMSkin = 3 },
+    ["wepcamo-digital"]		= { VMSkin = 4 },
+    ["wepcamo-urban"]		= { VMSkin = 5 },
+    ["wepcamo-bluetiger"]	= { VMSkin = 6 },
+    ["wepcamo-redtiger"]	= { VMSkin = 7 },
+    ["wepcamo-fall"]		= { VMSkin = 8 },
+    ["wepcamo-whiteout"]	= { VMSkin = 9 },
+    ["wepcamo-blackout"]        = { VMSkin = 10 },
+    ["wepcamo-bushdweller"]     = { VMSkin = 11 },
+    ["wepcamo-thunderstorm"]    = { VMSkin = 12 },
+            ["mw2_ubgl_m203"] = {
+                VMBodygroups = {{ind = 2, bg = 1}},
+            },
+            ["mw2_ubgl_masterkey"] = {
+                VMBodygroups = {{ind = 2, bg = 2}},
+            },
 }
 
 SWEP.ExtraSightDist = 5
@@ -140,18 +156,9 @@ SWEP.Attachments = {
         Slot = "optic",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(6.972, 0, 2.318),
+            vpos = Vector(3.7, 0, 2.12),
             vang = Angle(0, 0, 0),
-            wang = Angle(-9.738, 0, 180)
         },
-        SlideAmount = {
-            vmin = Vector(0.668, 0, 2.318),
-            --vmax = Vector(12.976, 0, 2.318),
-            vmax = Vector(8.976, 0, 2.318),
-            wmin = Vector(5.36, 0.739, -5.401),
-            wmax = Vector(5.36, 0.739, -5.401),
-        },
-		VMScale = Vector(1.2, 1.2, 1.2),
         InstalledEles = {"nors"},
     },
     {
@@ -162,25 +169,18 @@ SWEP.Attachments = {
         Offset = {
             vpos = Vector(23.628, 0, 0.56),
             vang = Angle(0, 0, 0),
-            wpos = Vector(26.648, 0.782, -8.042),
-            wang = Angle(-9.79, 0, 180)
         },
     },
     {
         PrintName = "Underbarrel",
-        Slot = {"foregrip", "ubgl", "bipod"},
+        Slot = {"foregrip", "ubgl", "bipod", "mw2_ubgl"},
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(18.427, 0, -1.04),
             vang = Angle(0, 0, 0),
-            wpos = Vector(14.329, 0.602, -4.453),
-            wang = Angle(-10.216, 0, 180)
         },
         SlideAmount = {
-            vmin = Vector(9.748, 0, -1.04),
-            vmax = Vector(18.427, 0, -1.04),
-            wmin = Vector(15, 0.74, -4.301),
-            wmax = Vector(15, 0.74, -4.301),
+            vmin = Vector(8, 0, -1),
+            vmax = Vector(14, 0, -1),
         },
     },
     {
@@ -188,16 +188,11 @@ SWEP.Attachments = {
         Slot = "tac",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(10.5, -1.5, 0.75),
             vang = Angle(0, 0, 90),
-            wpos = Vector(15.625, -0.253, -6.298),
-            wang = Angle(-8.829, -0.556, 90)
         },
         SlideAmount = {
             vmin = Vector(10.5, -1.5, 0.75),
             vmax = Vector(15, -1.5, 0.75),
-            wmin = Vector(15, 0.74, -4.301),
-            wmax = Vector(15, 0.74, -4.301),
         }
     },
     {
@@ -214,13 +209,6 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Skin",
-        Slot = {"skin_acr"},
-        DefaultAttName = "Gray",
-        FreeSlot = true,
-		Hidden = true, -- gotta export gray texture
-    },
-    {
         PrintName = "Charm",
         DefaultAttName = "None",
         Slot = "charm",
@@ -228,36 +216,106 @@ SWEP.Attachments = {
         FreeSlot = true,
         Offset = {
             vang = Angle(0, 0, 0),
-            wang = Angle(-9.738, 0, 180)
         },
         SlideAmount = {
             vmin = Vector(3, -0.8, 0.4),
             vmax = Vector(6, -0.8, 0.4),
-            wmin = Vector(5.36, 0.739, -5.401),
-            wmax = Vector(5.36, 0.739, -5.401),
         },
+    },
+    {
+        PrintName = "Camouflage",
+        DefaultAttName = "None",
+        Slot = "mw2_wepcamo",
+        FreeSlot = true,
     },
 }
 
+
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+	local attached = wep.Attachments[3].Installed
+	
+	-- m203 is 1, masterkey is 2, fgrip is 3
+	local attthing
+		if 		attached == "mw2_ubgl_m203" 		then attthing = 1
+		elseif 	attached == "mw2_ubgl_masterkey" 	then attthing = 2
+		else 											 attthing = 0
+	end
+	
+	-- when entering ubgl
+	if anim == "enter_ubgl" then
+		if attthing == 1 then
+			return "switch2_alt_m203"
+		elseif attthing == 2 then
+			return "switch2_alt_masterkey"
+		end
+	elseif anim == "exit_ubgl" then
+		if attthing == 1 then
+			return "switch2_gun_m203"
+		elseif attthing == 2 then
+			return "switch2_gun_masterkey"
+		end
+	end
+	
+    if attthing == 1 and wep:GetInUBGL() then
+        return "alt_" .. anim .. "_m203"
+		elseif attthing == 1 then
+			return anim .. "_m203"
+		
+	elseif attthing == 2 and wep:GetInUBGL() then
+        return "alt_" .. anim .. "_masterkey"
+		elseif attthing == 2 then
+			return anim .. "_masterkey"
+		
+    end
+end
+
 SWEP.Animations = {
+		["enter_ubgl"] = {
+			Source = "idle",
+			Time = 0/30
+		},
+		["exit_ubgl"] = {
+			Source = "idle",
+			Time = 0/30
+		}, 						-- Fuck you.
     ["idle"] = {
         Source = "idle",
-        Time = 0.06
+        Time = 1/30
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+        Time = 10/30
+    },
+    ["idle_sprint"] = {
+        Source = "sprint_loop",
+        Time = 30/40
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+        Time = 10/30
     },
     ["draw"] = {
-        Source = "draw",
-        Time = 0.93,
+        Source = "pullout",
+        Time = 27/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
         LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.6,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+    },
+    ["holster"] = {
+        Source = "putaway",
+        Time = 20/30,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
     },
     ["ready"] = {
-        Source = "draw_first",
-        Time = 1.23,
+        Source = "pullout_first",
+        Time = 36/30,
         SoundTable = {
-						{s = "MW2Common.Deploy", 		t = 0},
-						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_chamber_v1.wav", 	t = 36/80},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_chamber_v1.wav", 	t = 15/30},
 					},
         LHIK = true,
         LHIKIn = 0,
@@ -265,22 +323,23 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = "fire",
-        Time = 0.26,
+        Time = 7/30,
         ShellEjectAt = 0,
     },
     ["fire_iron"] = {
-        Source = "idle",
-        Time = 0.06,
+        Source = "fire_ads",
+        Time = 7/30,
         ShellEjectAt = 0,
     },
     ["reload"] = {
         Source = "reload",
-        Time = 1.9,
+        Time = 56/30,
+        MinProgress = 1.1,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/80},
-						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipout_v1.wav", 	t = 25/80},
-						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipin_v1.wav", 		t = 88/80},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipout_v1.wav", 	t = 10/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipin_v1.wav", 		t = 32/30},
 					},
         LHIK = true,
         LHIKIn = 0.5,
@@ -288,16 +347,317 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-        Time = 2.5,
+        Time = 74/30,
+        MinProgress = 1.1,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/80},
-						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipout_v1.wav", 	t = 25/80},
-						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipin_v1.wav", 		t = 88/80},
-						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_chamber_v1.wav", 	t = 130/80},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipout_v1.wav", 	t = 10/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipin_v1.wav", 		t = 32/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_chamber_v1.wav", 	t = 52/30},
 					},
         LHIK = true,
         LHIKIn = 0.5,
         LHIKOut = 1.4,
+    },
+------------------------------------------------
+------ Here lies M203 ANIMATIONS ... AWESOME ---
+------------------------------------------------
+    ["idle_m203"] = {
+        Source = "idle_m203",
+        Time = 1/30
+    },
+    ["enter_sprint_m203"] = {
+        Source = "sprint_in_m203",
+        Time = 10/30
+    },
+    ["idle_sprint_m203"] = {
+        Source = "sprint_loop_m203",
+        Time = 30/40
+    },
+    ["exit_sprint_m203"] = {
+        Source = "sprint_out_m203",
+        Time = 10/30
+    },
+    ["draw_m203"] = {
+        Source = "pullout_m203",
+        Time = 27/30,
+        SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+    },
+    ["holster_m203"] = {
+        Source = "putaway_m203",
+        Time = 20/30,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+    },
+    ["ready_m203"] = {
+        Source = "pullout_first_m203",
+        Time = 36/30,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_chamber_v1.wav", 	t = 15/30},
+					},
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.25,
+    },
+    ["fire_m203"] = {
+        Source = "fire_m203",
+        Time = 7/30,
+        ShellEjectAt = 0,
+    },
+    ["fire_iron_m203"] = {
+        Source = "fire_ads_m203",
+        Time = 7/30,
+        ShellEjectAt = 0,
+    },
+    ["reload_m203"] = {
+        Source = "reload_m203",
+        Time = 56/30,
+        MinProgress = 1.1,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipout_v1.wav", 	t = 10/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipin_v1.wav", 		t = 32/30},
+					},
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 0.5,
+    },
+    ["reload_empty_m203"] = {
+        Source = "reload_empty_m203",
+        Time = 74/30,
+        MinProgress = 1.1,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipout_v1.wav", 	t = 10/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipin_v1.wav", 		t = 32/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_chamber_v1.wav", 	t = 52/30},
+					},
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 1.4,
+    },
+------------------------------------------------
+------ Here lies M203 IN THE ANIMATIONS........... ... AWESOME ---
+------------------------------------------------
+    ["alt_idle_m203"] = {
+        Source = "alt_idle_m203",
+        Time = 1/30
+    },
+    ["alt_enter_sprint_m203"] = {
+        Source = "alt_sprint_in_m203",
+        Time = 10/30
+    },
+    ["alt_idle_sprint_m203"] = {
+        Source = "alt_sprint_loop_m203",
+        Time = 30/40
+    },
+    ["alt_exit_sprint_m203"] = {
+        Source = "alt_sprint_out_m203",
+        Time = 10/30
+    },
+    ["alt_draw_m203"] = {
+        Source = "alt_pullout_m203",
+        Time = 33/30,
+        SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+    },
+    ["alt_holster_m203"] = {
+        Source = "alt_putaway_m203",
+        Time = 20/30,
+    },
+    ["alt_fire_m203"] = {
+        Source = "alt_fire_m203",
+        Time = 10/30,
+    },
+    ["alt_reload_m203"] = {
+        Source = "alt_reload_m203",
+        Time = 78/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_m203_chamber_open_v12.wav", 		t = 12/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m203_load_v12.wav", 	t = 39/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m203_chamber_close_v12.wav", 	t = 60/30},
+					},
+    },
+------------------------------------------------
+------ Here lies MASTERKEY ANIMATIONS ... AWESOME ---
+------------------------------------------------
+    ["idle_masterkey"] = {
+        Source = "idle_masterkey",
+        Time = 1/30
+    },
+    ["enter_sprint_masterkey"] = {
+        Source = "sprint_in_masterkey",
+        Time = 10/30
+    },
+    ["idle_sprint_masterkey"] = {
+        Source = "sprint_loop_masterkey",
+        Time = 30/40
+    },
+    ["exit_sprint_masterkey"] = {
+        Source = "sprint_out_masterkey",
+        Time = 10/30
+    },
+    ["draw_masterkey"] = {
+        Source = "pullout_masterkey",
+        Time = 27/30,
+        SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+    },
+    ["holster_masterkey"] = {
+        Source = "putaway_masterkey",
+        Time = 20/30,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+    },
+    ["ready_masterkey"] = {
+        Source = "pullout_first_masterkey",
+        Time = 36/30,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_chamber_v1.wav", 	t = 15/30},
+					},
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.25,
+    },
+    ["fire_masterkey"] = {
+        Source = "fire_masterkey",
+        Time = 7/30,
+        ShellEjectAt = 0,
+    },
+    ["fire_iron_masterkey"] = {
+        Source = "fire_ads_masterkey",
+        Time = 7/30,
+        ShellEjectAt = 0,
+    },
+    ["reload_masterkey"] = {
+        Source = "reload_masterkey",
+        Time = 56/30,
+        MinProgress = 1.1,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipout_v1.wav", 	t = 10/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipin_v1.wav", 		t = 32/30},
+					},
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 0.5,
+    },
+    ["reload_empty_masterkey"] = {
+        Source = "reload_empty_masterkey",
+        Time = 74/30,
+        MinProgress = 1.1,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_lift_v1.wav", 		t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipout_v1.wav", 	t = 10/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_clipin_v1.wav", 		t = 32/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_masada_reload_chamber_v1.wav", 	t = 52/30},
+					},
+        LHIK = true,
+        LHIKIn = 0.5,
+        LHIKOut = 1.4,
+    },
+
+------------------------------------------------
+------ Here lies MASTERKEY IN THE ANIMATIONS........... ... AWESOME ---
+------------------------------------------------
+    ["alt_idle_masterkey"] = {
+        Source = "alt_idle_masterkey",
+        Time = 1/30
+    },
+    ["alt_enter_sprint_masterkey"] = {
+        Source = "alt_sprint_in_masterkey",
+        Time = 10/30
+    },
+    ["alt_idle_sprint_masterkey"] = {
+        Source = "alt_sprint_loop_masterkey",
+        Time = 30/40
+    },
+    ["alt_exit_sprint_masterkey"] = {
+        Source = "alt_sprint_out_masterkey",
+        Time = 10/30
+    },
+    ["alt_draw_masterkey"] = {
+        Source = "alt_pullout_masterkey",
+        Time = 25/30,
+        SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+    },
+    ["alt_holster_masterkey"] = {
+        Source = "alt_putaway_masterkey",
+        Time = 25/30,
+    },
+    ["alt_fire_masterkey"] = {
+        Source = "alt_fire_masterkey",
+        Time = 10/30,
+    },
+    ["alt_cycle_masterkey"] = {
+        Source = "alt_cycle_masterkey",
+        SoundTable = {{s = "weapons/fesiugmw2/foley/wpfoly_winchester_reload_pump_v1.wav", 		t = 3/30}},
+        Time = 15/30,
+    },
+    ["alt_reload_start_masterkey"] = {
+        Source = "alt_reload_start_masterkey",
+        Time = 35/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_shotattach_reload_lift_v1.wav", 		t = 0/30},
+						{s = "MW2Common.Masterkey_Load", 		t = 26/30},
+					},
+    },
+    ["alt_reload_loop_masterkey"] = {
+        Source = "alt_reload_loop_masterkey",
+        Time = 33/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "MW2Common.Masterkey_Load", 	t = 24/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_shotattach_reload_end_v1.wav", 	t = 33/30}, -- end
+					},
+    },
+    ["alt_reload_finish_masterkey"] = {
+        Source = "alt_reload_finish_masterkey",
+        Time = 50/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						--{s = "MW2Common.Masterkey_Load", 	t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_shotattach_reload_end_v1.wav", 	t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_winchester_reload_pump_v1.wav", 	t = 22/30},
+					},
+    },
+-----------------------------------------------------
+    ["switch2_gun_m203"] = {
+        Source = "switch2_gun_m203",
+        SoundTable = {{s = "MW2Common.Underbarrel", 		t = 0}},
+        Time = 24/30
+    },
+    ["switch2_alt_m203"] = {
+        Source = "switch2_alt_m203",
+        SoundTable = {{s = "MW2Common.Underbarrel", 		t = 0}},
+        Time = 24/30
+    },
+    ["switch2_gun_masterkey"] = {
+        Source = "switch2_gun_masterkey",
+        SoundTable = {{s = "MW2Common.Underbarrel", 		t = 0}},
+        Time = 22/30
+    },
+    ["switch2_alt_masterkey"] = {
+        Source = "switch2_alt_masterkey",
+        SoundTable = {
+						{s = "MW2Common.Underbarrel", 		t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_winchester_reload_pump_v1.wav", 		t = 14/30},
+					},
+        Time = 25/30
     },
 }

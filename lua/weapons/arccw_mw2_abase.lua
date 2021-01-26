@@ -42,30 +42,39 @@ SWEP.IronSightStruct = {
 	SwitchToSound = "",
 }
 
-SWEP.Hook_ModifyRecoil = function(wep)
+--[[SWEP.Hook_ModifyRecoil = function(wep)
 	return {
 		Recoil = 0,
 		RecoilSide = 0,
 		VisualRecoilMult = 0,
 	}
-end
+end]]
 
 
 SWEP.ShootMechSound = nil
 
 
+ -- hipfire
+ -- maximum accuracy
+    SWEP.Inaccuracy_Hip_Max_Stand	= 7
+    SWEP.Inaccuracy_Hip_Max_Duck	= 6
+    SWEP.Inaccuracy_Hip_Max_Prone	= 5
+ -- minimum accuracy
+    SWEP.Inaccuracy_Hip_Min_Stand   = 3
+    SWEP.Inaccuracy_Hip_Min_Duck    = 2.5
+    SWEP.Inaccuracy_Hip_Min_Prone   = 2
+
+ -- sighted fire
+ -- yeah
+    SWEP.Inaccuracy_ADS = 0
+
+ -- inaccuracy when you're... i don't remember
 SWEP.Inaccuracy_Add_ADS			= 0
 SWEP.Inaccuracy_Add_Hip			= 0.6
 SWEP.Inaccuracy_Add_Move		= 5
 
-SWEP.Inaccuracy_Hip_Max_Stand	= 7
-SWEP.Inaccuracy_Hip_Max_Duck	= 6
-SWEP.Inaccuracy_Hip_Max_Prone	= 5
-
-SWEP.Inaccuracy_Hip_Min_Stand   = 3
-SWEP.Inaccuracy_Hip_Min_Duck    = 2.5
-SWEP.Inaccuracy_Hip_Min_Prone   = 2
-
+ -- how fast to decay inaccuracy
+ -- additive
 SWEP.Inaccuracy_Hip_Decay_Stand	= 4
 SWEP.Inaccuracy_Hip_Decay_Duck	= 1.05
 SWEP.Inaccuracy_Hip_Decay_Prone	= 1.1
@@ -108,7 +117,7 @@ function SWEP:DoShootSound(sndoverride, dsndoverride, voloverride, pitchoverride
     end
 
     if fsound then self:MyEmitSound(fsound, volume, pitch, 1, CHAN_WEAPON) end
-    if msound then self:MyEmitSound(msound, 65, math.Rand(95, 105), .5, CHAN_AUTO) end
+    if msound then self:MyEmitSound(msound, 45, math.Rand(95, 105), .45, CHAN_AUTO) end
 
     local data = {
         sound   = fsound,
@@ -125,12 +134,15 @@ function SWEP:GetDispersion()
 end
 function SWEP:Think()
 	BaseClass.Think( self )
+    local InADS = 1 - self:GetSightDelta()
+    local InHip = self:GetSightDelta()
+
 	local Owner = self:GetOwner()
 
 	local max = self.Inaccuracy_Hip_Max_Stand
 	local state = self.Inaccuracy_Hip_Min_Stand
 	local decay = self.Inaccuracy_Hip_Decay_Stand
-
+    
 	if Owner:Crouching() then
 		state = self.Inaccuracy_Hip_Min_Duck
 		max = self.Inaccuracy_Hip_Max_Duck
@@ -144,8 +156,8 @@ function SWEP:Think()
 	state = state + ( speed * self.Inaccuracy_Add_Move )
 	max = max + ( speed * self.Inaccuracy_Add_Move )
 
-	state = state * idk * self:GetSightDelta()
-	max = max * idk * self:GetSightDelta()
+	state = ( ( state * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
+	max = ( ( max * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
 
 
 	self:SetInaccuracy( math.Clamp( self:GetInaccuracy() - (decay*idk) * FrameTime(), state, max ) )
@@ -368,6 +380,10 @@ end
 
 if CLIENT then
 
+local function ssm(input)
+    return ScreenScale(input) * GetConVar("arccw_hud_size"):GetFloat()
+end
+
 local translate = ArcCW.GetTranslation
 
 local temp = 0
@@ -409,10 +425,6 @@ local function DrawTextRot(span, txt, x, y, tx, ty, maxw, only)
     else
         surface.DrawText(txt)
     end
-end
-
-local function ssm(input)
-    return ScreenScale(input) * GetConVar("arccw_hud_size"):GetFloat()
 end
 
 local function multlinetext(text, maxw, font)

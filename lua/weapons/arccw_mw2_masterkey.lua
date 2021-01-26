@@ -272,3 +272,25 @@ SWEP.Animations = {
         LHIKOut = 0.8,
     },
 }
+
+ -- Super fucky temp!
+ -- S H U T  U P    A N D   K E E P  T H E M   P I N N E D  D O W N  
+
+ -- hipfire
+ -- maximum accuracy
+    SWEP.Inaccuracy_Hip_Max_Stand	= 7
+    SWEP.Inaccuracy_Hip_Max_Duck	= 7
+    SWEP.Inaccuracy_Hip_Max_Prone	= 7
+ -- minimum accuracy
+    SWEP.Inaccuracy_Hip_Min_Stand   = 5
+    SWEP.Inaccuracy_Hip_Min_Duck    = 5
+    SWEP.Inaccuracy_Hip_Min_Prone   = 5
+
+ -- sighted fire
+ -- yeah
+    SWEP.Inaccuracy_ADS = 5.5
+
+ -- inaccuracy when you're... i don't remember
+SWEP.Inaccuracy_Add_ADS			= 0
+SWEP.Inaccuracy_Add_Hip			= 0
+SWEP.Inaccuracy_Add_Move		= 0.1

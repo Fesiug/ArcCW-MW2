@@ -40,9 +40,9 @@ SWEP.ExtendedClipSize = 45
 SWEP.ReducedClipSize = 15
 
 SWEP.VisualRecoilMult = 0
-SWEP.Recoil = 0
-SWEP.RecoilSide = 0
-SWEP.RecoilRise = 0
+SWEP.Recoil = 0.5
+SWEP.RecoilSide = 0.3
+SWEP.RecoilRise = 0.2
 
 SWEP.Delay = 0.07 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
@@ -257,7 +257,6 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 	local attthing
 		if 		attached == "mw2_ubgl_m203" 		then attthing = 1
 		elseif 	attached == "mw2_ubgl_masterkey" 	then attthing = 2
-		elseif 	attached 							then attthing = 3
 		else 											 attthing = 0
 	end
 	
@@ -285,9 +284,6 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         return "alt_" .. anim .. "_masterkey"
 		elseif attthing == 2 then
 			return anim .. "_masterkey"
-		
-    elseif attthing == 3 then
-        return anim .. "_fgrip"
 		
     end
 end

@@ -39,9 +39,9 @@ SWEP.ExtendedClipSize = 45
 SWEP.ReducedClipSize = 15
 
 SWEP.VisualRecoilMult = 0
-SWEP.Recoil = 0
-SWEP.RecoilSide = 0
-SWEP.RecoilRise = 0
+SWEP.Recoil = 0.4
+SWEP.RecoilSide = 0.7
+SWEP.RecoilRise = 0.3
 
 SWEP.Delay = 0.079 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
