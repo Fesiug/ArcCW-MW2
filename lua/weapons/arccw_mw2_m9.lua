@@ -195,7 +195,7 @@ SWEP.Attachments = {
             wpos = Vector(14.329, 0.602, -4.453),
             wang = Angle(-10.216, 0, 180)
         },
-        MergeSlots = {9},
+        MergeSlots = {8},
     },
     {
         PrintName = "Tactical",
@@ -236,14 +236,14 @@ SWEP.Attachments = {
 SWEP.Hook_SelectReloadAnimation = function(wep, anim)
     if wep.Attachments[3].Installed == "mw2_tacticalknife" then
         return anim .. "_knife"
-    elseif wep.Attachments[9].Installed then
+    elseif wep.Attachments[8].Installed then
         return anim .. "_akimbo_right"
     end
 end
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     if wep.Attachments[3].Installed == "mw2_tacticalknife" then
         return anim .. "_knife"
-    elseif wep.Attachments[9].Installed then
+    elseif wep.Attachments[8].Installed then
         return anim .. "_akimbo_right"
     end
 end
