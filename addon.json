@@ -1,0 +1,23 @@
+{
+    "title" : "[ArcCW] Modern Warfare 2",
+    "type" : "weapon",
+	"tags" : [],
+	"ignore":
+	[
+		"*.cmd",
+		"*.ini",
+		"*.lnk",
+		"*.url",
+		"*.psd",
+        "*.bat",
+        ".git/*",
+        ".gitignore",
+        ".gitattributes",
+        "*.code-workspace",
+        "*.code-workspace",
+        "LICENSE",
+        "README.md",
+		"ArcCW-MW2.jpg",
+		"ArcCW-MW2.png"
+	]
+}

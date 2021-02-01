@@ -39,8 +39,8 @@ SWEP.ExtendedClipSize = 45
 SWEP.ReducedClipSize = 15
 
 SWEP.VisualRecoilMult = 0
-SWEP.Recoil = 0.50
-SWEP.RecoilSide = 0.44
+SWEP.Recoil = 0.4
+SWEP.RecoilSide = 0.35
 SWEP.RecoilRise = 0
 
 SWEP.Delay = 0.067 -- 60 / RPM.
