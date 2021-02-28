@@ -18,6 +18,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 6, -0.5),
         Ang = Angle(0.8, 0, 0),
+        ViewModelFOV = 65 / 1.3,
         Magnification = 1.3,
         IgnoreExtra = true
     },

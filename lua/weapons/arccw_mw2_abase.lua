@@ -38,7 +38,8 @@ SWEP.RecoilPunch = 0
 SWEP.IronSightStruct = {
 	Pos = Vector(0, 0, 0),
 	Ang = Angle(0, 0, 0),
-	Magnification = 1.1,
+    ViewModelFOV = 65 / 1.3,
+	Magnification = 1.3,
 	SwitchToSound = "",
 }
 
@@ -157,7 +158,7 @@ function SWEP:Think()
 	max = max + ( speed * self.Inaccuracy_Add_Move )
 
 	state = ( ( state * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
-	max = ( ( max * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
+	max = ( ( max * self:GetBuff_Mult("Mult_HipDispersion") * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
 
 
 	self:SetInaccuracy( math.Clamp( self:GetInaccuracy() - (decay*idk) * FrameTime(), state, max ) )

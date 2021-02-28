@@ -82,7 +82,8 @@ SWEP.SightTime = 0.30
 SWEP.IronSightStruct = {
     Pos = Vector(-3.241, -3, 0.93),
     Ang = Angle(0.513, 0, 0),
-    Magnification = 1.1,
+    ViewModelFOV = 65 / 1.3,
+    Magnification = 1.3,
 }
 
 SWEP.RevolverReload = true

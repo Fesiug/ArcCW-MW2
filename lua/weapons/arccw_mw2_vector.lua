@@ -100,6 +100,7 @@ SWEP.ProceduralIronFire = true
 SWEP.IronSightStruct = {
     Pos = Vector(-2.5, -2.746, 0.58),
     Ang = Angle(-0.212, 0, 0),
+    ViewModelFOV = 65 / 1.18,
     Magnification = 1.18,
 }
 

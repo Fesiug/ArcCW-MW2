@@ -22,6 +22,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 7, -0.8),
         Ang = Angle(0, 0, 0),
+        ViewModelFOV = 65 / 1.9,
         Magnification = 1.9,
         Thermal = true,
         IgnoreExtra = true,
@@ -31,9 +32,9 @@ att.AdditionalSights = {
 att.ScopeGlint = true
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/scopes/mw2_thermal.png")
+att.HolosightReticle = Material("hud/scopes/mw2_thermal.png", "mips smooth")
 att.HolosightNoFlare = true
-att.HolosightSize = 18
+att.HolosightSize = 16
 att.HolosightBone = "holosight"
 
 att.HolosightMagnification = 2.1

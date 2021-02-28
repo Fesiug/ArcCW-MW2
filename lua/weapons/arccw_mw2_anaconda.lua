@@ -95,6 +95,7 @@ SWEP.CaseBones = {
 SWEP.IronSightStruct = {
     Pos = Vector(-1.6, 2.134, 0.518),
     Ang = Angle(-0.358, 0, 0),
+    ViewModelFOV = 65,
     Magnification = 1,
 }
 
@@ -140,6 +141,7 @@ SWEP.AttachmentElements = {
         Override_IronSightStruct = {
 			Pos = Vector(-1.7, 0, -0.7),
 			Ang = Angle(-0.358, 0, 0),
+            ViewModelFOV = 65,
             Magnification = 1,
         }
     },

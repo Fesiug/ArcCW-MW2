@@ -98,6 +98,7 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 SWEP.IronSightStruct = {
     Pos = Vector(-2.42, -1.026, 0.88),
     Ang = Angle(1, 0, 0),
+    ViewModelFOV = 65 / 1.3,
     Magnification = 1.3,
 }
 

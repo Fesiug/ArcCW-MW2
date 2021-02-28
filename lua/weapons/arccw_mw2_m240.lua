@@ -87,6 +87,7 @@ SWEP.SightTime = 0.25
 SWEP.IronSightStruct = {
     Pos = Vector(-3.426, -2.9, 0.579),
     Ang = Angle(-0.1, 0, 0),
+    ViewModelFOV = 65 / 1.3,
     Magnification = 1.3,
 }
 
@@ -154,6 +155,7 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 }
 
 SWEP.ExtraSightDist = 5
+SWEP.Bipod_Integral = true
 
 SWEP.Attachments = {
     {

@@ -18,8 +18,9 @@ att.HolosightPiece 	= "models/weapons/arccw/fesiugmw2/atts/m82_3_hsp.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0.0151, 20, -1.01),
+        Pos = Vector(0.0151, 11, -1.01),
         Ang = Angle(0, 0, 0),
+        ViewModelFOV = 65 / 2.25,
         Magnification = 2.25,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 6,
@@ -31,9 +32,9 @@ att.AdditionalSights = {
 att.ScopeGlint = true
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/scopes/m40a3.png")
+att.HolosightReticle = Material("hud/scopes/m40a3.png", "mips smooth")
 att.HolosightNoFlare = true
-att.HolosightSize = 12
+att.HolosightSize = 25
 att.HolosightBone = "holosight"
 att.Colorable = false
 

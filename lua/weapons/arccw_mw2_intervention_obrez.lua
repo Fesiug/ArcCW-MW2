@@ -86,7 +86,8 @@ SWEP.SightTime = 0.2
 SWEP.IronSightStruct = {
     Pos = Vector(-3.778, -3, 0.93),
     Ang = Angle(0.513, 0, 0),
-    Magnification = 1.1,
+    ViewModelFOV = 65 / 1.3,
+    Magnification = 1.3,
 }
 
 SWEP.HoldtypeHolstered = "passive"

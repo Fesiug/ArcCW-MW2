@@ -18,8 +18,9 @@ att.HolosightPiece 	= "models/weapons/arccw/fesiugmw2/atts/cheytacscope_2b_hsp.m
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 20, -1.5),
+        Pos = Vector(0, 12, -1.5),
         Ang = Angle(0, 0, 0),
+        ViewModelFOV = 65 / 2.25,
         Magnification = 2.25,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 6,
@@ -31,9 +32,9 @@ att.AdditionalSights = {
 att.ScopeGlint = true
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/scopes/m40a3.png")
+att.HolosightReticle = Material("hud/scopes/m40a3.png", "mips smooth")
 att.HolosightNoFlare = true
-att.HolosightSize = 12
+att.HolosightSize = 25
 att.HolosightBone = "holosight"
 att.Colorable = false
 

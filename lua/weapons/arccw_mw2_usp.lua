@@ -91,6 +91,7 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 SWEP.IronSightStruct = {
     Pos = Vector(-1.994, 2.434, 1.559),
     Ang = Angle(-1.382, 0, 0),
+    ViewModelFOV = 65,
     Magnification = 1,
 }
 
@@ -159,6 +160,7 @@ SWEP.AttachmentElements = {
         Override_IronSightStruct = {
             Pos = Vector(-1.704, -2.346, 0.119),
             Ang = Angle(0, 0, 0),
+            ViewModelFOV = 65,
             Magnification = 1,
         },
         VMBodygroups = {{ind = 2, bg = 1}}, -- m1911 is an old fart and doesn't have the knife bone all the way back so we hide it in qc and show it here instead

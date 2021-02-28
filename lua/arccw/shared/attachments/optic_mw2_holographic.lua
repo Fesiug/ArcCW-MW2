@@ -19,6 +19,7 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 8, -1.16),
         Ang = Angle(0, 0, 0),
+        ViewModelFOV = 65 / 1.3,
         Magnification = 1.3,
         ScrollFunc = ArcCW.SCROLL_NONE,
         IgnoreExtra = true,
@@ -26,9 +27,9 @@ att.AdditionalSights = {
 }
 
 att.Holosight = true
-att.HolosightReticle = Material("holosights/mw2_holo.png", "smooth")
-att.HolosightFlare = Material("holosights/mw2_holo_flare.png", "smooth")
-att.HolosightSize = 0.5
+att.HolosightReticle = Material("holosights/mw2_holo.png", "mips smooth")
+att.HolosightFlare = Material("holosights/mw2_holo_flare.png", "mips smooth")
+att.HolosightSize = 0.8
 att.HolosightBone = "holosight"
 
 att.Mult_SightTime = 1.075

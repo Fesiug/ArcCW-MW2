@@ -20,7 +20,8 @@ att.AdditionalSights = {
     {
         Pos = Vector(0, 10, -1.62),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.3,
+        ViewModelFOV = 65 / 1.6,
+        Magnification = 1.6,
         ScrollFunc = ArcCW.SCROLL_ZOOM,
         ZoomLevels = 12,
         ZoomSound = "weapons/arccw/fiveseven/fiveseven_slideback.wav",
@@ -31,9 +32,9 @@ att.AdditionalSights = {
 att.ScopeGlint = false
 
 att.Holosight = true
-att.HolosightReticle = Material("hud/scopes/m40a3.png")
+att.HolosightReticle = Material("hud/scopes/m40a3.png", "mips smooth")
 att.HolosightNoFlare = true
-att.HolosightSize = 26
+att.HolosightSize = 15
 att.HolosightBone = "holosight"
 att.HolosightPiece = "models/weapons/arccw/fesiugmw2/atts/scopes/swavorski_lens_2b.mdl"
 att.Colorable = false
