@@ -239,6 +239,18 @@ SWEP.Attachments = {
         },
         Hidden = true,
     },
+    {
+        PrintName = "Charm",
+        Slot = "charm",
+        FreeSlot = true,
+        Bone = "tag_weapon",
+        Offset = {
+            vpos = Vector(3, -0.4, 0.5),
+            vang = Angle(0, 0, 0),
+            wpos = Vector(9.625, 2.5, -3.75),
+            wang = Angle(0, 0, 180)
+        },
+    },
 }
 
 SWEP.Hook_SelectReloadAnimation = function(wep, anim)
