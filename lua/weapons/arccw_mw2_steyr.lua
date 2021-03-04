@@ -125,29 +125,6 @@ SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 
 SWEP.BarrelLength = 27
 
-SWEP.AttachmentElements = {
-    ["norail"] = {
-        VMBodygroups = {{ind = 3, bg = 1}},
-    },
-    ["nors"] = {
-        VMBodygroups = {{ind = 2, bg = 1}},
-    },
-    ["optic_mw2_mp5krearsight"] = { VMBodygroups = {{ind = 2, bg = 0}} },
-    ["grip"] = { VMBodygroups = {{ind = 1, bg = 1}} },
-    ["wepcamo-desert"]		= { VMSkin = 1 },
-    ["wepcamo-arctic"]		= { VMSkin = 2 },
-    ["wepcamo-woodland"]	= { VMSkin = 3 },
-    ["wepcamo-digital"]		= { VMSkin = 4 },
-    ["wepcamo-urban"]		= { VMSkin = 5 },
-    ["wepcamo-bluetiger"]	= { VMSkin = 6 },
-    ["wepcamo-redtiger"]	= { VMSkin = 7 },
-    ["wepcamo-fall"]		= { VMSkin = 8 },
-    ["wepcamo-whiteout"]	= { VMSkin = 9 },
-    ["wepcamo-blackout"]        = { VMSkin = 10 },
-    ["wepcamo-bushdweller"]     = { VMSkin = 11 },
-    ["wepcamo-thunderstorm"]    = { VMSkin = 12 },
-}
-
 SWEP.ExtraSightDist = 5
 
 SWEP.Attachments = {
@@ -234,6 +211,41 @@ SWEP.Attachments = {
         Slot = "mw2_wepcamo",
         FreeSlot = true,
     },
+	{
+        PrintName = "Charm",
+        Slot = "charm",
+        FreeSlot = true,
+        Bone = "tag_weapon",
+        Offset = {
+            vpos = Vector(0, -0.8, 1),
+            vang = Angle(0, 0, 0),
+            wpos = Vector(9.625, 1.5, -4),
+            wang = Angle(0, 0, 180)
+        },
+    },
+}
+
+SWEP.AttachmentElements = {
+    ["norail"] = {
+        VMBodygroups = {{ind = 3, bg = 1}},
+    },
+    ["nors"] = {
+        VMBodygroups = {{ind = 2, bg = 1}},
+    },
+    ["optic_mw2_mp5krearsight"] = { VMBodygroups = {{ind = 2, bg = 0}} },
+    ["grip"] = { VMBodygroups = {{ind = 1, bg = 1}} },
+    ["wepcamo-desert"]		= { VMSkin = 1 },
+    ["wepcamo-arctic"]		= { VMSkin = 2 },
+    ["wepcamo-woodland"]	= { VMSkin = 3 },
+    ["wepcamo-digital"]		= { VMSkin = 4 },
+    ["wepcamo-urban"]		= { VMSkin = 5 },
+    ["wepcamo-bluetiger"]	= { VMSkin = 6 },
+    ["wepcamo-redtiger"]	= { VMSkin = 7 },
+    ["wepcamo-fall"]		= { VMSkin = 8 },
+    ["wepcamo-whiteout"]	= { VMSkin = 9 },
+    ["wepcamo-blackout"]        = { VMSkin = 10 },
+    ["wepcamo-bushdweller"]     = { VMSkin = 11 },
+    ["wepcamo-thunderstorm"]    = { VMSkin = 12 },
 }
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)
