@@ -216,6 +216,18 @@ SWEP.Attachments = {
         Slot = "mw2_wepcamo",
         FreeSlot = true,
     },
+	{
+        PrintName = "Charm",
+        Slot = "charm",
+        FreeSlot = true,
+        Bone = "tag_weapon",
+        Offset = {
+            vpos = Vector(4, -0.85, 0.1),
+            vang = Angle(0, 0, 0),
+            wpos = Vector(9.625, 1.5, -4),
+            wang = Angle(0, 0, 180)
+        },
+    },
 }
 
 SWEP.Animations = {
