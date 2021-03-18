@@ -164,7 +164,7 @@ function SWEP:Think()
 	self:SetInaccuracy( math.Clamp( self:GetInaccuracy() - (decay*idk) * FrameTime(), state, max ) )
 end
 SWEP.Hook_FireBullets = function(wep, bullet)
-	local ro = wep:GetInaccuracy() * self:GetBuff("AccuracyMOA")
+	local ro = wep:GetInaccuracy() * wep:GetBuff("AccuracyMOA")
 	bullet.Dir = wep:GetOwner():GetAimVector() + VectorRand(-ro/2, ro/2	)
 	--bullet.Spread = Vector(0, 0, 0)
 
