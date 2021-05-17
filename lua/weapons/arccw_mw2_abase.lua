@@ -184,9 +184,8 @@ function SWEP:SetupDataTables()
 end
 
 SWEP.Hook_DrawHUD = function(wep)
-    local mr = math.Round
-
     if true then return end
+    local mr = math.Round
 
     surface.SetFont("ArcCW_26")
     surface.SetTextColor(255, 255, 255, 255)

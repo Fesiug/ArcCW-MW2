@@ -39,8 +39,10 @@ SWEP.ExtendedClipSize = 6
 SWEP.ReducedClipSize = 2
 
 SWEP.VisualRecoilMult = 0
+SWEP.MaxRecoilBlowback = 0
 SWEP.Recoil = 5
 SWEP.RecoilSide = 1
+SWEP.RecoilPunch = 1
 
 SWEP.ShotgunReload = true
 
