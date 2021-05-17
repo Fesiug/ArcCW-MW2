@@ -110,8 +110,8 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.CustomizePos = Vector(10.479, 0, -3.321)
 SWEP.CustomizeAng = Angle(18.2, 39.4, 14.8)
 
-SWEP.HolsterPos = Vector(3, 0, 0)
-SWEP.HolsterAng = Angle(-10, 25, 0)
+SWEP.HolsterPos = Vector(1, 0, 1)
+SWEP.HolsterAng = Angle(-10, 12, 0)
 
 SWEP.SprintPos = Vector(0, 0, 1)
 SWEP.SprintAng = Angle(0, 0, 0)
