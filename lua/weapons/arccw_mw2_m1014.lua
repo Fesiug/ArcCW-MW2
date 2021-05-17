@@ -48,7 +48,6 @@ SWEP.ShotgunReload = true
 
 SWEP.Delay = 0.2 -- 60 / RPM.
 SWEP.Num = 8 -- number of shots per trigger pull.
-SWEP.RunawayBurst = false
 SWEP.Firemodes = {
     {
         Mode = 1,

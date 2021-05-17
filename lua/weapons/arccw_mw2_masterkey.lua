@@ -46,7 +46,6 @@ SWEP.ManualAction = true
 
 SWEP.Delay = 10/30 -- 60 / RPM.
 SWEP.Num = 6 -- number of shots per trigger pull.
-SWEP.RunawayBurst = false
 SWEP.Firemodes = {
     {
         PrintName = "PUMP",
