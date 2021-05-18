@@ -291,6 +291,16 @@ SWEP.Animations = {
         ShellEjectAt = 0,
     },
     ["reload"] = {
+        Source = "reload",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_lift_v1.wav", 		t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_clipout_v1.wav", 	t = 19/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_clipin_v1.wav", 		t = 66/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_hit_v1.wav", 		t = 75/30},
+					},
+    },
+    ["reload_empty"] = {
         Source = "reload_empty",
         Time = 113/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
@@ -301,7 +311,7 @@ SWEP.Animations = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_hit_v1.wav", 		t = 75/30},
 						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_chamber_v1.wav",		t = 86/30},
 					},
-    },
+    },	
 ------------------------------------------------
 ------ Here lies foregrip animations. awesome --
 ------------------------------------------------
@@ -355,6 +365,16 @@ SWEP.Animations = {
         ShellEjectAt = 0,
     },
     ["reload_fgrip"] = {
+        Source = "reload_fgrip",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_lift_v1.wav", 		t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_clipout_v1.wav", 	t = 19/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_clipin_v1.wav", 		t = 66/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_hit_v1.wav", 		t = 75/30},
+					},
+    },
+    ["reload_empty_fgrip"] = {
         Source = "reload_empty_fgrip",
         Time = 113/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
@@ -365,5 +385,5 @@ SWEP.Animations = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_hit_v1.wav", 		t = 75/30},
 						{s = "weapons/fesiugmw2/foley/wpfoly_sa80_reload_chamber_v1.wav",		t = 86/30},
 					},
-    },
+    },	
 }
