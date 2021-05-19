@@ -182,3 +182,13 @@ att.UBGL_Reload = function(wep, ubgl)
 
     wep:SetClip2(load)
 end
+
+att.Hook_GetHUDData = function( wep, data )
+    if ArcCW:ShouldDrawHUDElement("CHudAmmo") then
+        data.clip = wep:Clip2() .. " / " .. wep:Clip1()
+    else
+        data.clip = wep:Clip1() + wep:Clip2()
+    end
+    data.ubgl = nil
+    return data
+end
