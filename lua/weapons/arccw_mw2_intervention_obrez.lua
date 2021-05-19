@@ -21,7 +21,12 @@ SWEP.Slot = 1
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/arccw/fesiugmw2/c_intervention_obrez.mdl"
-SWEP.MirrorVMWM = false
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos = Vector(-6.5, 4, -6),
+    ang = Angle(-10, 0, 180),
+    scale = 1.125
+}
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
 SWEP.ViewModelFOV = 65
 
@@ -91,8 +96,8 @@ SWEP.IronSightStruct = {
 }
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "shotgun"
-SWEP.HoldtypeSights = "ar2"
+SWEP.HoldtypeActive = "ar2"
+SWEP.HoldtypeSights = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 

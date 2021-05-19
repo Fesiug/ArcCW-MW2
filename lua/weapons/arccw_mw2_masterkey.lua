@@ -21,7 +21,12 @@ SWEP.Slot = 1
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/arccw/fesiugmw2/c_mifl_masterkey_1.mdl"
-SWEP.MirrorVMWM = false
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos = Vector(-4, 3, -6),
+    ang = Angle(-10, 0, 180),
+    scale = 1.125
+}
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
 SWEP.ViewModelFOV = 65
 
@@ -57,7 +62,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.NPCWeaponType = "weapon_shotgun"
-SWEP.NPCWeight = 125
+SWEP.NPCWeight = 100
 
 SWEP.AccuracyMOA = 75 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 160 -- inaccuracy added by hip firing.

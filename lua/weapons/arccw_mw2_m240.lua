@@ -21,7 +21,12 @@ SWEP.Slot = 2
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/arccw/fesiugmw2_2/c_m240_1.mdl"
-SWEP.MirrorVMWM = false
+SWEP.MirrorVMWM = true
+SWEP.WorldModelOffset = {
+    pos = Vector(-6, 3, -6),
+    ang = Angle(-10, 0, 180),
+    scale = 1.125
+}
 SWEP.WorldModel = "models/weapons/w_mach_m249para.mdl"
 SWEP.ViewModelFOV = 65
 
@@ -56,7 +61,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.NPCWeaponType = {"weapon_ar2", "weapon_smg1"}
-SWEP.NPCWeight = 150
+SWEP.NPCWeight = 100
 
 SWEP.AccuracyMOA = 10 -- accuracy in Minutes of Angle. There are 60 MOA in a degree.
 SWEP.HipDispersion = 600 -- inaccuracy added by hip firing.
