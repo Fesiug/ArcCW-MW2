@@ -25,8 +25,8 @@ SWEP.MirrorVMWM = false
 SWEP.WorldModel = "models/weapons/w_shotgun.mdl"
 SWEP.ViewModelFOV = 80
 
-SWEP.Damage = 80
-SWEP.DamageMin = 120
+SWEP.Damage = 90
+SWEP.DamageMin = 130
 SWEP.Range = 90 -- in METRES
 SWEP.Penetration = 22
 
