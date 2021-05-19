@@ -1,4 +1,4 @@
-att.PrintName = "Akimbo M93 Raffica"
+att.PrintName = "M93 Raffica"
 att.Icon = Material("entities/acwatt_mw2_akimbo.png", "smooth")
 att.Description = "Wholy."
 att.Hidden = true
@@ -65,7 +65,6 @@ att.Hook_Think = function(wep)
         wep:SetNextSecondaryFire(CurTime() + postburst) end
     elseif wep:GetOwner():KeyPressed(IN_ATTACK2) then
         wep:SetInUBGL(false)
-        wep:PrimaryAttack()
     end
 
     if wep:Clip2() > 0 then

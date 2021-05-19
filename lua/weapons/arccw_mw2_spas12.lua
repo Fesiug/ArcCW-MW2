@@ -309,6 +309,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0.5,
         LHIKOut = 0,
+		MinProgress = 0.6,
     },
     ["sgreload_insert"] = {
         Source = "reload_loop",
@@ -319,6 +320,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0,
+		MinProgress = 1,
     },
     ["sgreload_finish"] = {
         Source = "reload_finish",

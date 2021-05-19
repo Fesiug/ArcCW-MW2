@@ -139,6 +139,7 @@ SWEP.Attachments = {
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
+        ExcludeFlags = {"arcticfixyoshit1","cantuseshitinakimboyet"},
         InstalledEles = {"nors"},
     },
     {
@@ -152,6 +153,7 @@ SWEP.Attachments = {
             wpos = Vector(26.648, 0.782, -8.042),
             wang = Angle(-9.79, 0, 180)
         },
+        ExcludeFlags = {"arcticfixyoshit1","cantuseshitinakimboyet"},
     },
     {
         PrintName = "Underbarrel",
@@ -167,6 +169,7 @@ SWEP.Attachments = {
             vmin = Vector(-3, 0, -0.7),
             vmax = Vector(2, 0, -0.7),
         },
+        MergeSlots = {7},
     },
     {
         PrintName = "Tactical",
@@ -188,6 +191,17 @@ SWEP.Attachments = {
         PrintName = "Perk",
         Slot = "perk"
     },
+    {
+        PrintName = "Akimbotest",
+        DefaultAttName = "No LH",
+        Slot = "akimbotest",
+        Bone = "tag_view",
+        Offset = {
+            vpos = Vector(0, 0, 0),
+            vang = Angle(0, 0, 0),
+        },
+        Hidden = true,
+    },
 	{
         PrintName = "Charm",
         Slot = "charm",
@@ -201,6 +215,17 @@ SWEP.Attachments = {
         },
     },
 }
+
+SWEP.Hook_SelectReloadAnimation = function(wep, anim)
+    if wep.Attachments[7].Installed then
+        return anim .. "_akimbo_right"
+    end
+end
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+    if wep.Attachments[7].Installed then
+        return anim .. "_akimbo_right"
+    end
+end
 
 SWEP.Animations = {
     ["idle"] = {
@@ -251,6 +276,52 @@ SWEP.Animations = {
         LHIKIn = 0.3,
         LHIKOut = 0.4,
         LHIKEaseOut = 0.3
+    },
+-- akimbo
+    ["idle_akimbo_right"] = {
+        Source = "idle_r",
+        Time = 1/30,
+    },
+    ["enter_sprint_akimbo_right"] = {
+        Source = "sprint_in_r",
+        Time = 10/30
+    },
+    ["idle_sprint_akimbo_right"] = {
+        Source = "sprint_loop_r",
+        Time = 30/40
+    },
+    ["exit_sprint_akimbo_right"] = {
+        Source = "sprint_out_r",
+        Time = 10/30
+    },
+    ["draw_akimbo_right"] = {
+        Source = "pullout_r",
+        Time = 25/30,
+        SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+    },
+    ["holster_akimbo_right"] = {
+        Source = "putaway_r",
+        Time = 25/30,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.9,
+    },
+    ["fire_akimbo_right"] = {
+        Source = "fire_r",
+        Time = 12/30,
+    },
+    ["reload_akimbo_right"] = {
+        Source = "reload_mp_r",
+        Time = 120/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
+        SoundTable = {
+            {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_lift_v1.wav", 		t = 0.01},
+            {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clipout_v1.wav", 		t = 12/30},
+            {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clip1in_v1.wav", 		t = 53/30},
+            {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clip2in_v1.wav", 		t = 70/30},
+            {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_chamber_v1.wav", 		t = 106/30},
+        },
+		MinProgress = 1.549,
     },
 }
 

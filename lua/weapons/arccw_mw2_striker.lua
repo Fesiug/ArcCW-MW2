@@ -282,6 +282,7 @@ SWEP.Animations = {
                         {s = "weapons/fesiugmw2/foley/wpfoly_striker_reload_button_v1.wav", 		t = 36/40},
                     },
 		RestoreAmmo = 1, -- only used by shotgun empty insert reload
+		MinProgress = 0.85,
     },
     ["sgreload_insert"] = {
         Source = "reload_loop",
@@ -292,6 +293,7 @@ SWEP.Animations = {
                         {s = "weapons/fesiugmw2/foley/wpfoly_striker_reload_button_v1.wav", 		t = 19/40},
                     },
         TPAnimStartTime = 0.3,
+		MinProgress = 0.3,
     },
     ["sgreload_finish"] = {
         Source = "reload_finish",

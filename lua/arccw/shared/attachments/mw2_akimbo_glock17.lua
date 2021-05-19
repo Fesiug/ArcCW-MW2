@@ -1,4 +1,4 @@
-att.PrintName = "Akimbo G17"
+att.PrintName = "G17"
 att.Icon = Material("entities/acwatt_mw2_akimbo.png", "smooth")
 att.Description = "Wholy."
 att.Hidden = false
@@ -54,7 +54,6 @@ att.Hook_Think = function(wep)
         wep:Reload()
     elseif wep:GetOwner():KeyPressed(IN_ATTACK) then
         wep:SetInUBGL(false)
-        wep:PrimaryAttack()
     elseif wep:GetOwner():KeyPressed(IN_ATTACK2) then
         wep:SetInUBGL(true)
         wep:ShootUBGL()

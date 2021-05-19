@@ -12,3 +12,7 @@ att.Free = true
 att.ActivateElements = {"wepcamo-ak47_cod4","altirons"}
 
 att.SortOrder = 20 *-1
+
+att.Hook_GetShootSound = function(wep, sound)
+    if sound == "weapons/fesiugmw2/fire/ak47.wav" then return "weapons/fesiugmw2/organizelater/weap_ak47_slst_3.wav" end
+end

@@ -1,4 +1,4 @@
-att.PrintName = "Desert Eagle"
+att.PrintName = "Striker"
 att.Icon = Material("entities/acwatt_mw2_akimbo.png", "smooth")
 att.Description = "Wholy."
 att.Hidden = false
@@ -23,7 +23,7 @@ att.AddSuffix = " + Desert Eagle"
 
 att.MountPositionOverride = 0
 
-att.Model = "models/weapons/arccw/fesiugmw2/akimbo/c_desert_eagle_left_2.mdl"
+att.Model = "models/weapons/arccw/fesiugmw2_2/c_ranger_2.mdl"
 
 
 att.LHIK = true
@@ -34,14 +34,14 @@ att.UBGL = true
 
 att.UBGL_PrintName = "AKIMBO"
 att.UBGL_Automatic = false
-att.UBGL_MuzzleEffect = "muzzleflash_4"
-att.UBGL_ClipSize = 7
-att.UBGL_Ammo = "357"
-att.UBGL_RPM = 60 / 0.079
-att.UBGL_Recoil = 1
-att.UBGL_RecoilSide = 1
+att.UBGL_MuzzleEffect = "muzzleflash_m3"
+att.UBGL_ClipSize = 2
+att.UBGL_Ammo = "Buckshot"
+att.UBGL_RPM = 60 / 0.009
+att.UBGL_Recoil = 3
+att.UBGL_RecoilSide = 2
 att.UBGL_RecoilRise = 0
-att.UBGL_Capacity = 7
+att.UBGL_Capacity = 2
 
 att.Hook_ShouldNotSight = function(wep)
     return true
@@ -62,42 +62,44 @@ att.Hook_Think = function(wep)
 end
 
 att.Hook_TranslateSequence = function(wep, anim)
-    local awesome-- = wep:GetAnimKeyTime(anim)
-    local playanim = nil
+end
 
-    -- i fucking hate it! i really do why the fuck it so nastyy
-    -- need to find a way to fix this disaster
+local awesomelist = {
+    ["sprint_in_r"] = {
+        time = 10/30,
+        anim = "sprint_in_l",
+    },
+    ["sprint_out_r"] = {
+        time = 10/30,
+        anim = "sprint_out_l",
+    },
+    ["sprint_loop_r"] = {
+        time = 30/40,
+        anim = "sprint_loop_l",
+    },
+    ["pullout_r"] = {
+        time = 12/30,
+        anim = "pullout_l",
+    },
+    ["putaway_r"] = {
+        time = 23/30,
+        anim = "putaway_l",
+    },
+}
 
-    if anim == "sprint_in_akimbo_right" then
-        awesome = 11/30
-        playanim = "sprint_in"
-    elseif anim == "sprint_out_akimbo_right" then
-        awesome = 11/30
-        playanim = "sprint_out"
-    elseif anim == "sprint_loop_akimbo_right" then
-        awesome = 31/40
-        playanim = "sprint_loop"
-    elseif anim == "pullout_akimbo_right" then
-        awesome = 26/30 /4
-        playanim = "pullout"
-    elseif anim == "putaway_akimbo_right" then
-        awesome = 26/30 /4
-        playanim = "putaway"
-    end
-
-    if playanim then
-        wep:DoLHIKAnimation(playanim, awesome)
+att.Hook_TranslateSequence = function(wep, anim)
+    if awesomelist[anim] then
+        local bab = awesomelist[anim]
+        wep:DoLHIKAnimation(bab.anim, bab.time)
     end
 end
 
 att.Hook_LHIK_TranslateAnimation = function(wep, anim)
-    if anim == "idle" and wep:Clip2() <= 0 then
-        return "idle_empty"
-    end
+    if anim == "idle" then return "idle_l" end
 end
 
 local function Ammo(wep)
-    return wep.Owner:GetAmmoCount("357") -- att.UBGL_Ammo
+    return wep.Owner:GetAmmoCount("Buckshot") -- att.UBGL_Ammo
 end
 
 att.UBGL_Fire = function(wep, ubgl)
@@ -108,8 +110,8 @@ att.UBGL_Fire = function(wep, ubgl)
 
     wep.Owner:FireBullets({
 		Src = wep.Owner:EyePos(),
-		Num = 1,
-		Damage = 40,
+		Num = 6,
+		Damage = 75,
 		Force = 1,
 		Attacker = wep.Owner,
 		Dir = wep.Owner:EyeAngles():Forward(),
@@ -117,8 +119,8 @@ att.UBGL_Fire = function(wep, ubgl)
 		Callback = function(_, tr, dmg)
 			local dist = (tr.HitPos - tr.StartPos):Length() * ArcCW.HUToM
 
-			local dmgmax = 40
-			local dmgmin = 20
+			local dmgmax = 75
+			local dmgmin = 35
 
 			local delta = dist / 800 * 0.025
 
@@ -129,7 +131,7 @@ att.UBGL_Fire = function(wep, ubgl)
 			dmg:SetDamage(amt)
 		end
 	})
-    wep:EmitSound("weapons/fesiugmw2/fire/deagle.wav", 130, 115 * math.Rand(1 - 0.05, 1 + 0.05))
+    wep:EmitSound("weapons/fesiugmw2/fire/shot_ranger.wav", 130, 115 * math.Rand(1 - 0.05, 1 + 0.05))
                             -- This is kinda important
                                             -- Wep volume
                                                     -- Weapon pitch (along with the pitch randomizer)
@@ -139,11 +141,7 @@ att.UBGL_Fire = function(wep, ubgl)
 
     wep:SetClip2(wep:Clip2() - 1)
     
-    if wep:Clip2() > 0 then
-        wep:DoLHIKAnimation("fire", 16/30)
-    else
-        wep:DoLHIKAnimation("fire_last", 16/30)
-    end
+    wep:DoLHIKAnimation("fire_l", 16/30)
 
     wep:DoEffects()
 end
@@ -151,28 +149,21 @@ end
 att.UBGL_Reload = function(wep, ubgl)
     wep:Reload()
 
-    local clip = 7
+    local clip = 2
     
     if wep:Clip2() >= clip then return end -- att.UBGL_Capacity
 
     if Ammo(wep) <= 0 then return end
 
-    if wep:Clip2() <= 0 then
-        wep:DoLHIKAnimation("reload_empty", 63/30)
-        wep:SetNextSecondaryFire(CurTime() + 63/30)
-        wep:PlaySoundTable({
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav",  	t = 39/30},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_chamber_v1.wav", 	t = 48/30},
-        })
-    else
-        wep:DoLHIKAnimation("reload", 59/30)
-        wep:SetNextSecondaryFire(CurTime() + 59/30)
-        wep:PlaySoundTable({
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav", 	    t = 39/30},
-        })
-    end
+    wep:DoLHIKAnimation("reload_mp_l", 120/30)
+    wep:SetNextSecondaryFire(CurTime() + 120/30)
+    wep:PlaySoundTable({
+        {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_lift_v1.wav", 		t = 0.01},
+        {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clipout_v1.wav", 		t = 12/30},
+        {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clip1in_v1.wav", 		t = 53/30},
+        {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clip2in_v1.wav", 		t = 70/30},
+        {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_chamber_v1.wav", 		t = 106/30},
+    })
 
     local reserve = Ammo(wep)
 
@@ -180,7 +171,7 @@ att.UBGL_Reload = function(wep, ubgl)
 
     local load = math.Clamp(clip, 0, reserve)
 
-    wep.Owner:SetAmmo(reserve - load, "357") -- att.UBGL_Ammo
+    wep.Owner:SetAmmo(reserve - load, "Buckshot") -- att.UBGL_Ammo
 
     wep:SetClip2(load)
 end

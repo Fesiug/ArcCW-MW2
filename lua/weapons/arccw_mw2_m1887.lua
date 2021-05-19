@@ -138,10 +138,11 @@ SWEP.Attachments = {
         Slot = "optic",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(2, 0, 2.35),
+            vpos = Vector(8, 0, 2.95),
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
         },
+        ExcludeFlags = {"arcticfixyoshit1","cantuseshitinakimboyet"},
         InstalledEles = {"nors"},
     },
     {
@@ -155,6 +156,7 @@ SWEP.Attachments = {
             wpos = Vector(26.648, 0.782, -8.042),
             wang = Angle(-9.79, 0, 180)
         },
+        ExcludeFlags = {"arcticfixyoshit1","cantuseshitinakimboyet"},
     },
     {
         PrintName = "Underbarrel",
@@ -170,6 +172,7 @@ SWEP.Attachments = {
             vmin = Vector(6, 0, 0.5),
             vmax = Vector(12, 0, 0.5),
         },
+        MergeSlots = {7},
     },
     {
         PrintName = "Tactical",
@@ -192,10 +195,15 @@ SWEP.Attachments = {
         Slot = "perk"
     },
     {
-        PrintName = "Camouflage",
-        DefaultAttName = "None",
-        Slot = "mw2_wepcamo",
-        FreeSlot = true,
+        PrintName = "Akimbotest",
+        DefaultAttName = "No LH",
+        Slot = "akimbotest",
+        Bone = "tag_view",
+        Offset = {
+            vpos = Vector(0, 0, 0),
+            vang = Angle(0, 0, 0),
+        },
+        Hidden = true,
     },
 	{
         PrintName = "Charm",
@@ -210,6 +218,17 @@ SWEP.Attachments = {
         },
     },
 }
+
+SWEP.Hook_SelectReloadAnimation = function(wep, anim)
+    if wep.Attachments[7].Installed then
+        return anim .. "_akimbo_right"
+    end
+end
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+    if wep.Attachments[7].Installed then
+        return anim .. "_akimbo_right"
+    end
+end
 
 SWEP.Animations = {
     ["idle"] = {
@@ -290,6 +309,7 @@ SWEP.Animations = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_open_v1.wav", 	t = 8/30},
 						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_shell_v1.wav", 	t = 53/30},
 					},
+		MinProgress = 1.45,
     },
     ["sgreload_insert"] = {
         Source = "reload_loop",
@@ -297,6 +317,7 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
         SoundTable = {{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_shell_v1.wav", 		t = 27/40}},
         TPAnimStartTime = 0.3,
+		MinProgress = 0.6,
     },
     ["sgreload_finish"] = {
         Source = "reload_finish",
@@ -305,8 +326,82 @@ SWEP.Animations = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_close_v1.wav", 	t = 15/30},
 					},
     },
-    ["sgreload_finish_empty"] = {
-        Source = "reload_finish",
+-- akimbo
+    ["idle_akimbo_right"] = {
+        Source = "idle_r",
+        Time = 1/30,
+    },
+    ["enter_sprint_akimbo_right"] = {
+        Source = "sprint_in_r",
+        Time = 10/30
+    },
+    ["idle_sprint_akimbo_right"] = {
+        Source = "sprint_loop_r",
+        Time = 30/40
+    },
+    ["exit_sprint_akimbo_right"] = {
+        Source = "sprint_out_r",
+        Time = 10/30
+    },
+    ["ready_akimbo_right"] = {
+        Source = "pullout_first_r",
+        Time = 47/30,
+        SoundTable = {
+                        {s = "MW2Common.Deploy",                                            t = 0},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_lift_v1.wav", 	t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_open_v1.wav", 	t = 7/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_close_v1.wav", 	t = 23/30},
+					},
+    },
+    ["draw_akimbo_right"] = {
+        Source = "pullout_r",
+        Time = 25/30,
+        SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+    },
+    ["holster_akimbo_right"] = {
+        Source = "putaway_r",
+        Time = 25/30,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0.9,
+    },
+    ["fire_akimbo_right"] = {
+        Source = "fire_r",
+        Time = 12/30,
+		MinProgress = 0.433,
+    },
+    ["cycle_akimbo_right"] = {
+        Source = "rechamber_r",
+        Time = 35/30,
+		MinProgress = 0.85,
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_lift_v1.wav", 	t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_open_v1.wav", 	t = 6/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_close_v1.wav", 	t = 16/30},
+					},
+    },
+    ["sgreload_start_akimbo_right"] = {
+        Source = "reload_start_r",
+        Time = 59/30,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
+		RestoreAmmo = 1, -- loads a shell since the first reload has a shell in animation
+        SoundTable = {
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_lift_v1.wav", 	t = 0/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_open_v1.wav", 	t = 14/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_shell_v1.wav", 	t = 54/30},
+					},
+		MinProgress = 1.45,
+    },
+    ["sgreload_insert_akimbo_right"] = {
+        Source = "reload_loop_r",
+        Time = 33/40,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
+        SoundTable = {{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_shell_v1.wav", 		t = 18/40}},
+        TPAnimStartTime = 0.3,
+		MinProgress = 0.6,
+    },
+    ["sgreload_finish_akimbo_right"] = {
+        Source = "reload_finish_r",
         Time = 41/30,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_close_v1.wav", 	t = 15/30},
