@@ -52,7 +52,6 @@ att.Hook_Think = function(wep)
     if wep:GetOwner():KeyPressed(IN_RELOAD) then
         wep:SetInUBGL(false)
         wep:ReloadUBGL()
-        wep:Reload()
     elseif wep:GetOwner():KeyPressed(IN_ATTACK) then
         wep:SetInUBGL(false)
     elseif wep:GetOwner():KeyPressed(IN_ATTACK2) then

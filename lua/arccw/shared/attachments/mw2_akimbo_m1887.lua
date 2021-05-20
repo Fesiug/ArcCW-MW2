@@ -49,7 +49,8 @@ end
 
 att.Hook_Think = function(wep)
 
-	if wep:GetMW2Masterkey_NeedPump() and wep:GetMW2Masterkey_ReloadingTimer() <= CurTime() and wep:Clip2() > 0 and !wep:GetMW2Masterkey_Reloading() and !wep.Owner:KeyDown(IN_ATTACK2) then
+    -- and wep:Clip2() > 0
+	if wep:GetMW2Masterkey_NeedPump() and wep:GetMW2Masterkey_ReloadingTimer() <= CurTime() and !wep:GetMW2Masterkey_Reloading() and !wep.Owner:KeyDown(IN_ATTACK2) then
         wep:DoLHIKAnimation("rechamber_l", 35/30)
 		--wep:SetReloading(CurTime() + 0.85)
 		wep:SetNextSecondaryFire(CurTime() + 0.85)
@@ -76,7 +77,6 @@ att.Hook_Think = function(wep)
     if wep:GetOwner():KeyPressed(IN_RELOAD) then
         wep:SetInUBGL(false)
         wep:ReloadUBGL()
-        wep:Reload()
     elseif wep:GetOwner():KeyPressed(IN_ATTACK) then
         wep:SetInUBGL(false)
     elseif wep:GetOwner():KeyPressed(IN_ATTACK2) then
@@ -172,6 +172,7 @@ att.UBGL_Fire = function(wep, ubgl)
 end
 
 att.UBGL_Reload = function(wep, ubgl)
+    wep:SetInUBGL(false)
     wep:Reload()
 
 	if wep:Clip2() >= 7 then return end
