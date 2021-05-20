@@ -1,4 +1,4 @@
-att.PrintName = "Striker"
+att.PrintName = "Ranger"
 att.Icon = Material("entities/acwatt_mw2_akimbo.png", "smooth")
 att.Description = "Wholy."
 att.Hidden = false
@@ -19,7 +19,7 @@ att.GivesFlags = {"cantuseshitinakimboyet"}
 
 att.SortOrder = 1738
 
-att.AddSuffix = " + Desert Eagle"
+att.AddSuffix = " + Ranger"
 
 att.MountPositionOverride = 0
 

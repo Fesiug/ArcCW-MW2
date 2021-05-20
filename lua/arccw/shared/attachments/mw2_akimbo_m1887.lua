@@ -19,7 +19,7 @@ att.GivesFlags = {"cantuseshitinakimboyet"}
 
 att.SortOrder = 1738
 
-att.AddSuffix = " + Desert Eagle"
+att.AddSuffix = " + Model 1887"
 
 att.MountPositionOverride = 0
 
@@ -108,9 +108,11 @@ local awesomelist = {
     },
 }
 
-att.Hook_TranslateSequence = function(wep, anim)
+att.Hook_TranslateSequence = function(wep, anim)    
+    if anim != "idle_r" then print(anim) end
     if awesomelist[anim] then
         local bab = awesomelist[anim]
+        PrintTable(bab)
         wep:DoLHIKAnimation(bab.anim, bab.time)
     end
 end

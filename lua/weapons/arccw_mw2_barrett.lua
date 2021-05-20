@@ -59,7 +59,7 @@ SWEP.Firemodes = {
     }
 }
 
-SWEP.NPCWeaponType = {"weapon_annabelle", "weapon_shotgun"}
+SWEP.NPCWeaponType = {"weapon_crossbow"}
 SWEP.NPCWeight = 100
 
 SWEP.Primary.Ammo = "SniperPenetratedRound" -- what ammo type the gun uses

@@ -134,6 +134,10 @@ function SWEP:GetDispersion()
 	return 0
 end
 function SWEP:Think()
+    if IsValid(self:GetOwner()) and self:GetClass() == "arccw_mw2_abase" then
+        self:Remove()
+        return
+    end
 	BaseClass.Think( self )
     local InADS = 1 - self:GetSightDelta()
     local InHip = self:GetSightDelta()
