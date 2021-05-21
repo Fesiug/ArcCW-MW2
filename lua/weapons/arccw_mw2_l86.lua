@@ -151,6 +151,7 @@ SWEP.AttachmentElements = {
 }
 
 SWEP.ExtraSightDist = 5
+SWEP.Bipod_Integral = true
 
 SWEP.Attachments = {
     {
