@@ -4,7 +4,7 @@ SWEP.Category = "ArcCW - MW2 - Unofficial"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
-SWEP.PrintName = "SCAR-L"
+SWEP.PrintName = "SCAR-LOS"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Fully automatic, all purpose weapon."
 
