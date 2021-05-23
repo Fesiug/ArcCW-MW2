@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
 SWEP.Spawnable = true
-SWEP.Category = "ArcCW - MW2"
+SWEP.Category = "ArcCW - MW2 - Unofficial"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -48,7 +48,7 @@ SWEP.Recoil = 0.4
 SWEP.RecoilSide = 0.35
 SWEP.RecoilRise = 0
 
-SWEP.Delay = 0.067 -- 60 / RPM.
+SWEP.Delay = 0.08 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
@@ -174,7 +174,7 @@ SWEP.Attachments = {
         Slot = "muzzle",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(11, 0, 1.9),
+            vpos = Vector(15, 0, 1.9),
             vang = Angle(0, 0, 0),
             wpos = Vector(12.057, 4.317, -3.858),
             wang = Angle(-3.074, -23.004, 0)
@@ -192,7 +192,7 @@ SWEP.Attachments = {
         },
         SlideAmount = {
             vmin = Vector(7, 0, 1),
-            vmax = Vector(9, 0, 1),
+            vmax = Vector(12.5, 0, 1.5),
         },
     },
     {

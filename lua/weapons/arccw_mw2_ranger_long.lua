@@ -1,10 +1,10 @@
 SWEP.Base = "arccw_mw2_abase"
 SWEP.Spawnable = true
-SWEP.Category = "ArcCW - MW2"
+SWEP.Category = "ArcCW - MW2 - Unofficial"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
-SWEP.PrintName = "Long Ranger"
+SWEP.PrintName = "Ranger Lockpick"
 SWEP.Trivia_Class = "Shotgun"
 SWEP.Trivia_Desc = "Break action."
 

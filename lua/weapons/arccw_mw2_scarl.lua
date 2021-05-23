@@ -1,6 +1,6 @@
 SWEP.Base = "arccw_mw2_abase"
 SWEP.Spawnable = true
-SWEP.Category = "ArcCW - MW2"
+SWEP.Category = "ArcCW - MW2 - Unofficial"
 SWEP.AdminOnly = false
 SWEP.WeaponCamBone = tag_camera
 
@@ -48,7 +48,7 @@ SWEP.Recoil = 0.4
 SWEP.RecoilSide = 0.3
 SWEP.RecoilRise = 0
 
-SWEP.Delay = 0.076 -- 60 / RPM.
+SWEP.Delay = 0.082 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
