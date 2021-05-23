@@ -72,7 +72,7 @@ SWEP.Primary.Ammo = "buckshot" -- what ammo type the gun uses
 SWEP.ShootVol = 120 -- volume of shoot sound
 SWEP.ShootPitch = 110 -- pitch of shoot sound
 
-SWEP.ShootSound =			"weapons/fesiugmw2/fire/shot_ranger.wav"
+SWEP.ShootSound =			"weapons/fesiugmw2/fire/longranger.wav"
 --SWEP.DistantShootSound =	"weapons/fesiugmw2/fire_distant/shot_ranger.wav"
 SWEP.ShootSoundSilenced =	"weapons/fesiugmw2/fire/shot_sil.wav"
 
@@ -174,7 +174,7 @@ SWEP.Attachments = {
             vmin = Vector(-3, 0, -0.7),
             vmax = Vector(2, 0, -0.7),
         },
-        MergeSlots = {7},
+    ----MergeSlots = {7},
     },
     {
         PrintName = "Tactical",

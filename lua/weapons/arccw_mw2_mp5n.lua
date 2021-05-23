@@ -74,11 +74,11 @@ SWEP.Primary.Ammo = "pistol" -- what ammo type the gun uses
 SWEP.ShootVol = 110 -- volume of shoot sound
 SWEP.ShootPitch = 95 -- pitch of shoot sound
 
-SWEP.ShootSound =			"weapons/fesiugmw2/fire/mp5.wav"
+SWEP.ShootSound =			"weapons/fesiugmw2/fire/mp5n.wav"
 SWEP.ShootMechSound =       ArcCW_MW2_Mech
 --SWEP.DistantShootSound =	"weapons/fesiugmw2/fire_distant/mp5.wav"
 SWEP.ShootDrySound =        "weapons/fesiugmw2/fire/dryfire_smg.wav"
-SWEP.ShootSoundSilenced =	"weapons/fesiugmw2/fire/mp5_sil.wav"
+SWEP.ShootSoundSilenced =	"weapons/fesiugmw2/fire/mp5n_sil.wav"
 
 SWEP.MuzzleEffect = "muzzleflash_smg"
 SWEP.ShellModel = "models/shells/shell_9mm.mdl"
@@ -317,10 +317,10 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG1,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_lift_v1.wav", 	t = 0/30},		
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_chamber_v1.wav", 	t = 11/30},		
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipout_v1.wav", 	t = 28/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_chamber_v1.wav", 	t = 9/30},		
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipout_v1.wav", 	t = 27/30},
 						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipin_v1.wav", 	t = 64/30},
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_hit_v1.wav", 	t = 82/30},						
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_hit_v1.wav", 	t = 80/30},					
 					},
         LHIK = true,
         LHIKIn = 0.3,
@@ -399,10 +399,10 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG1,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_lift_v1.wav", 	t = 0/30},		
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_chamber_v1.wav", 	t = 11/30},		
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipout_v1.wav", 	t = 28/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_chamber_v1.wav", 	t = 9/30},		
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipout_v1.wav", 	t = 27/30},
 						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipin_v1.wav", 	t = 64/30},
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_hit_v1.wav", 	t = 82/30},						
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_hit_v1.wav", 	t = 80/30},						
 					},
         LHIK = true,
         LHIKIn = 0.3,
