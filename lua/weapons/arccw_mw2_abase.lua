@@ -80,7 +80,7 @@ SWEP.Inaccuracy_Hip_Decay_Stand	= 4
 SWEP.Inaccuracy_Hip_Decay_Duck	= 1.05
 SWEP.Inaccuracy_Hip_Decay_Prone	= 1.1
 
-local idk = 1/45
+local idk = 1/45*2
 
 DEFINE_BASECLASS("arccw_base")
 
@@ -158,8 +158,8 @@ function SWEP:Think()
 	local maxspeed = Owner:GetWalkSpeed() * self:GetBuff("SpeedMult")
 	speed = math.Clamp(speed / maxspeed, 0, 1)
 
-	state = state + ( speed * self.Inaccuracy_Add_Move )
-	max = max + ( speed * self.Inaccuracy_Add_Move )
+	state = state + ( speed * self.Inaccuracy_Add_Move * FrameTime() )
+	max = max + ( speed * self.Inaccuracy_Add_Move * FrameTime() )
 
 	state = ( ( state * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
 	max = ( ( max * self:GetBuff_Mult("Mult_HipDispersion") * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
@@ -284,6 +284,7 @@ function SWEP:DoDrawCrosshair(x, y)
 			* (GetConVar("arccw_crosshair_static"):GetBool() and 0.25 or math.Clamp(self:GetInaccuracy() * 10, 0.1, 100))
 			* GetConVar("arccw_crosshair_gap"):GetFloat()
 	gap = gap + ScreenScale(8) * math.Clamp(self.RecoilAmount, 0, 1)
+    gap = gap / 2
 
 	local prong = ScreenScale(prong_len)
 	local p_w = ScreenScale(prong_wid)

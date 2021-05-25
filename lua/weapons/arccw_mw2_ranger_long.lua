@@ -30,10 +30,10 @@ SWEP.WorldModelOffset = {
 SWEP.WorldModel = "models/weapons/w_shotgun.mdl"
 SWEP.ViewModelFOV = 65
 
-SWEP.Damage = 120
-SWEP.DamageMin = 45
-SWEP.Range = 400 * 0.025  -- GAME UNITS * 0.025 = METRES
-SWEP.RangeMin = 200 * 0.025  -- GAME UNITS * 0.025 = METRES
+SWEP.Damage = 50
+SWEP.DamageMin = 25
+SWEP.Range = 800 * 0.025  -- GAME UNITS * 0.025 = METRES
+SWEP.RangeMin = 400 * 0.025  -- GAME UNITS * 0.025 = METRES
 SWEP.Penetration = 1
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil -- entity to fire, if any
@@ -45,11 +45,11 @@ SWEP.ExtendedClipSize = 2
 SWEP.ReducedClipSize = 2
 
 SWEP.VisualRecoilMult = 0
-SWEP.Recoil = 6
-SWEP.RecoilSide = 4
+SWEP.Recoil = 4
+SWEP.RecoilSide = 3
 
 SWEP.Delay = 0.009 -- 60 / RPM.
-SWEP.Num = 8 -- number of shots per trigger pull.
+SWEP.Num = 6 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
         Mode = 1,
@@ -334,7 +334,7 @@ SWEP.Animations = {
 
 -- notverycreativenowarewe
 local nvcnaw = 7
-local nvcnaw2 = 5
+local nvcnaw2 = 3.5
 
  -- hipfire
  -- maximum accuracy
