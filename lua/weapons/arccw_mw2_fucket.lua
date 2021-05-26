@@ -115,9 +115,6 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.HolsterPos = Vector(1, 0, 1)
 SWEP.HolsterAng = Angle(-10, 12, 0)
 
-SWEP.SprintPos = Vector(0, 0, 1)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.BarrelOffsetSighted = Vector(0, 0, -1)
 SWEP.BarrelOffsetHip = Vector(2, 0, -2)
 
@@ -283,19 +280,19 @@ sound.Add({
 	name = 			"ArcCW_FML_MW2R_Musket_Open.1",
 	channel = 		CHAN_ITEM,
 	volume = 		1.0,
-	sound = 			"weapons/fesiugmw2/fleshymusket/open.wav"
+	sound = 			"weapons/fesiugmw2/unofficial/fleshymusket/open.wav"
 })
 
 sound.Add({
 	name = 			"ArcCW_FML_MW2R_Musket_In.1",
 	channel = 		CHAN_ITEM,
 	volume = 		1.0,
-	sound = 			"weapons/fesiugmw2/fleshymusket/insert.wav"
+	sound = 			"weapons/fesiugmw2/unofficial/fleshymusket/insert.wav"
 })
 
 sound.Add({
 	name = 			"ArcCW_FML_MW2R_Musket_Close.1",
 	channel = 		CHAN_ITEM,
 	volume = 		1.0,
-	sound = 			"weapons/fesiugmw2/fleshymusket/close.wav"
+	sound = 			"weapons/fesiugmw2/unofficial/fleshymusket/close.wav"
 })
