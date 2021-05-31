@@ -261,9 +261,6 @@ SWEP.Animations = {
         Source = "pullout",
         Time = 41/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.35,
     },
     ["holster"] = {
         Source = "putaway",
@@ -322,9 +319,6 @@ SWEP.Animations = {
         Source = "pullout_grip",
         Time = 41/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.35,
     },
     ["holster_grip"] = {
         Source = "putaway_grip",
