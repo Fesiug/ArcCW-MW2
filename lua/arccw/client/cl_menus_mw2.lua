@@ -1,7 +1,7 @@
 -- stole yo shit
 
 hook.Add( "PopulateToolMenu", "ArcCW_MW2_Options", function()
-    spawnmenu.AddToolMenuOption( "Utilities", "ArcCW", "ArcCW_MW2_Options", "MW2", "", "", ArcCW_MW2_Options)
+    spawnmenu.AddToolMenuOption( "Options", "ArcCW", "ArcCW_MW2_Options", "MW2", "", "", ArcCW_MW2_Options)
 end )
 
 function ArcCW_MW2_Options( CPanel )
