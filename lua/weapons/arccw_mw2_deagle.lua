@@ -493,6 +493,7 @@ SWEP.Animations = {
     ["reload_akimbo_right"] = {
         Source = "reload_akimbo_right",
         Time = 58/30,
+        MinProgress = 1.429,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
@@ -502,6 +503,7 @@ SWEP.Animations = {
     ["reload_empty_akimbo_right"] = {
         Source = "reload_empty_akimbo_right",
         Time = 63/30,
+        MinProgress = 1.429,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},

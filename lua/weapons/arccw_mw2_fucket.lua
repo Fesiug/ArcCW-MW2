@@ -6,7 +6,7 @@ SWEP.WeaponCamBone = tag_camera
 
 SWEP.PrintName = "Fucket"
 SWEP.Trivia_Class = "Sniper Rifle"
-SWEP.Trivia_Desc = "Break-action double-barrel musket.\n\nAn 8Z moment."
+SWEP.Trivia_Desc = "Break-action double-barrel musket.\nUnofficial.\nAn 8Z moment."
 
 if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
 SWEP.Trivia_Manufacturer = "Musketeer with a time machine"

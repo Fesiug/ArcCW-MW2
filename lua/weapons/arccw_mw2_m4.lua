@@ -264,21 +264,28 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 		elseif 	attached == "mw2_ubgl_masterkey" 	then attthing = 2
 		else 											 attthing = 0
 	end
+    
+    local aplay = nil
 	
 	-- when entering ubgl
 	if anim == "enter_ubgl" then
 		if attthing == 1 then
-			return "switch2_alt_m203"
+			aplay = "switch2_alt_m203"
 		elseif attthing == 2 then
-			return "switch2_alt_masterkey"
+			aplay = "switch2_alt_masterkey"
 		end
 	elseif anim == "exit_ubgl" then
 		if attthing == 1 then
-			return "switch2_gun_m203"
+			aplay = "switch2_gun_m203"
 		elseif attthing == 2 then
-			return "switch2_gun_masterkey"
+			aplay = "switch2_gun_masterkey"
 		end
 	end
+
+    if aplay then
+        wep:PlayAnimation(aplay, 1, false, 0, false)
+        return false
+    end
 	
     if attthing == 1 and wep:GetInUBGL() then
         return "alt_" .. anim .. "_m203"
@@ -296,11 +303,11 @@ end
 SWEP.Animations = {
 		["enter_ubgl"] = {
 			Source = "idle",
-			Time = 0/30
+			Time = 1/30
 		},
 		["exit_ubgl"] = {
 			Source = "idle",
-			Time = 0/30
+			Time = 1/30
 		}, 						-- Fuck you.
     ["idle"] = {
         Source = "idle",
@@ -620,7 +627,7 @@ SWEP.Animations = {
     },
     ["alt_fire_masterkey"] = {
         Source = "alt_fire_masterkey",
-        Time = 10/30,
+        Time = 10/24,
     },
     ["alt_cycle_masterkey"] = {
         Source = "alt_cycle_masterkey",
@@ -638,7 +645,7 @@ SWEP.Animations = {
     },
     ["alt_reload_loop_masterkey"] = {
         Source = "alt_reload_loop_masterkey",
-        Time = 33/30,
+        Time = 33/40,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         SoundTable = {
 						{s = "MW2Common.Masterkey_Load", 	t = 24/30},

@@ -6,7 +6,7 @@ SWEP.WeaponCamBone = tag_camera
 
 SWEP.PrintName = "SCAR-LOS"
 SWEP.Trivia_Class = "Assault Rifle"
-SWEP.Trivia_Desc = "Fully automatic, all purpose weapon."
+SWEP.Trivia_Desc = "Fully automatic, all purpose weapon.\nUnofficial."
 
 if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
 SWEP.Trivia_Manufacturer = "FN Herstal"

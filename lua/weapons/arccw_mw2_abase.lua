@@ -164,6 +164,8 @@ function SWEP:Think()
 	state = ( ( state * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
 	max = ( ( max * self:GetBuff_Mult("Mult_HipDispersion") * InHip ) + ( self.Inaccuracy_ADS * InADS ) ) * idk
 
+    if self:InBipod() then state = state * ((self.BipodDispersion or 1) * self:GetBuff_Mult("Mult_BipodDispersion") or 0.1)
+    max = max * ((self.BipodDispersion or 1) * self:GetBuff_Mult("Mult_BipodDispersion") or 0.1) end
 
 	self:SetInaccuracy( math.Clamp( self:GetInaccuracy() - (decay*idk) * FrameTime(), state, max ) )
 end

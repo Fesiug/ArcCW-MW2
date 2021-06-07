@@ -47,7 +47,24 @@ att.Hook_ShouldNotSight = function(wep)
     return true
 end
 
+local function Ammo(wep)
+    return wep.Owner:GetAmmoCount("Buckshot") -- att.UBGL_Ammo
+end
+
 att.Hook_Think = function(wep)
+    if wep:GetMW2Masterkey_ShellInsertTime() < CurTime() and wep:GetMW2Masterkey_ShellInsertTime() != 0 then
+        wep:SetMW2Masterkey_ShellInsertTime(0)
+        local clip = 2
+        if wep:Clip2() >= clip then return end
+        if Ammo(wep) <= 0 then return end
+
+        local reserve = Ammo(wep)
+        reserve = reserve + wep:Clip2()
+        local load = math.Clamp(clip, 0, reserve)
+        wep.Owner:SetAmmo(reserve - load, "Buckshot")
+        wep:SetClip2(load)
+    end
+
     if !IsFirstTimePredicted() then return end
     if wep:GetOwner():KeyPressed(IN_RELOAD) then
         wep:SetInUBGL(false)
@@ -97,10 +114,6 @@ att.Hook_LHIK_TranslateAnimation = function(wep, anim)
     if anim == "idle" then return "idle_l" end
 end
 
-local function Ammo(wep)
-    return wep.Owner:GetAmmoCount("Buckshot") -- att.UBGL_Ammo
-end
-
 att.UBGL_Fire = function(wep, ubgl)
     if wep:Clip2() <= 0 then return end
 
@@ -146,16 +159,12 @@ att.UBGL_Fire = function(wep, ubgl)
 end
 
 att.UBGL_Reload = function(wep, ubgl)
+    wep:SetInUBGL(false)
     wep:Reload()
-
-    local clip = 2
-    
-    if wep:Clip2() >= clip then return end -- att.UBGL_Capacity
-
-    if Ammo(wep) <= 0 then return end
 
     wep:DoLHIKAnimation("reload_mp_l", 120/30)
     wep:SetNextSecondaryFire(CurTime() + 120/30)
+    wep:SetMW2Masterkey_ShellInsertTime(CurTime() + 1.549)
     wep:PlaySoundTable({
         {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_lift_v1.wav", 		t = 0.01},
         {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clipout_v1.wav", 		t = 12/30},
@@ -163,16 +172,6 @@ att.UBGL_Reload = function(wep, ubgl)
         {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clip2in_v1.wav", 		t = 70/30},
         {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_chamber_v1.wav", 		t = 106/30},
     })
-
-    local reserve = Ammo(wep)
-
-    reserve = reserve + wep:Clip2()
-
-    local load = math.Clamp(clip, 0, reserve)
-
-    wep.Owner:SetAmmo(reserve - load, "Buckshot") -- att.UBGL_Ammo
-
-    wep:SetClip2(load)
 end
 
 att.Hook_GetHUDData = function( wep, data )

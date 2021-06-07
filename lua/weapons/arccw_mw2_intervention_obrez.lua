@@ -6,7 +6,7 @@ SWEP.WeaponCamBone = tag_camera
 
 SWEP.PrintName = "Intervention Obrez"
 SWEP.Trivia_Class = "Sniper Rifle"
-SWEP.Trivia_Desc = "Obrez bolt action."
+SWEP.Trivia_Desc = "Obrez bolt action.\nUnofficial."
 
 if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
 SWEP.Trivia_Manufacturer = "CheyTac USA"

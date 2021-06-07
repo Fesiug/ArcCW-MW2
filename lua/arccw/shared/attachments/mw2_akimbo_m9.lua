@@ -46,7 +46,24 @@ att.Hook_ShouldNotSight = function(wep)
     return true
 end
 
+local function Ammo(wep)
+    return wep.Owner:GetAmmoCount("pistol") -- att.UBGL_Ammo
+end
+
 att.Hook_Think = function(wep)
+    if wep:GetMW2Masterkey_ShellInsertTime() < CurTime() and wep:GetMW2Masterkey_ShellInsertTime() != 0 then
+        wep:SetMW2Masterkey_ShellInsertTime(0)
+        local clip = 15
+        if wep:Clip2() >= clip then return end
+        if Ammo(wep) <= 0 then return end
+
+        local reserve = Ammo(wep)
+        reserve = reserve + wep:Clip2()
+        local load = math.Clamp(clip, 0, reserve)
+        wep.Owner:SetAmmo(reserve - load, "pistol")
+        wep:SetClip2(load)
+    end
+
     if !IsFirstTimePredicted() then return end
     if wep:GetOwner():KeyPressed(IN_RELOAD) then
         wep:SetInUBGL(false)
@@ -59,31 +76,33 @@ att.Hook_Think = function(wep)
     end
 end
 
+local awesomelist = {
+    ["sprint_in_akimbo_right"] = {
+        time = 10/30,
+        anim = "sprint_in",
+    },
+    ["sprint_out_akimbo_right"] = {
+        time = 10/30,
+        anim = "sprint_out",
+    },
+    ["sprint_loop_akimbo_right"] = {
+        time = 30/40,
+        anim = "sprint_loop",
+    },
+    ["pullout_akimbo_right"] = {
+        time = 26/30 /4,
+        anim = "pullout",
+    },
+    ["putaway_akimbo_right"] = {
+        time = 26/30 /4,
+        anim = "putaway",
+    },
+}
+
 att.Hook_TranslateSequence = function(wep, anim)
-    local awesome-- = wep:GetAnimKeyTime(anim)
-
-    -- i fucking hate it! i really do why the fuck it so nastyy
-    -- need to find a way to fix this disaster
-
-    
-    if anim == "sprint_in_akimbo_right" or anim == "sprint_out_akimbo_right" or anim == "sprint_loop_akimbo_right" or anim == "pullout_akimbo_right" or anim == "putaway_akimbo_right" then
-        if anim == "sprint_in_akimbo_right" then
-            awesome = 11/30
-            playanim = "sprint_in"
-        elseif anim == "sprint_out_akimbo_right" then
-            awesome = 11/30
-            playanim = "sprint_out"
-        elseif anim == "sprint_loop_akimbo_right" then
-            awesome = 31/40
-            playanim = "sprint_loop"
-        elseif anim == "pullout_akimbo_right" then
-            awesome = 26/30 /4
-            playanim = "pullout"
-        elseif anim == "putaway_akimbo_right" then
-            awesome = 26/30 /4
-            playanim = "putaway"
-        end
-            wep:DoLHIKAnimation(playanim, awesome)
+    if awesomelist[anim] then
+        local bab = awesomelist[anim]
+        wep:DoLHIKAnimation(bab.anim, bab.time)
     end
 end
 
@@ -91,10 +110,6 @@ att.Hook_LHIK_TranslateAnimation = function(wep, anim)
     if anim == "idle" and wep:Clip2() <= 0 then
         return "idle_empty"
     end
-end
-
-local function Ammo(wep)
-    return wep.Owner:GetAmmoCount("pistol") -- att.UBGL_Ammo
 end
 
 att.UBGL_Fire = function(wep, ubgl)
@@ -149,15 +164,10 @@ att.UBGL_Reload = function(wep, ubgl)
     wep:SetInUBGL(false)
     wep:Reload()
 
-    local clip = 15
-
-    if wep:Clip2() >= clip then return end -- att.UBGL_Capacity
-
-    if Ammo(wep) <= 0 then return end
-
     if wep:Clip2() <= 0 then
         wep:DoLHIKAnimation("reload_empty", 89/40)
         wep:SetNextSecondaryFire(CurTime() + 89/40)
+        wep:SetMW2Masterkey_ShellInsertTime(CurTime() + 1.2)
         wep:PlaySoundTable({
             {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/40},
             {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav",  	t = 42/40},
@@ -166,21 +176,12 @@ att.UBGL_Reload = function(wep, ubgl)
     else
         wep:DoLHIKAnimation("reload", 70/40)
         wep:SetNextSecondaryFire(CurTime() + 70/40)
+        wep:SetMW2Masterkey_ShellInsertTime(CurTime() + 1.2)
         wep:PlaySoundTable({
             {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/40},
             {s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipin_v2.wav", 	    t = 36/40},
         })
     end
-
-    local reserve = Ammo(wep)
-
-    reserve = reserve + wep:Clip2()
-
-    local load = math.Clamp(clip, 0, reserve)
-
-    wep.Owner:SetAmmo(reserve - load, "pistol") -- att.UBGL_Ammo
-
-    wep:SetClip2(load)
 end
 
 att.Hook_GetHUDData = function( wep, data )

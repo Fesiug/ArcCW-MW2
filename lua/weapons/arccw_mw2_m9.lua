@@ -508,6 +508,7 @@ SWEP.Animations = {
     ["reload_akimbo_right"] = {
         Source = "reload_akimbo_right",
         Time = 70/40,
+        MinProgress = 1.2,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/40},
@@ -517,6 +518,7 @@ SWEP.Animations = {
     ["reload_empty_akimbo_right"] = {
         Source = "reload_empty_akimbo_right",
         Time = 89/40,
+        MinProgress = 1.2,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         SoundTable = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_beretta9mm_reload_clipout_v2.wav", 	t = 4/40},

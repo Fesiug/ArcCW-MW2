@@ -48,11 +48,8 @@ att.Hook_ShouldNotSight = function(wep)
 end
 
 att.Hook_Think = function(wep)
-
-    -- and wep:Clip2() > 0
 	if wep:GetMW2Masterkey_NeedPump() and wep:GetMW2Masterkey_ReloadingTimer() <= CurTime() and !wep:GetMW2Masterkey_Reloading() and !wep.Owner:KeyDown(IN_ATTACK2) then
         wep:DoLHIKAnimation("rechamber_l", 35/30)
-		--wep:SetReloading(CurTime() + 0.85)
 		wep:SetNextSecondaryFire(CurTime() + 0.85)
 		wep:SetMW2Masterkey_NeedPump(false)
 
@@ -62,7 +59,7 @@ att.Hook_Think = function(wep)
             {s = "weapons/fesiugmw2/foley/wpfoly_m1887_reload_close_v1.wav", 	t = 16/30},
         })
 	end
-	if wep:GetMW2Masterkey_Reloading() and wep:GetMW2Masterkey_ReloadingTimer() < CurTime() and wep:Clip2() >= 7 then
+	if wep:GetMW2Masterkey_Reloading() and wep:GetMW2Masterkey_ReloadingTimer() < CurTime() and (wep:Clip2() >= 7 or wep:GetOwner():KeyDown(IN_ATTACK2)) then
 		MW2M1887_ReloadFinish(wep)
 	elseif wep:GetMW2Masterkey_Reloading() and wep:GetMW2Masterkey_ReloadingTimer() < CurTime() and wep:Clip2() < 7 then
 		MW2M1887_ReloadLoop(wep)
@@ -82,6 +79,7 @@ att.Hook_Think = function(wep)
     elseif wep:GetOwner():KeyPressed(IN_ATTACK2) then
         wep:SetInUBGL(true)
         wep:ShootUBGL()
+        wep:SetInUBGL(false)
     end
 end
 
@@ -98,6 +96,11 @@ local awesomelist = {
         time = 30/40,
         anim = "sprint_loop_l",
     },
+    ["pullout_first_r"] = {
+        time = 47/30,
+        anim = "pullout_first_l",
+        --soundtable = {}
+    },
     ["pullout_r"] = {
         time = 25/30,
         anim = "pullout_l",
@@ -109,11 +112,13 @@ local awesomelist = {
 }
 
 att.Hook_TranslateSequence = function(wep, anim)    
-    if anim != "idle_r" then print(anim) end
+    --if anim != "idle_r" then print("lol", anim) end
     if awesomelist[anim] then
         local bab = awesomelist[anim]
-        PrintTable(bab)
+        --print(CurTime() .. " - epic win")
+        --PrintTable(bab)
         wep:DoLHIKAnimation(bab.anim, bab.time)
+        if bab.soundtable then wep:PlaySoundTable(bab.soundtable) end
     end
 end
 
@@ -126,6 +131,8 @@ local function Ammo(wep)
 end
 
 att.UBGL_Fire = function(wep, ubgl)
+    PrintTable(att)
+
     if wep:Clip2() <= 0 then return end
 	if wep:GetMW2Masterkey_NeedPump() then return end
 	if wep:GetMW2Masterkey_Reloading() then return end
@@ -166,7 +173,7 @@ att.UBGL_Fire = function(wep, ubgl)
 
     wep:SetClip2(wep:Clip2() - 1)
     
-    wep:DoLHIKAnimation("fire_l", 16/30)
+    wep:DoLHIKAnimation("fire_l", 12/30)
     wep:SetMW2Masterkey_ReloadingTimer(CurTime() + 0.433)
     wep:SetMW2Masterkey_NeedPump(true)
 
@@ -183,39 +190,6 @@ att.UBGL_Reload = function(wep, ubgl)
 
 	MW2M1887_ReloadStart(wep)
 	wep:SetMW2Masterkey_Reloading(true)
-
-    --[[local clip = 7
-    
-    if wep:Clip2() >= clip then return end -- att.UBGL_Capacity
-
-    if Ammo(wep) <= 0 then return end
-
-    if wep:Clip2() <= 0 then
-        wep:DoLHIKAnimation("reload_empty", 63/30)
-        wep:SetNextSecondaryFire(CurTime() + 63/30)
-        wep:PlaySoundTable({
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav",  	t = 39/30},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_chamber_v1.wav", 	t = 48/30},
-        })
-    else
-        wep:DoLHIKAnimation("reload", 59/30)
-        wep:SetNextSecondaryFire(CurTime() + 59/30)
-        wep:PlaySoundTable({
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipout_v1.wav", 	t = 10/30},
-            {s = "weapons/fesiugmw2/foley/wpfoly_de50_reload_clipin_v1.wav", 	    t = 39/30},
-        })
-    end
-
-    local reserve = Ammo(wep)
-
-    reserve = reserve + wep:Clip2()
-
-    local load = math.Clamp(clip, 0, reserve)
-
-    wep.Owner:SetAmmo(reserve - load, "357") -- att.UBGL_Ammo
-
-    wep:SetClip2(load)]]
 end
 
 att.Hook_GetHUDData = function( wep, data )

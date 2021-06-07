@@ -6,7 +6,7 @@ SWEP.WeaponCamBone = tag_camera
 
 SWEP.PrintName = "Ranger Lockpick"
 SWEP.Trivia_Class = "Shotgun"
-SWEP.Trivia_Desc = "Break action."
+SWEP.Trivia_Desc = "Break action.\nUnofficial."
 
 if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
 SWEP.Trivia_Manufacturer = "Franchi"

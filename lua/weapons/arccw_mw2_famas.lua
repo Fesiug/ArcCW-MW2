@@ -339,8 +339,8 @@ SWEP.Animations = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_famas_reload_clipin_v1.wav", 	    t = 63/30},
 					},
         LHIK = true,
-        LHIKIn = 0.5,
-        LHIKOut = 0.5,
+        LHIKIn = 0.3,
+        LHIKOut = 0.3,
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -354,8 +354,8 @@ SWEP.Animations = {
 						{s = "weapons/fesiugmw2/foley/wpfoly_famas_reload_chamber_v1.wav",		t = 78/30},
 					},
         LHIK = true,
-        LHIKIn = 0.5,
-        LHIKOut = 0.6,
+        LHIKIn = 0.3,
+        LHIKOut = 0.3,
     },
 ------------------------------------------------
 ------ Here lies M203 ANIMATIONS ... AWESOME ---

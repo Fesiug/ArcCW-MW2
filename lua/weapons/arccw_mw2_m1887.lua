@@ -6,7 +6,7 @@ SWEP.WeaponCamBone = tag_camera
 
 SWEP.PrintName = "Model 1887"
 SWEP.Trivia_Class = "Shotgun"
-SWEP.Trivia_Desc = "Pump action."
+SWEP.Trivia_Desc = "Lever-action."
 
 if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
 SWEP.Trivia_Manufacturer = "Franchi"
@@ -366,9 +366,6 @@ SWEP.Animations = {
     ["holster_akimbo_right"] = {
         Source = "putaway_r",
         Time = 25/30,
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.9,
     },
     ["fire_akimbo_right"] = {
         Source = "fire_r",

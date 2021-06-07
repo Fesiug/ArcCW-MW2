@@ -47,7 +47,7 @@ att.UBGL_Fire = function(wep, ubgl)
 	if wep:Clip2() <= 0 then return end
 
 	wep:PlayAnimation("alt_fire_masterkey", 1, true, nil, nil, nil, true)
-    wep:SetWeaponOpDelay(CurTime() + wep:GetAnimKeyTime("alt_fire_masterkey"))
+    wep:SetWeaponOpDelay(CurTime() + 0.43)
 
 	wep.Owner:FireBullets({
 		Src = wep.Owner:EyePos(),
@@ -110,18 +110,17 @@ end
 
 function MW2Masterkey_ReloadStart(wep)
 	wep:PlayAnimation("alt_reload_start_masterkey", 1, true, nil, nil, nil, true)
-	wep:SetMW2Masterkey_ReloadingTimer(CurTime() + 1)
-	
 	wep:SetReloading(CurTime() + 1)
+	wep:SetMW2Masterkey_ReloadingTimer(CurTime() + 1)
     wep:SetMW2Masterkey_ShellInsertTime(CurTime() + 0.6)
 	wep:SetMW2Masterkey_Reloading(true)
 end
 
 function MW2Masterkey_ReloadLoop(wep)
 	wep:PlayAnimation("alt_reload_loop_masterkey", 1, true, nil, nil, nil, true)
+	wep:SetReloading(CurTime() + 0.75)
 	wep:SetMW2Masterkey_ReloadingTimer(CurTime() + 0.75)
     wep:SetMW2Masterkey_ShellInsertTime(CurTime() + 0.55)
-	wep:SetReloading(CurTime() + 0.75)
 end
 
 function MW2Masterkey_ReloadFinish(wep)

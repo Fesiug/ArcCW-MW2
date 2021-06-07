@@ -6,7 +6,7 @@ SWEP.WeaponCamBone = tag_camera
 
 SWEP.PrintName = "MP5"
 SWEP.Trivia_Class = "Sub Machine Gun"
-SWEP.Trivia_Desc = "Fully automatic, close range."
+SWEP.Trivia_Desc = "Fully automatic, close range.\nUnofficial."
 
 if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
 SWEP.Trivia_Manufacturer = "Heckler & Koch"
@@ -386,9 +386,9 @@ SWEP.Animations = {
         Time = 75/30,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG1,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_lift_v1.wav", 	t = 0/30},
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipout_v1.wav", 	t = 15/30},
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipin_v1.wav", 	t = 52/30},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_lift_v1.wav", 	t = 0/30, p = 90},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipout_v1.wav", 	t = 15/30, p = 90},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipin_v1.wav", 	t = 48/30, p = 80},
 					},
         LHIK = true,
         LHIKIn = 0.3,
@@ -398,11 +398,11 @@ SWEP.Animations = {
         Source = "reload_empty_nofg",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SMG1,
         SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_lift_v1.wav", 	t = 0/30},		
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_chamber_v1.wav", 	t = 9/30},		
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipout_v1.wav", 	t = 27/30},
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipin_v1.wav", 	t = 64/30},
-						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_hit_v1.wav", 	t = 80/30},						
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_lift_v1.wav", 	t = 0/30, p = 90},		
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_chamber_v1.wav", 	t = 9/30, p = 90},		
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipout_v1.wav", 	t = 27/30, p = 90},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_clipin_v1.wav", 	t = 60/30, p = 80},
+						{s = "weapons/fesiugmw2/foley/wpfoly_mp5k_reload_hit_v1.wav", 	t = 80/30, p = 90},						
 					},
         LHIK = true,
         LHIKIn = 0.3,

@@ -6,7 +6,7 @@ SWEP.WeaponCamBone = tag_camera
 
 SWEP.PrintName = "Ranger"
 SWEP.Trivia_Class = "Shotgun"
-SWEP.Trivia_Desc = "Pump action."
+SWEP.Trivia_Desc = "Double barrel."
 
 if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
 SWEP.Trivia_Manufacturer = "Franchi"
@@ -301,12 +301,12 @@ SWEP.Animations = {
     },
     ["draw_akimbo_right"] = {
         Source = "pullout_r",
-        Time = 25/30,
+        Time = 12/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
     },
     ["holster_akimbo_right"] = {
         Source = "putaway_r",
-        Time = 25/30,
+        Time = 23/30,
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0.9,
@@ -318,6 +318,7 @@ SWEP.Animations = {
     ["reload_akimbo_right"] = {
         Source = "reload_mp_r",
         Time = 120/30,
+        MinProgress = 1.549,
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
         SoundTable = {
             {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_lift_v1.wav", 		t = 0.01},
@@ -326,7 +327,6 @@ SWEP.Animations = {
             {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_clip2in_v1.wav", 		t = 70/30},
             {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_chamber_v1.wav", 		t = 106/30},
         },
-		MinProgress = 1.549,
     },
 }
 
