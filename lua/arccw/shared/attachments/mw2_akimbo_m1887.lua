@@ -181,12 +181,13 @@ att.UBGL_Fire = function(wep, ubgl)
 end
 
 att.UBGL_Reload = function(wep, ubgl)
+        if wep:Clip2() >= 7 then return end
+        if Ammo(wep) <= 0 then return end
+        if wep:GetMW2Masterkey_Reloading() then return end
+
     wep:SetInUBGL(false)
     wep:Reload()
 
-	if wep:Clip2() >= 7 then return end
-	if Ammo(wep) <= 0 then return end
-	if wep:GetMW2Masterkey_Reloading() then return end
 
 	MW2M1887_ReloadStart(wep)
 	wep:SetMW2Masterkey_Reloading(true)

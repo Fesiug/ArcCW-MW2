@@ -161,6 +161,9 @@ att.UBGL_Fire = function(wep, ubgl)
 end
 
 att.UBGL_Reload = function(wep, ubgl)
+        if wep:Clip2() >= 15 then return end
+        if Ammo(wep) <= 0 then return end
+
     wep:SetInUBGL(false)
     wep:Reload()
 
