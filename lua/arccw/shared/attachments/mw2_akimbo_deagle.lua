@@ -108,8 +108,9 @@ att.Hook_TranslateSequence = function(wep, anim)
 end
 
 att.Hook_LHIK_TranslateAnimation = function(wep, anim)
-    if anim == "idle" and wep:Clip2() <= 0 then
-        return "idle_empty"
+    if anim == "idle" then
+        --wep:DoLHIKAnimation("idle", 200/30) This will fucking crash your game because it plays idle when the animation playing is idle WHY DIDNT I CALL IT IDLE_AKIMBO_LEFT WOEISME
+        return "DoNotPlayIdle"
     end
 end
 

@@ -265,28 +265,21 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 		else 											 attthing = 0
 	end
     
-    local aplay = nil
-	
 	-- when entering ubgl
 	if anim == "enter_ubgl" then
 		if attthing == 1 then
-			aplay = "switch2_alt_m203"
+			return "switch2_alt_m203"
 		elseif attthing == 2 then
-			aplay = "switch2_alt_masterkey"
+			return "switch2_alt_masterkey"
 		end
 	elseif anim == "exit_ubgl" then
 		if attthing == 1 then
-			aplay = "switch2_gun_m203"
+			return "switch2_gun_m203"
 		elseif attthing == 2 then
-			aplay = "switch2_gun_masterkey"
+			return "switch2_gun_masterkey"
 		end
 	end
 
-    if aplay then
-        wep:PlayAnimation(aplay, 1, false, 0, false)
-        return false
-    end
-	
     if attthing == 1 and wep:GetInUBGL() then
         return "alt_" .. anim .. "_m203"
 		elseif attthing == 1 then
