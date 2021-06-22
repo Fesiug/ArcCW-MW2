@@ -20,14 +20,14 @@ att.Model = "models/weapons/arccw/fesiugmw2/atts/scopes/susat_3.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(-0.015, 11, -1.54),
+        Pos = Vector(-0.015, 10, -1.54),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 65 / 2.1,
         Magnification = 2.1,
         IgnoreExtra = true
     },
     {
-        Pos = Vector(0, 11, -2.55),
+        Pos = Vector(0, 10, -2.6),
         Ang = Angle(1, 0, 0),
         ViewModelFOV = 65 / 1.3,
         Magnification = 1.3,

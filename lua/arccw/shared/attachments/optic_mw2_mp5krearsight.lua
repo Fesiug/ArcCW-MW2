@@ -16,7 +16,7 @@ att.Model = "models/weapons/arccw/fesiugmw2/atts/scopes/mp5k_rearsight_1.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 6, -0.5),
+        Pos = Vector(0, 6.026, -0.5),
         Ang = Angle(0.8, 0, 0),
         ViewModelFOV = 65 / 1.3,
         Magnification = 1.3,
