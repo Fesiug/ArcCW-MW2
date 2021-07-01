@@ -43,7 +43,7 @@ att.UBGL_Fire = function(wep, ubgl)
 
     wep:PlayAnimation("alt_fire_m203", 1, true, nil, nil, nil, true)
 
-    wep:FireRocket("arccw_gl_he_mw2", 30000)
+    wep:FireRocket("arccw_gl_he_mw2", 1000)
 
     if wep.MW2_M203isGP25 then
         wep:EmitSound("weapons/fesiugmw2/fire/gp25.wav", 100)
