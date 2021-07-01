@@ -191,7 +191,6 @@ SWEP.Attachments = {
             wang = Angle(0, 6.034, 180)
         },
 		WMScale = Vector(1, 1, 1),
-        InstalledEles = {"nomuzzle"},
     },
     {
         PrintName = "Underbarrel",
@@ -209,7 +208,6 @@ SWEP.Attachments = {
             wmin = Vector(20.996, -0.991, -3.837),
             wmax = Vector(13.661, -0.078, -3.837),
         },
-        --InstalledEles = {"nogrip"},
     },
     {
         PrintName = "Tactical",
@@ -335,16 +333,6 @@ SWEP.Animations = {
         LHIKIn = 0.3,
         LHIKOut = 0,
     },
-    ["ready"] = {
-        Source = "pullout_first",
-        Time = 37/30,
-        SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_ak47_reload_chamber_v4.wav", 	t = 11/30},
-					},
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.25,
-    },
     ["fire"] = {
         Source = "fire",
         Time = 5/30,
@@ -417,16 +405,6 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0.3,
         LHIKOut = 0,
-    },
-    ["ready_m203"] = {
-        Source = "pullout_first_m203",
-        Time = 37/30,
-        SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_ak47_reload_chamber_v4.wav", 	t = 11/30},
-					},
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.25,
     },
     ["fire_m203"] = {
         Source = "fire_m203",
@@ -542,16 +520,6 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0.3,
         LHIKOut = 0,
-    },
-    ["ready_masterkey"] = {
-        Source = "pullout_first_masterkey",
-        Time = 37/30,
-        SoundTable = {
-						{s = "weapons/fesiugmw2/foley/wpfoly_ak47_reload_chamber_v4.wav", 	t = 11/30},
-					},
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKOut = 0.25,
     },
     ["fire_masterkey"] = {
         Source = "fire_masterkey",
