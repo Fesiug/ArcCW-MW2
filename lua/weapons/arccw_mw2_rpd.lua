@@ -144,16 +144,21 @@ SWEP.AttachmentElements = {
 }
 
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
-    [10] = "j_bullet_010",
-    [9] = "j_bullet_09",
-    [8] = "j_bullet_08",
-    [7] = "j_bullet_07",
-    [6] = "j_bullet_06",
-    [5] = "j_bullet_05",
-    [4] = "j_bullet_04",
-    [3] = "j_bullet_03",
-    [2] = "j_bullet_02",
-    [1] = "j_bullet_01",
+    [16] = "j_bullet16",
+    [15] = "j_bullet15",
+    [14] = "j_bullet14",
+    [13] = "j_bullet13",
+    [12] = "j_bullet12",
+    [11] = "j_bullet11",
+    [10] = "j_bullet10",
+    [9] = "j_bullet9",
+    [8] = "j_bullet8",
+    [7] = "j_bullet7",
+    [6] = "j_bullet6",
+    [5] = "j_bullet5",
+    [4] = "j_bullet4",
+    [3] = "j_bullet3",
+    [2] = "j_bullet2",
 }
 
 SWEP.ExtraSightDist = 5

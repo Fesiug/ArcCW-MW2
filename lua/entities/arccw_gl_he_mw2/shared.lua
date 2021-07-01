@@ -15,61 +15,59 @@ ENT.FuseTime = 0.1
 ENT.Defused = false
 
 if SERVER then
+    function ENT:Initialize()
+        local pb_vert = 1
+        local pb_hor = 1
+        self:SetModel(self.Model)
+        self:PhysicsInitBox( Vector(-pb_vert,-pb_hor,-pb_hor), Vector(pb_vert,pb_hor,pb_hor) )
 
-function ENT:Initialize()
-    local pb_vert = 1
-    local pb_hor = 1
-    self:SetModel(self.Model)
-    self:PhysicsInitBox( Vector(-pb_vert,-pb_hor,-pb_hor), Vector(pb_vert,pb_hor,pb_hor) )
+        local phys = self:GetPhysicsObject()
+        if phys:IsValid() then
+            phys:Wake()
+        end
 
-    local phys = self:GetPhysicsObject()
-    if phys:IsValid() then
-        phys:Wake()
+        self.SpawnTime = CurTime()
+        self.Ticks = CurTime()
+
+        timer.Simple(0.1, function()
+            if !IsValid(self) then return end
+            self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+        end)
     end
 
-    self.SpawnTime = CurTime()
-
-    timer.Simple(0.1, function()
-        if !IsValid(self) then return end
-        self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
-    end)
-end
-
-function ENT:Think()
-    if SERVER and self.Defused and CurTime() - self.Defused_When >= self.Defused_RemoveIn then
-        self:Remove()
+    function ENT:Think()
+        if SERVER and self.Defused and CurTime() - self.Defused_When >= self.Defused_RemoveIn then
+            self:Remove()
+        end
     end
-end
-
 else
+    function ENT:Think()
+        if CurTime() >= self.Ticks then
+            local emitter = ParticleEmitter(self:GetPos())
 
-function ENT:Think()
-	if self.Ticks % 5 == 0 then
-        local emitter = ParticleEmitter(self:GetPos())
+            if !self:IsValid() or self:WaterLevel() > 2 then return end
+            if !IsValid(emitter) then return end
 
-        if !self:IsValid() or self:WaterLevel() > 2 then return end
-        if !IsValid(emitter) then return end
+            local smoke = emitter:Add("particle/particle_smokegrenade", self:GetPos())
+            smoke:SetVelocity( VectorRand() * 25 )
+            smoke:SetGravity( Vector(math.Rand(-5, 5), math.Rand(-5, 5), math.Rand(-20, -25)) )
+            smoke:SetDieTime( 1 )
+            smoke:SetStartAlpha( 255 )
+            smoke:SetEndAlpha( 0 )
+            smoke:SetStartSize( 0 )
+            smoke:SetEndSize( 50 )
+            smoke:SetRoll( math.Rand(-180, 180) )
+            smoke:SetRollDelta( math.Rand(-0.2,0.2) )
+            smoke:SetColor( 113, 113, 113 )
+            smoke:SetAirResistance( 5 )
+            smoke:SetPos( self:GetPos() )
+            smoke:SetLighting( false )
+            emitter:Finish()
 
-        local smoke = emitter:Add("particle/particle_smokegrenade", self:GetPos())
-        smoke:SetVelocity( VectorRand() * 25 )
-        smoke:SetGravity( Vector(math.Rand(-5, 5), math.Rand(-5, 5), math.Rand(-20, -25)) )
-        smoke:SetDieTime( math.Rand(1, 1.5) )
-        smoke:SetStartAlpha( 100 )
-        smoke:SetEndAlpha( 0 )
-        smoke:SetStartSize( 0 )
-        smoke:SetEndSize( 50 )
-        smoke:SetRoll( math.Rand(-180, 180) )
-        smoke:SetRollDelta( math.Rand(-0.2,0.2) )
-        smoke:SetColor( 113, 113, 113 )
-        smoke:SetAirResistance( 5 )
-        smoke:SetPos( self:GetPos() )
-        smoke:SetLighting( false )
-        emitter:Finish()
+            self.Ticks = CurTime() + (1/50)
+        end
+
     end
-
-    self.Ticks = self.Ticks + 1
-end
-
 end
 
 function ENT:Detonate()
@@ -80,10 +78,8 @@ function ENT:Detonate()
 
     if self:WaterLevel() >= 1 then
         util.Effect( "WaterSurfaceExplosion", effectdata )
-        --self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
     else
         util.Effect( "Explosion", effectdata)
-        --self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
     end
 
     local attacker = self

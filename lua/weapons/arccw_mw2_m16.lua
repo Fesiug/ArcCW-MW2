@@ -45,9 +45,9 @@ SWEP.ExtendedClipSize = 45
 SWEP.ReducedClipSize = 15
 
 SWEP.VisualRecoilMult = 0
-SWEP.Recoil = 0.45
-SWEP.RecoilSide = 0.35
-SWEP.RecoilRise = 0.15
+SWEP.Recoil = 0.5
+SWEP.RecoilSide = 0.4
+SWEP.RecoilRise = 0.1
 
 SWEP.Delay = 0.064 -- 60 / RPM.
 SWEP.Num = 1 -- number of shots per trigger pull.
@@ -322,9 +322,6 @@ SWEP.Animations = {
         Source = "pullout",
         Time = 33/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
-        LHIK = true,
-        LHIKIn = 0.3,
-        LHIKOut = 0,
     },
     ["holster"] = {
         Source = "putaway",
@@ -395,9 +392,6 @@ SWEP.Animations = {
         Source = "pullout_m203",
         Time = 33/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
-        LHIK = true,
-        LHIKIn = 0.3,
-        LHIKOut = 0,
     },
     ["holster_m203"] = {
         Source = "putaway_m203",
@@ -510,9 +504,6 @@ SWEP.Animations = {
         Source = "pullout_masterkey",
         Time = 33/30,
         SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
-        LHIK = true,
-        LHIKIn = 0.3,
-        LHIKOut = 0,
     },
     ["holster_masterkey"] = {
         Source = "putaway_masterkey",
