@@ -2,7 +2,7 @@ SWEP.Base = "arccw_mw2_abase"
 SWEP.Spawnable = true
 SWEP.Category = "ArcCW - MW2"
 SWEP.AdminOnly = false
-SWEP.WeaponCamBone = tag_camera
+SWEP.CamAttachment = 3
 
 SWEP.PrintName = "Ranger"
 SWEP.Trivia_Class = "Shotgun"
