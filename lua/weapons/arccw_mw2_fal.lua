@@ -45,8 +45,8 @@ SWEP.ExtendedClipSize = 30
 SWEP.ReducedClipSize = 10
 
 SWEP.VisualRecoilMult = 0
-SWEP.Recoil = 0.5
-SWEP.RecoilSide = 0.3
+SWEP.Recoil = 0.7
+SWEP.RecoilSide = 0.7
 SWEP.RecoilRise = 0.2
 
 SWEP.Delay = 0.079 -- 60 / RPM.
@@ -67,7 +67,7 @@ SWEP.AccuracyMOA = 2.5 -- accuracy in Minutes of Angle. There are 60 MOA in a de
 SWEP.HipDispersion = 500 -- inaccuracy added by hip firing.
 SWEP.MoveDispersion = 150
 
-SWEP.Primary.Ammo = "smg1" -- what ammo type the gun uses
+SWEP.Primary.Ammo = "ar2" -- what ammo type the gun uses
 
 SWEP.ShootVol = 110 -- volume of shoot sound
 SWEP.ShootPitch = 100 -- pitch of shoot sound
@@ -96,8 +96,8 @@ SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
 }
 
 SWEP.IronSightStruct = {
-    Pos = Vector(-2.595, -3.512, 0.159), --
-    Ang = Angle(0, 0, 0),
+    Pos = Vector(-2.59, -2, 1.09), --
+    Ang = Angle(-0.7, 0, 0),
     ViewModelFOV = 65 / 1.3,
     Magnification = 1.3,
 }
@@ -159,15 +159,9 @@ SWEP.Attachments = {
         Slot = "optic",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(6.972, 0, 4.018),
+            vpos = Vector(2.5, 0, 2.4),
             vang = Angle(0, 0, 0),
             wang = Angle(-9.738, 0, 180)
-        },
-        SlideAmount = {
-            vmin = Vector(0.668, 0, 3.618),
-            vmax = Vector(5.076, 0, 3.618),
-            wmin = Vector(5.36, 0.739, -5.401),
-            wmax = Vector(5.36, 0.739, -5.401),
         },
         InstalledEles = {"nors"},
     },
@@ -177,7 +171,7 @@ SWEP.Attachments = {
         Slot = "muzzle",
         Bone = "tag_weapon",
         Offset = {
-            vpos = Vector(17, 0, 2),
+            vpos = Vector(29, 0, 1.1),
             vang = Angle(0, 0, 0),
             wpos = Vector(33.719, -2.122, -5.573),
             wang = Angle(0, 6.034, 180)
@@ -296,7 +290,7 @@ SWEP.Animations = {
 		}, 						-- Fuck you.
     ["idle"] = {
         Source = "idle",
-        Time = 100/30
+        Time = 0--100/30
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
@@ -384,7 +378,7 @@ SWEP.Animations = {
 ------------------------------------------------
     ["idle_m203"] = {
         Source = "idle_m203",
-        Time = 100/30
+        Time = 0--100/30
     },
     ["enter_sprint_m203"] = {
         Source = "sprint_in_m203",
@@ -499,7 +493,7 @@ SWEP.Animations = {
 ------------------------------------------------
     ["idle_masterkey"] = {
         Source = "idle_masterkey",
-        Time = 100/30
+        Time = 0--100/30
     },
     ["enter_sprint_masterkey"] = {
         Source = "sprint_in_masterkey",

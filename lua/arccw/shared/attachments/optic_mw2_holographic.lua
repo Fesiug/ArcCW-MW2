@@ -17,7 +17,7 @@ att.ModelOffset = Vector(-1, 0, -0.1)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 10, -1.16),
+        Pos = Vector(0, 7, -1.16),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 65 / 1.3,
         Magnification = 1.3,
@@ -29,7 +29,7 @@ att.AdditionalSights = {
 att.Holosight = true
 att.HolosightReticle = Material("holosights/mw2_holo.png", "mips smooth")
 att.HolosightFlare = Material("holosights/mw2_holo_flare.png", "mips smooth")
-att.HolosightSize = 0.8
+att.HolosightSize = 0.7
 att.HolosightBone = "holosight"
 
 att.Mult_SightTime = 1.075

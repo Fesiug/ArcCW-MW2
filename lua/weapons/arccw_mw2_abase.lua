@@ -129,7 +129,18 @@ function SWEP:DoShootSound(sndoverride, dsndoverride, voloverride, pitchoverride
     self:GetBuff_Hook("Hook_AddShootSound", data)
 end
 
-SWEP.Override_NoRandSpread = true
+
+function SWEP:SetupDataTables()
+	BaseClass.SetupDataTables( self )
+    
+    self:NetworkVar("Bool", 30, "MW2Masterkey_NeedPump")
+    self:NetworkVar("Bool", 31, "MW2Masterkey_Reloading")
+
+    self:NetworkVar("Float", 29, "MW2Masterkey_ShellInsertTime")
+    self:NetworkVar("Float", 30, "MW2Masterkey_ReloadingTimer")
+	--self:NetworkVar("Float", 31, "Inaccuracy")
+end
+--[[SWEP.Override_NoRandSpread = true
 function SWEP:GetDispersion()
 	return 0
 end
@@ -176,17 +187,6 @@ SWEP.Hook_FireBullets = function(wep, bullet)
 
 	wep:SetInaccuracy( wep:GetInaccuracy() + ( wep:GetSightDelta() * (wep.Inaccuracy_Add_Hip*idk) ) + ( (1-wep:GetSightDelta()) * (wep.Inaccuracy_Add_ADS*idk) ) )
 	return bullet
-end
-
-function SWEP:SetupDataTables()
-	BaseClass.SetupDataTables( self )
-    
-    self:NetworkVar("Bool", 30, "MW2Masterkey_NeedPump")
-    self:NetworkVar("Bool", 31, "MW2Masterkey_Reloading")
-
-    self:NetworkVar("Float", 29, "MW2Masterkey_ShellInsertTime")
-    self:NetworkVar("Float", 30, "MW2Masterkey_ReloadingTimer")
-	self:NetworkVar("Float", 31, "Inaccuracy")
 end
 
 SWEP.Hook_DrawHUD = function(wep)
@@ -359,4 +359,4 @@ function SWEP:DoDrawCrosshair(x, y)
 
 
 	return true
-end
+end]]
