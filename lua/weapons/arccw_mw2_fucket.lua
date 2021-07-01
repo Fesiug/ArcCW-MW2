@@ -75,7 +75,7 @@ SWEP.ShootSoundSilenced =	"weapons/fesiugmw2/fleshymusket/musket_sil.wav"
 SWEP.MuzzleEffect = "muzzleflash_shotgun"
 SWEP.ShellModel = "models/shells/shell_12gauge.mdl"
 SWEP.ShellPitch = 100
-SWEP.ShellScale = 1.5
+SWEP.ShellScale = 1
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectAttachment = 2 -- which attachment to put the case effect on

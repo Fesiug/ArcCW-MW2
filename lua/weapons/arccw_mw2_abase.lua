@@ -34,6 +34,9 @@ SWEP.RecoilRise = 0
 SWEP.MaxRecoilBlowback = 0
 SWEP.VisualRecoilMult = 0
 SWEP.RecoilPunch = 0
+SWEP.RecoilVMShake = 0
+SWEP.RecoilPunchBackMax = 0
+SWEP.RecoilPunchBackMaxSights = 0
 
 SWEP.IronSightStruct = {
 	Pos = Vector(0, 0, 0),

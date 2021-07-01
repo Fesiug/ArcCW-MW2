@@ -80,7 +80,7 @@ SWEP.ShootSoundSilenced =	"weapons/fesiugmw2/fire/usp45_sil.wav"
 
 SWEP.MuzzleEffect = "muzzleflash_4"
 SWEP.ShellModel = "models/shells/shell_9mm.mdl"
-SWEP.ShellScale = 1.5
+SWEP.ShellScale = 1
 SWEP.ShellRotateAngle = Angle(0, 90, 0)
 
 SWEP.MuzzleEffectAttachment = 1 -- which attachment to put the muzzle on
