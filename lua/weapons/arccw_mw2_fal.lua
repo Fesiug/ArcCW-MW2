@@ -189,8 +189,8 @@ SWEP.Attachments = {
             wang = Angle(-2.461, -6.525, 176.662)
         },
         SlideAmount = {
-            vmin = Vector(6.748, 0, 1.04),
-            vmax = Vector(12.427, 0, 1.04),
+            vmin = Vector(10, 0, 0.4),
+            vmax = Vector(15, 0, 0.4),
             wmin = Vector(20.996, -0.991, -3.837),
             wmax = Vector(13.661, -0.078, -3.837),
         },
