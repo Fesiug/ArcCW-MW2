@@ -54,7 +54,7 @@ SWEP.Delay = 12/30 -- 60 / RPM.
 SWEP.Num = 8 -- number of shots per trigger pull.
 SWEP.Firemodes = {
     {
-        PrintName = "PUMP",
+        PrintName = "lever",
         Mode = 1,
     },
     {
