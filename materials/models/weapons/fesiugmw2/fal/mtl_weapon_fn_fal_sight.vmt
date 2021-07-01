@@ -1,0 +1,7 @@
+Patch
+{
+	include materials/models/weapons/fesiugmw2/fal/mtl_weapon_fn_fal_shared.vmt
+	insert
+	{
+	}
+}
