@@ -304,7 +304,7 @@ SWEP.Animations = {
 		}, 						-- Fuck you.
     ["idle"] = {
         Source = "idle",
-        Time = 1/30
+        Time = 0--100/30
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
@@ -374,7 +374,7 @@ SWEP.Animations = {
 ------------------------------------------------
     ["idle_m203"] = {
         Source = "idle_m203",
-        Time = 1/30
+        Time = 0--100/30
     },
     ["enter_sprint_m203"] = {
         Source = "sprint_in_m203",
@@ -444,7 +444,7 @@ SWEP.Animations = {
 ------------------------------------------------
     ["alt_idle_m203"] = {
         Source = "alt_idle_m203",
-        Time = 1/30
+        Time = 0--100/30
     },
     ["alt_enter_sprint_m203"] = {
         Source = "alt_sprint_in_m203",
@@ -486,7 +486,7 @@ SWEP.Animations = {
 ------------------------------------------------
     ["idle_masterkey"] = {
         Source = "idle_masterkey",
-        Time = 1/30
+        Time = 0--100/30
     },
     ["enter_sprint_masterkey"] = {
         Source = "sprint_in_masterkey",
@@ -556,7 +556,7 @@ SWEP.Animations = {
 ------------------------------------------------
     ["alt_idle_masterkey"] = {
         Source = "alt_idle_masterkey",
-        Time = 100/30
+        Time = 0--100/30
     },
     ["alt_enter_sprint_masterkey"] = {
         Source = "alt_sprint_in_masterkey",
