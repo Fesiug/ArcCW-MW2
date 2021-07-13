@@ -8,14 +8,6 @@ SWEP.PrintName = "RPD"
 SWEP.Trivia_Class = "Light Machine Gun"
 SWEP.Trivia_Desc = "Fully automatic, large magazines."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Heckler & Koch"
-SWEP.Trivia_Calibre = "5.56x45mm NATO"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "Germany"
-SWEP.Trivia_Year = 2001
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

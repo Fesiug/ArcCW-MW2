@@ -8,14 +8,6 @@ SWEP.PrintName = "AA-12"
 SWEP.Trivia_Class = "Shotgun"
 SWEP.Trivia_Desc = "Fully automatic, low ammo."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Maxwell Atchisson"
-SWEP.Trivia_Calibre = "12 Gauge"
-SWEP.Trivia_Mechanism = "API Blowback"
-SWEP.Trivia_Country = "USA"
-SWEP.Trivia_Year = 2005
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

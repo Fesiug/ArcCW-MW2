@@ -8,14 +8,6 @@ SWEP.PrintName = "FAMAS"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "3 round burst."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Arsenal Nationale"
-SWEP.Trivia_Calibre = "5.56x45mm NATO"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "France"
-SWEP.Trivia_Year = 1971
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

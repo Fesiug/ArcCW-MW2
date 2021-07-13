@@ -8,14 +8,6 @@ SWEP.PrintName = "G17"
 SWEP.Trivia_Class = "Handgun"
 SWEP.Trivia_Desc = "Semi-automatic (single fire)\nUnofficial."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Glock Ges.m.b.H."
-SWEP.Trivia_Calibre = "9x19mm Para"
-SWEP.Trivia_Mechanism = "Short Recoil"
-SWEP.Trivia_Country = "Austria"
-SWEP.Trivia_Year = 1982
-end
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true

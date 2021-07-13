@@ -8,14 +8,6 @@ SWEP.PrintName = "M1911 .45"
 SWEP.Trivia_Class = "Handgun"
 SWEP.Trivia_Desc = "Semi-automatic (single fire)"
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Colt Manufacturing Company"
-SWEP.Trivia_Calibre = ".45 ACP"
-SWEP.Trivia_Mechanism = "Short Recoil"
-SWEP.Trivia_Country = "USA"
-SWEP.Trivia_Year = 1911
-end
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true

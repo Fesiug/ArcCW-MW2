@@ -8,14 +8,6 @@ SWEP.PrintName = "M4A1"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Fully automatic, all purpose weapon."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Colt"
-SWEP.Trivia_Calibre = "5.56x45mm NATO"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "USA"
-SWEP.Trivia_Year = 1994
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

@@ -1,9 +1,5 @@
 ArcCW_MW2_Mech = { "weapons/fesiugmw2/mechanism/weap_mech_layer_c1.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c2.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c3.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c4.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c5.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c6.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c7.wav", "weapons/fesiugmw2/mechanism/weap_mech_layer_c8.wav" }
 
-if CLIENT then
-	CreateClientConVar("arccw_mw2cl_trivia", 1, true, false, "Show extra trivia in customization, such as manufacturers and mechanisms.")
-end
-
 sound.Add(
 	{
 		name	=		"MW2Common.Deploy",			

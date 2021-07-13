@@ -8,14 +8,6 @@ SWEP.PrintName = "PP2000"
 SWEP.Trivia_Class = "Machine Pistol"
 SWEP.Trivia_Desc = "Fully automatic, close range."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "KBP IDB"
-SWEP.Trivia_Calibre = "9x19mm Para"
-SWEP.Trivia_Mechanism = "Straight Blowback"
-SWEP.Trivia_Country = "Russia"
-SWEP.Trivia_Year = 2000
-end
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true

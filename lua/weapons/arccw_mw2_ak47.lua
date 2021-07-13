@@ -8,14 +8,6 @@ SWEP.PrintName = "AK-47"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Fully automatic, all purpose weapon."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "rusasian"
-SWEP.Trivia_Calibre = "7.62xshortmm Soviet"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "USARR"
-SWEP.Trivia_Year = 1947
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

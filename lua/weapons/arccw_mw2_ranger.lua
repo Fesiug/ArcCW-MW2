@@ -8,14 +8,6 @@ SWEP.PrintName = "Ranger"
 SWEP.Trivia_Class = "Shotgun"
 SWEP.Trivia_Desc = "Double barrel."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Franchi"
-SWEP.Trivia_Calibre = "12 Gauge"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "Italy"
-SWEP.Trivia_Year = 1979
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

@@ -8,14 +8,6 @@ SWEP.PrintName = "Striker"
 SWEP.Trivia_Class = "Shotgun"
 SWEP.Trivia_Desc = "Semi-automatic (single fire)"
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Benelli Armi SPA"
-SWEP.Trivia_Calibre = "12 Gauge"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "Italy"
-SWEP.Trivia_Year = 1998
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

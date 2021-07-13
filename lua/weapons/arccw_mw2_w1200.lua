@@ -8,14 +8,6 @@ SWEP.PrintName = "W1200"
 SWEP.Trivia_Class = "Shotgun"
 SWEP.Trivia_Desc = "Pump action."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Winchester"
-SWEP.Trivia_Calibre = "12 Gauge"
-SWEP.Trivia_Mechanism = "Pump-Action"
-SWEP.Trivia_Country = "USA"
-SWEP.Trivia_Year = 1964
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

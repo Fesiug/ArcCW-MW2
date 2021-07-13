@@ -8,14 +8,6 @@ SWEP.PrintName = "FAL"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Semi-automatic (single fire)"
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Colt"
-SWEP.Trivia_Calibre = "5.56x45mm NATO"
-SWEP.Trivia_Mechanism = "Short-Stroke Gas Piston"
-SWEP.Trivia_Country = "Belgium"
-SWEP.Trivia_Year = 1947
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

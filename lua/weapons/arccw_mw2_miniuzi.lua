@@ -8,14 +8,6 @@ SWEP.PrintName = "Mini-Uzi"
 SWEP.Trivia_Class = "Sub Machine Gun"
 SWEP.Trivia_Desc = "Fully automatic, close range."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Israel Military Industries"
-SWEP.Trivia_Calibre = "9x19mm Para"
-SWEP.Trivia_Mechanism = "Closed-Bolt"
-SWEP.Trivia_Country = "Israel"
-SWEP.Trivia_Year = 1980
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

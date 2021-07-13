@@ -8,14 +8,6 @@ SWEP.PrintName = "TAR-21"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Fully automatic, all purpose weapon."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Israel Weapon Industries"
-SWEP.Trivia_Calibre = "5.56x45mm NATO"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "Israel"
-SWEP.Trivia_Year = 2001
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

@@ -8,14 +8,6 @@ SWEP.PrintName = "SCAR-H"
 SWEP.Trivia_Class = "Assault Rifle"
 SWEP.Trivia_Desc = "Fully automatic, all purpose weapon."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "FN Herstal"
-SWEP.Trivia_Calibre = "7.62x51mm NATO"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "Belgium"
-SWEP.Trivia_Year = 2004
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

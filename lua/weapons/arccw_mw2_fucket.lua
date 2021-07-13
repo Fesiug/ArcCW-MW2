@@ -8,14 +8,6 @@ SWEP.PrintName = "Fucket"
 SWEP.Trivia_Class = "Sniper Rifle"
 SWEP.Trivia_Desc = "Break-action double-barrel musket.\nUnofficial.\nAn 8Z moment."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Musketeer with a time machine"
-SWEP.Trivia_Calibre = "7.62x31mm NATO"
-SWEP.Trivia_Mechanism = "Break-Action"
-SWEP.Trivia_Country = "N/A"
-SWEP.Trivia_Year = 2020
-end
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true

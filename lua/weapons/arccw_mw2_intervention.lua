@@ -8,14 +8,6 @@ SWEP.PrintName = "Intervention"
 SWEP.Trivia_Class = "Sniper Rifle"
 SWEP.Trivia_Desc = "Bolt action."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "CheyTac USA"
-SWEP.Trivia_Calibre = ".408 Cheyenne Tactical"
-SWEP.Trivia_Mechanism = "Bolt-Action"
-SWEP.Trivia_Country = "USA"
-SWEP.Trivia_Year = 2001
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

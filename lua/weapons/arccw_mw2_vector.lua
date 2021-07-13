@@ -8,14 +8,6 @@ SWEP.PrintName = "Vector"
 SWEP.Trivia_Class = "Sub Machine Gun"
 SWEP.Trivia_Desc = "Fully automatic, high fire rate."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Kriss USA"
-SWEP.Trivia_Calibre = ".45 ACP"
-SWEP.Trivia_Mechanism = "Delayed Blowback"
-SWEP.Trivia_Country = "USA"
-SWEP.Trivia_Year = 2006
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

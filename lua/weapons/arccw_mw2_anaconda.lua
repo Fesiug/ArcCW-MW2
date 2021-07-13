@@ -8,14 +8,6 @@ SWEP.PrintName = ".44 Magnum"
 SWEP.Trivia_Class = "Handgun"
 SWEP.Trivia_Desc = "Revolver."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Colt"
-SWEP.Trivia_Calibre = ".44 Magnum"
-SWEP.Trivia_Mechanism = "Double-Action"
-SWEP.Trivia_Country = "USA"
-SWEP.Trivia_Year = 1990
-end
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true

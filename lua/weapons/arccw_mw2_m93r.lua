@@ -8,14 +8,6 @@ SWEP.PrintName = "M93 Raffica"
 SWEP.Trivia_Class = "Handgun"
 SWEP.Trivia_Desc = "Semi-automatic (single fire)"
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Beretta"
-SWEP.Trivia_Calibre = "9x19mm Para"
-SWEP.Trivia_Mechanism = "Locking Block"
-SWEP.Trivia_Country = "Italy"
-SWEP.Trivia_Year = 1975
-end
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true

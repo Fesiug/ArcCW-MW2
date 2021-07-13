@@ -8,14 +8,6 @@ SWEP.PrintName = "MP5"
 SWEP.Trivia_Class = "Sub Machine Gun"
 SWEP.Trivia_Desc = "Fully automatic, close range.\nUnofficial."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Heckler & Koch"
-SWEP.Trivia_Calibre = "9x19mm Para"
-SWEP.Trivia_Mechanism = "Closed-Bolt"
-SWEP.Trivia_Country = "Germany"
-SWEP.Trivia_Year = 1976
-end
-
 SWEP.Slot = 2
 
 SWEP.UseHands = true

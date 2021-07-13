@@ -8,14 +8,6 @@ SWEP.PrintName = "Masterkey"
 SWEP.Trivia_Class = "Shotgun"
 SWEP.Trivia_Desc = "Pump action.\nUnofficial."
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Knight's Armament Company"
-SWEP.Trivia_Calibre = "12 Gauge"
-SWEP.Trivia_Mechanism = "Pump-Action"
-SWEP.Trivia_Country = "USA"
-SWEP.Trivia_Year = 1998
-end
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true

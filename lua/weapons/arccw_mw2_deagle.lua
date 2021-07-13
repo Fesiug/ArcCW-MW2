@@ -8,14 +8,6 @@ SWEP.PrintName = "Desert Eagle"
 SWEP.Trivia_Class = "Handgun"
 SWEP.Trivia_Desc = "Semi-automatic (single fire)"
 
-if CLIENT and GetConVar("arccw_mw2cl_trivia"):GetBool() then
-SWEP.Trivia_Manufacturer = "Magnum Research"
-SWEP.Trivia_Calibre = ".50 Action Express"
-SWEP.Trivia_Mechanism = "Gas-Operated"
-SWEP.Trivia_Country = "Israel"
-SWEP.Trivia_Year = 1982
-end
-
 SWEP.Slot = 1
 
 SWEP.UseHands = true
