@@ -46,6 +46,10 @@ att.Hook_ShouldNotSight = function(wep)
     return true
 end
 
+local function Ammo(wep)
+    return wep.Owner:GetAmmoCount("pistol") -- att.UBGL_Ammo
+end
+
 att.Hook_Think = function(wep)
     if wep:GetMW2Masterkey_ShellInsertTime() < CurTime() and wep:GetMW2Masterkey_ShellInsertTime() != 0 then
         wep:SetMW2Masterkey_ShellInsertTime(0)
