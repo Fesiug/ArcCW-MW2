@@ -18,7 +18,7 @@ att.HolosightPiece 	= "models/weapons/arccw/fesiugmw2/atts/cheytacscope_2b_hsp.m
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 12, -1.5),
+        Pos = Vector(0, 10.2, -1.5),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 65 / 2.25,
         Magnification = 2.25,
