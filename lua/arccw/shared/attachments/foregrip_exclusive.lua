@@ -15,6 +15,6 @@ att.Mult_Recoil = 0.8
 
 att.Mult_SightTime = 1.1
 att.Mult_HipDispersion = 1.1
-att.Mult_SpeedMult = 0.95
+-- att.Mult_SpeedMult = 0.95
 
 att.AddSuffix = " Grip"

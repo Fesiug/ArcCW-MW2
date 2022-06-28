@@ -44,6 +44,6 @@ att.HolosightConstDist = 42
 
 att.Mult_SightTime = 1.2
 att.Mult_SightedSpeedMult = 0.85
-att.Mult_SpeedMult = 0.95
+-- att.Mult_SpeedMult = 0.95
 
 att.AddSuffix = " Thermal"
