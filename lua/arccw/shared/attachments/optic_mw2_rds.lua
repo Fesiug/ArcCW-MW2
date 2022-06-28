@@ -17,7 +17,7 @@ att.ModelOffset = Vector(-1, 0, -0.1)
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 10, -0.8),
+        Pos = Vector(0, 3, -0.8),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 65 / 1.3,
         Magnification = 1.3,

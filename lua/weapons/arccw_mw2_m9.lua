@@ -152,6 +152,7 @@ SWEP.AttachmentElements = {
             ViewModelFOV = 65,
             Magnification = 1,
         },
+        Override_AutosolveSourceSeq = "idle_knife",
         VMBodygroups = {{ind = 1, bg = 1}}, -- m1911 is an old fart and doesn't have the knife bone all the way back so we hide it in qc and show it here instead
         WMBodygroups = {},
     },
@@ -167,7 +168,7 @@ SWEP.Attachments = {
             vpos = Vector(-0.7, -0.075, 2.1),
             vang = Angle(0, 0, 0),
         },
-        ExcludeFlags = {"arcticfixyoshit1","cantuseshitinakimboyet"},
+        ExcludeFlags = {"cantuseshitinakimboyet"},
         InstalledEles = {"railthegrind"},
     },
     {

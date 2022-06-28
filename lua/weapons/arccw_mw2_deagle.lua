@@ -147,6 +147,7 @@ SWEP.AttachmentElements = {
             ViewModelFOV = 65,
             Magnification = 1,
         },
+        Override_AutosolveSourceSeq = "idle_knife",
         VMBodygroups = {{ind = 1, bg = 1}},
     },
 }
@@ -165,7 +166,7 @@ SWEP.Attachments = {
             vmin = Vector(3.2, 0, 1.7),
             vmax = Vector(5.5, 0, 1.7),
         },
-        ExcludeFlags = {"arcticfixyoshit1","cantuseshitinakimboyet"},
+        ExcludeFlags = {"cantuseshitinakimboyet"},
     },
     {
         PrintName = "Muzzle",
@@ -354,6 +355,10 @@ SWEP.Animations = {
 --------- LE TACTICAL KNIFE XDXDXDXD---------------------
 ---------------------------------------------------------
 		["idle_knife"] = {
+			Source = "idle_knife",
+			Time = 300/30
+		},
+		["idle_empty_knife"] = {
 			Source = "idle_knife",
 			Time = 300/30
 		},

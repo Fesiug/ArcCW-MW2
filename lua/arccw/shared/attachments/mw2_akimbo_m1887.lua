@@ -131,8 +131,6 @@ local function Ammo(wep)
 end
 
 att.UBGL_Fire = function(wep, ubgl)
-    PrintTable(att)
-
     if wep:Clip2() <= 0 then return end
 	if wep:GetMW2Masterkey_NeedPump() then return end
 	if wep:GetMW2Masterkey_Reloading() then return end
