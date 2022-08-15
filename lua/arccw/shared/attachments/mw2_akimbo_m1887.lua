@@ -140,7 +140,7 @@ att.UBGL_Fire = function(wep, ubgl)
 
     wep.Owner:FireBullets({
 		Src = wep.Owner:EyePos(),
-		Num = 1,
+		Num = 8,
 		Damage = 40,
 		Force = 1,
 		Attacker = wep.Owner,
@@ -190,20 +190,6 @@ att.UBGL_Reload = function(wep, ubgl)
 	MW2M1887_ReloadStart(wep)
 	wep:SetMW2Masterkey_Reloading(true)
 end
-
-att.Hook_GetHUDData = function( wep, data )
-    if ArcCW:ShouldDrawHUDElement("CHudAmmo") then
-        data.clip = wep:Clip2() .. " / " .. wep:Clip1()
-    else
-        data.clip = wep:Clip1() + wep:Clip2()
-    end
-    data.ubgl = nil
-    return data
-end
-
-
-
--- don't copy... yet
 
 function MW2M1887_ReloadStart(wep)
     wep:DoLHIKAnimation("reload_start_l", 59/30)

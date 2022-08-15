@@ -176,13 +176,3 @@ att.UBGL_Reload = function(wep, ubgl)
         {s = "weapons/fesiugmw2/foley/wpfoly_ranger_reload_chamber_v1.wav", 		t = 106/30},
     })
 end
-
-att.Hook_GetHUDData = function( wep, data )
-    if ArcCW:ShouldDrawHUDElement("CHudAmmo") then
-        data.clip = wep:Clip2() .. " / " .. wep:Clip1()
-    else
-        data.clip = wep:Clip1() + wep:Clip2()
-    end
-    data.ubgl = nil
-    return data
-end
