@@ -65,7 +65,7 @@ SWEP.Firemodes = {
 	{ Mode = 0 }
 }
 SWEP.Hook_ShouldNotFire = function(wep)
-	--return (wep:GetSightDelta() != 0)
+	return (wep:GetSightDelta() != 0)
 end
 SWEP.BarrelLength							= 48
 
@@ -121,8 +121,6 @@ SWEP.Attachments = {}
 SWEP.IronSightStruct = {
 	Pos = Vector(-0.66, -8, 0.72),
 	Ang = Angle(13.2, -10.1, 11),
-	--Pos = AMW2_Vector(-8.97, 2.569, -0.839),
-	--Ang = AMW2_Angle(11.173, -11.075, -12.512),
 	ViewModelFOV = 65 / 1.1818,
 	Magnification = 1.1818,
 }

@@ -150,11 +150,11 @@ function ENT:Detonate()
 	do
 		local d = DamageInfo()
 		d:SetDamage( 160 )
-		d:SetAttacker( ply or self )
+		d:SetAttacker( IsValid(self:GetOwner()) and self:GetOwner() or self )
 		d:SetInflictor( self )
 		d:SetDamageType( DMG_BLAST + DMG_AIRBOAT )
 
-		util.BlastDamageInfo( d, self:GetPos(), (400 * 0.025) * ArcCW.HUToM )
+		util.BlastDamageInfo( d, self:GetPos(), 400 )
 	end
 
 	self:Remove()
