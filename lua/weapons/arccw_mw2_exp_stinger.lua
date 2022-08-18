@@ -13,13 +13,13 @@ SWEP.Slot									= 4
 -- Description
 --
 SWEP.Category								= "ArcCW - MW2 - Explosives"
-SWEP.PrintName								= "RPG-7"
+SWEP.PrintName								= "Stinger"
 SWEP.Trivia_Class							= "Launcher"
-SWEP.Trivia_Desc							= "Fires unguided rockets."
+SWEP.Trivia_Desc							= "Vehicle lock-on only."
 
 
 -- Presentation
-SWEP.ViewModel								= "models/weapons/arccw/fesiugmw2_2/c_rpg7.mdl"
+SWEP.ViewModel								= "models/weapons/arccw/fesiugmw2_2/c_stinger.mdl"
 SWEP.ViewModelFOV							= 65
 SWEP.WorldModel								= "models/weapons/w_rif_m4a1.mdl"
 SWEP.MirrorVMWM								= true
@@ -119,10 +119,10 @@ SWEP.Attachments = {}
 -- Presentation 2
 --
 SWEP.IronSightStruct = {
-	Pos = Vector(0.53, -1, 1.08),
-	Ang = Angle(1.6, 0, 0),
-	ViewModelFOV = 65 / 1.1818,
-	Magnification = 1.1818,
+	Pos = Vector(-0.93, -0.34, 0.71),
+	Ang = Angle(17.6, -18.8, 42),
+	ViewModelFOV = 65 / 2.6,
+	Magnification = 2.6,
 }
 
 SWEP.AnimShoot								= ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
@@ -130,9 +130,9 @@ SWEP.HoldtypeHolstered						= "passive"
 SWEP.HoldtypeActive							= "smg"
 SWEP.HoldtypeSights							= "rpg"
 
-SWEP.ActivePos								= AMW2_Vector(-2.168, -3.287, 2.377) / 0.875
+SWEP.ActivePos								= AMW2_Vector(0, 0, 0)
 SWEP.ActivePos.z							= SWEP.ActivePos.z + 1
-SWEP.ActiveAng								= AMW2_Angle(0.615, 11.14, 5.041)
+SWEP.ActiveAng								= AMW2_Angle(0, 0, 0)
 
 SWEP.CustomizePos							= Vector(10.479, 0, -1.321)
 SWEP.CustomizeAng							= Angle(18.2, 39.4, 14.8)
@@ -155,9 +155,6 @@ SWEP.Animations = {
 	["idle"] = {
 		Source = "idle",
 	},
-	["idle_empty"] = {
-		Source = "idle_empty",
-	},
 	["enter_sprint"] = {
 		Source = "sprint_in",
 	},
@@ -175,13 +172,11 @@ SWEP.Animations = {
 		Source = "putaway",
 	},
 	["fire"] = {
-		Source = "fire",
+		Source = "fire_ads",
 	},
 	["reload"] = {
 		Source = "reload",
-		Time = 79/24, -- temp
 		MinProgress = 1.169, -- temp
-		LastClip1OutTime = 0.3,
 		TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
 		SoundTable = {
 			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_lift_v1.wav", 		t = 0/24}, -- temp
