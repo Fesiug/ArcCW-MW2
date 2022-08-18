@@ -8,6 +8,9 @@ ENT.Model = "models/weapons/w_missile_launch.mdl"
 ENT.SpawnTime = 0
 ENT.next = 0
 ENT.LifeTime = 5
+ENT.Velocity = 90 / ArcCW.HUToM
+ENT.AngleDodgyness = 2
+ENT.AngleDodgynessTime = 0.1
 
 ENT.TurnPerSecond = 180
 ENT.WhoToTrack = false
@@ -23,7 +26,7 @@ function ENT:Initialize()
 	self:SetCollisionGroup( COLLISION_GROUP_WEAPON )
 	timer.Simple(0.05, function()
 		if IsValid(self) then
-			self:SetCollisionGroup( COLLISION_GROUP_PROJECTILE )
+			self:SetCollisionGroup( COLLISION_GROUP_NONE )
 		end
 	end)
 
@@ -80,7 +83,8 @@ function ENT:Think()
 		if !self:IsValid() then return end
 		local phys = self:GetPhysicsObject()
 		if SERVER and !phys:IsValid() then return end
-		if !homing then
+		local homing = false
+		if homing then
 			local ang = self:GetAngles()
 			
 			if IsValid(self:GetOwner()) then
@@ -117,9 +121,11 @@ function ENT:Think()
 			end
 
 			phys:SetAngles( ang )
-			phys:SetVelocity( (phys:GetAngles():Forward() * (50 / ArcCW.HUToM)) + VectorRand( -30, 30 ) )
-		elseif rocketdodgy then
-			phys:SetVelocity( phys:GetVelocity() + VectorRand( -200, 200 ) )
+		end
+		if ( self.dodgythink or CurTime() ) <= CurTime() then
+			phys:SetAngles( phys:GetAngles() + AngleRand( -self.AngleDodgyness, self.AngleDodgyness ) )
+			phys:SetVelocity( (phys:GetAngles():Forward() * self.Velocity) )
+			self.dodgythink = CurTime() + self.AngleDodgynessTime
 		end
 		self.lastthink = CurTime()
 		self:NextThink( CurTime() )
@@ -141,7 +147,15 @@ function ENT:Detonate()
 	self:EmitSound("AMW2.Explode")
 	self:EmitSound("AMW2.ExplodeFar")
 
-	util.BlastDamage( self, self:GetOwner(), self:GetPos(), (400 * 0.025) * ArcCW.HUToM, 160 )
+	do
+		local d = DamageInfo()
+		d:SetDamage( 160 )
+		d:SetAttacker( ply or self )
+		d:SetInflictor( self )
+		d:SetDamageType( DMG_BLAST + DMG_AIRBOAT )
+
+		util.BlastDamageInfo( d, self:GetPos(), (400 * 0.025) * ArcCW.HUToM )
+	end
 
 	self:Remove()
 end

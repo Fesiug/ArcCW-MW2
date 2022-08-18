@@ -65,7 +65,7 @@ SWEP.Firemodes = {
 	{ Mode = 0 }
 }
 SWEP.Hook_ShouldNotFire = function(wep)
-	--return (wep:GetSightDelta() != 0)
+	return (wep:GetSightDelta() != 0)
 end
 SWEP.BarrelLength							= 48
 
