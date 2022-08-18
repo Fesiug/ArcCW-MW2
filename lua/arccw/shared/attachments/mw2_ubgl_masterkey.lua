@@ -2,12 +2,10 @@ att.PrintName = "Shotgun"
 att.Icon = Material("entities/acwatt_mw2_ubgl_masterkey.png", "smooth")
 att.Description = "Weapon-exclusive underbarrel shotgun with its own unique animations."
 att.Desc_Pros = {
-	"pro.ubsg",
 }
 att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
-	"info.toggleubgl"
 }
 att.AutoStats = true
 att.Slot = "mw2_ubgl"

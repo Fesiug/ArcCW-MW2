@@ -2,12 +2,10 @@ att.PrintName = "Grenade Launcher"
 att.Icon = Material("entities/acwatt_mw2_ubgl_m203.png", "smooth")
 att.Description = "Weapon-exclusive grenade launcher with its own unique animations."
 att.Desc_Pros = {
-    "pro.ubgl",
 }
 att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
-    "info.toggleubgl"
 }
 att.AutoStats = true
 att.Slot = "mw2_ubgl"
