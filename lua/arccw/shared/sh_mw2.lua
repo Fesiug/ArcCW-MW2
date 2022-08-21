@@ -14,6 +14,15 @@ ArcCW_MW2_Mech = { "weapons/fesiugmw2/mechanism/weap_mech_layer_c1.wav", "weapon
 	Angle( -y, z, x )
 ]]
 
+if SERVER then
+	util.AddNetworkString("AMW2_RPGTrack")
+
+	function AMW2_RPGTrack(ply, final)
+		net.Start("AMW2_RPGTrack")
+			net.WriteBool(final)
+		net.Send(ply)
+	end
+end
 
 function AMW2_Vector(x, y, z)
 	return Vector( -y, -x, z )

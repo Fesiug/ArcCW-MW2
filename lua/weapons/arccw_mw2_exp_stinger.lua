@@ -119,7 +119,7 @@ SWEP.Attachments = {}
 -- Presentation 2
 --
 SWEP.IronSightStruct = {
-	Pos = Vector(-0.93, -0.34, 0.71),
+	Pos = Vector(-0.89, -0.34, 0.69),
 	Ang = Angle(17.6, -18.8, 42),
 	ViewModelFOV = 65 / 2.6,
 	Magnification = 2.6,
@@ -166,10 +166,22 @@ SWEP.Animations = {
 	},
 	["draw"] = {
 		Source = "pullout",
-		SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+		SoundTable = {
+			{s = "weapons/fesiugmw2/foley/wpfoly_stinger_pickup_lift_v1.wav", 		t = 0/30},
+		},
+	},
+	["ready"] = {
+		Source = "pullout_first",
+		SoundTable = {
+			{s = "weapons/fesiugmw2/foley/wpfoly_stinger_pickup_lift_v1.wav", 		t = 0/30},
+			{s = "weapons/fesiugmw2/foley/wpfoly_stinger_pickup_open_v1.wav", 		t = 19/30},
+		},
 	},
 	["holster"] = {
 		Source = "putaway",
+		SoundTable = {
+			{s = "weapons/fesiugmw2/foley/wpfoly_stinger_pickup_lift_v1.wav", 		t = 0/30},
+		},
 	},
 	["fire"] = {
 		Source = "fire_ads",
@@ -178,10 +190,5 @@ SWEP.Animations = {
 		Source = "reload",
 		MinProgress = 1.169, -- temp
 		TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_lift_v1.wav", 		t = 0/24}, -- temp
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_insert_v2.wav", 	t = 20/24}, -- temp
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_twist_v2.wav", 	    t = 34/24}, -- temp
-		},
 	},
 }

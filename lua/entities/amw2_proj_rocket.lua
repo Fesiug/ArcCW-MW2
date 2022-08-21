@@ -8,13 +8,14 @@ ENT.Model = "models/weapons/w_missile_launch.mdl"
 ENT.SpawnTime = 0
 ENT.next = 0
 ENT.LifeTime = 5
-ENT.Velocity = 90 / ArcCW.HUToM
-ENT.AngleDodgyness = 2
-ENT.AngleDodgynessTime = 0.1
+ENT.Velocity = 60 / ArcCW.HUToM
+ENT.AngleDodgyness = 0
+ENT.AngleDodgynessTime = 0
 
-ENT.TurnPerSecond = 180
+ENT.TurnPerSecond = 360
 ENT.WhoToTrack = false
 ENT.DoNotTrack = true
+ENT.Homing = false
 
 function ENT:Initialize()
 	-- Sets what model to use
@@ -61,11 +62,11 @@ function ENT:Think()
 			local smoke = emitter:Add("particle/particle_smokegrenade", self:GetPos())
 			smoke:SetVelocity( VectorRand() * 25 )
 			smoke:SetGravity( Vector(math.Rand(-5, 5), math.Rand(-5, 5), math.Rand(-20, -25)) )
-			smoke:SetDieTime( 1 )
+			smoke:SetDieTime( 7 )
 			smoke:SetStartAlpha( 255 )
 			smoke:SetEndAlpha( 0 )
 			smoke:SetStartSize( 20 )
-			smoke:SetEndSize( 0 )
+			smoke:SetEndSize( 100 )
 			smoke:SetRoll( math.Rand(-180, 180) )
 			smoke:SetRollDelta( math.Rand(-0.2,0.2) )
 			smoke:SetColor( 113, 113, 113 )
@@ -75,7 +76,7 @@ function ENT:Think()
 			emitter:Finish()
 		end
 
-		self.next = CurTime() + 0.01
+		self.next = CurTime() + 0.015
 	end
 
 	if SERVER then
@@ -83,10 +84,8 @@ function ENT:Think()
 		if !self:IsValid() then return end
 		local phys = self:GetPhysicsObject()
 		if SERVER and !phys:IsValid() then return end
-		local homing = false
-		if homing then
-			local ang = self:GetAngles()
-			
+		local ang = self:GetAngles()
+		if self.Homing then
 			if IsValid(self:GetOwner()) then
 				local p = self:GetOwner()
 				
@@ -123,10 +122,10 @@ function ENT:Think()
 			phys:SetAngles( ang )
 		end
 		if ( self.dodgythink or CurTime() ) <= CurTime() then
-			phys:SetAngles( phys:GetAngles() + AngleRand( -self.AngleDodgyness, self.AngleDodgyness ) )
-			phys:SetVelocity( (phys:GetAngles():Forward() * self.Velocity) )
+			phys:SetAngles( ang + AngleRand( -self.AngleDodgyness, self.AngleDodgyness ) )
 			self.dodgythink = CurTime() + self.AngleDodgynessTime
 		end
+		phys:SetVelocity( (phys:GetAngles():Forward() * self.Velocity) )
 		self.lastthink = CurTime()
 		self:NextThink( CurTime() )
 		return true
@@ -154,7 +153,7 @@ function ENT:Detonate()
 		d:SetInflictor( self )
 		d:SetDamageType( DMG_BLAST + DMG_AIRBOAT )
 
-		util.BlastDamageInfo( d, self:GetPos(), 400 )
+		util.BlastDamageInfo( d, self:GetPos(), 15 / ArcCW.HUToM )
 	end
 
 	self:Remove()

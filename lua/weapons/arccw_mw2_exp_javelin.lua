@@ -162,7 +162,17 @@ SWEP.Animations = {
 	},
 	["draw"] = {
 		Source = "pullout",
-		SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+		SoundTable = {
+			{s = "weapons/fesiugmw2/foley/wpfoly_at4_raise_v1.wav", 		t = 0/30},
+		},
+	},
+	["ready"] = {
+		Source = "pullout_first",
+		SoundTable = {
+			{s = "weapons/fesiugmw2/foley/wpfoly_javelin_pickup_lift_v1.wav", 		t = 0/30},
+			{s = "weapons/fesiugmw2/foley/wpfoly_javelin_pickup_removecap_v1.wav", 	t = 28/30},
+			{s = "weapons/fesiugmw2/foley/wpfoly_at4_raise_v1.wav", 				t = 46/30},
+		},
 	},
 	["holster"] = {
 		Source = "putaway",
@@ -175,9 +185,10 @@ SWEP.Animations = {
 		MinProgress = 1.169, -- temp
 		TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
 		SoundTable = {
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_lift_v1.wav", 		t = 0/24}, -- temp
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_insert_v2.wav", 	t = 20/24}, -- temp
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_twist_v2.wav", 	    t = 34/24}, -- temp
+			{s = "weapons/fesiugmw2/foley/wpfoly_javelin_reload_lift_v1.wav", 		t = 0/30},
+			{s = "weapons/fesiugmw2/foley/wpfoly_javelin_reload_tube_v1.wav", 	t = 37/30},
+			{s = "weapons/fesiugmw2/foley/wpfoly_javelin_reload_tube_v1.wav", 	    t = 84/30},
+			{s = "weapons/fesiugmw2/foley/wpfoly_at4_raise_v1.wav", 	    t = 105/30},
 		},
 	},
 }

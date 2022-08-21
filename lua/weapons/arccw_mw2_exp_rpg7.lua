@@ -190,3 +190,12 @@ SWEP.Animations = {
 		},
 	},
 }
+
+--
+-- Rocket launcher code
+--
+SWEP.Hook_PostFireRocket = function(wep, ent)
+	ent.Velocity = 60 / ArcCW.HUToM
+	ent.AngleDodgyness = 2
+	ent.AngleDodgynessTime = 0.1
+end

@@ -160,12 +160,23 @@ SWEP.Animations = {
 	["exit_sprint"] = {
 		Source = "sprint_out",
 	},
+	["ready"] = {
+		Source = "pullout_first",
+		SoundTable = {
+			{s = "weapons/fesiugmw2/foley/wpfoly_at4_raise_first_v1.wav", 		t = 0/30}, -- temp
+		},
+	},
 	["draw"] = {
 		Source = "pullout",
-		SoundTable = {{s = "MW2Common.Deploy", 		t = 0}},
+		SoundTable = {
+			{s = "weapons/fesiugmw2/foley/wpfoly_at4_raise_v1.wav", 		t = 0/30}, -- temp
+		},
 	},
 	["holster"] = {
 		Source = "putaway",
+		SoundTable = {
+			{s = "weapons/fesiugmw2/foley/wpfoly_at4_drop_v1.wav", 		t = 0/30}, -- temp
+		},
 	},
 	["fire"] = {
 		Source = "fire_ads",
@@ -175,10 +186,60 @@ SWEP.Animations = {
 		Time = 3,
 		MinProgress = 2.299, -- temp
 		TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-		SoundTable = {
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_lift_v1.wav", 		t = 0/24}, -- temp
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_insert_v2.wav", 	t = 20/24}, -- temp
-			{s = "weapons/fesiugmw2/foley/wpfoly_rpg_reload_twist_v2.wav", 	    t = 34/24}, -- temp
-		},
 	},
 }
+
+--
+-- Rocket launcher code
+--
+local target = false
+local lastt = 0
+
+local track1 = 0
+
+SWEP.Hook_Think = function(wep)
+	--local totrack = wep:GetOwner():GetEyeTrace().Entity
+	if SERVER and wep:GetSightDelta() == 0 then
+		local hs = 32
+		local p = wep:GetOwner()
+		local tr = {
+			start = p:EyePos(),
+			endpos = p:EyePos() + (p:EyeAngles():Forward() * 65535),
+			filter = p,
+			ignoreworld = true,
+		}
+
+		tr = util.TraceLine(tr)
+
+		local totrack = tr.Entity
+		if IsValid(totrack) and !totrack.DoNotTrack and totrack:GetVelocity():Length2D() > 10 then
+			if lastt < CurTime() then
+				track1 = track1 + 1
+				if track1 >= 3 then
+					wep:EmitSound( "weapons/fesiugmw2/organizelater/weap_hellfire_lock.wav", 70, 100, 1, CHAN_STATIC )
+				else
+					wep:EmitSound( "weapons/fesiugmw2/organizelater/bomb_tick_digital1.wav", 70, 100, 1, CHAN_STATIC )
+				end
+				lastt = CurTime() + 1
+			end
+			if track1 >= 3 then
+				target = totrack
+			else
+				target = false
+			end
+		else
+			track1 = 0
+		end
+		--print(target)
+	end
+end
+
+SWEP.Hook_PostFireRocket = function(wep, ent)
+	ent.Homing = true
+	ent.WhoToTrack = target
+	print(ent.WhoToTrack)
+	print(target)
+	ent.Velocity = 60 / ArcCW.HUToM
+	ent.AngleDodgyness = 0
+	ent.AngleDodgynessTime = 0
+end
